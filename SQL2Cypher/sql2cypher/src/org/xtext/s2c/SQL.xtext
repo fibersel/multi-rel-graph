@@ -1,0 +1,46 @@
+grammar org.xtext.example.s2c.SQL with org.eclipse.xtext.common.Terminals
+
+generate sQL "http://www.xtext.org/example/s2c/SQL"
+
+Model:
+	statements+=select;
+
+select:
+	'SELECT' expressions+=expression (',' expressions+=expression)*
+	(from_section=fromSection)? 
+	(where_section=where_clause)? 
+	(group_section=group_clause)? 
+	(having_section=having_clause)?;
+
+fromSection:
+	'FROM' from_item=fromItem;
+
+fromItem:
+	(table_name=ID | '('select_expr=select')') ('JOIN' rhs=fromItem 'ON' bool_expr=boolExpression)?;
+
+where_clause:
+	'WHERE' bool_expr=boolExpression;
+
+boolExpression:
+	lhs=Term ('OR' rhs=Term)?;
+
+Term:
+	lhs=Factor ('AND' rhs=Factor);
+
+Factor:
+	'NOT' factor=Factor | '('expr=boolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
+
+Binary:
+	lhs=Column ('<' | '>' | '=' | '>=' | '<=') rhs=Column;
+
+Column:
+	name=ID;
+
+group_clause:
+	'GROUP' 'BY' expressions+=expression (',' expressions+=expression)*;
+
+having_clause:
+	'HAVING' expr=boolExpression;
+
+expression:
+	'*' | col=Column | 'count()' | 'sum('col=Column')';
