@@ -115,7 +115,7 @@ if __name__ == "__main__":
     driver = GraphDatabase.driver(uri, auth=(user, password))
     session = driver.session()
 
-    triplets = extract_tables(session)
+    triplets = extract_triplets(session)
         
     tuples = defaultdict(set) # mapping node label -> set(nodes)
 
