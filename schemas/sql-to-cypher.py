@@ -6,6 +6,8 @@ from pygraphviz import *
 from helpers import *
 from entities import *
 from generate_migrations import generate_neo4j_migrations
+import argparse
+
 
 def get_tables_list(cursor, DB):
 
@@ -168,8 +170,12 @@ def relational_to_graph(relSchema):
     return GraphSchema(nodeClasses, edgeClasses), G, edge_labels
 
 if __name__ == "__main__":
-    DB = "northwind"
-    conn = psycopg2.connect("dbname={} user=postgres password=password".format(DB))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--filename", type=str)
+    parser.add_argument("-db", "--database", type=str)
+    args = parser.parse_args()
+
+    conn = psycopg2.connect("dbname={} user=postgres password=password".format(args.db))
     cursor = conn.cursor()
 
     table_names = get_tables_list(cursor, DB)
@@ -188,7 +194,5 @@ if __name__ == "__main__":
     # map rel schema to graph schema
     graphSchema, G, edge_labels = relational_to_graph(rel_schema)
 
-    filename = "/Users/a.palagashvili/coursework/neo4j/queries/tmp.cypher"
-
     # generate neo4j migrations
-    generate_neo4j_migrations(tables, filename)
+    generate_neo4j_migrations(tables, args.filename)
