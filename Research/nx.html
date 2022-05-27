@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 2500px;
+            height: 2500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "products", "label": "products", "shape": "dot", "size": 10}, {"id": "orders", "label": "orders", "shape": "dot", "size": 10}, {"id": "categories", "label": "categories", "shape": "dot", "size": 10}, {"id": "suppliers", "label": "suppliers", "shape": "dot", "size": 10}, {"id": "employees", "label": "employees", "shape": "dot", "size": 10}, {"id": "territories", "label": "territories", "shape": "dot", "size": 10}, {"id": "region", "label": "region", "shape": "dot", "size": 10}, {"id": "customers", "label": "customers", "shape": "dot", "size": 10}, {"id": "shippers", "label": "shippers", "shape": "dot", "size": 10}, {"id": "customer_demographics", "label": "customer_demographics", "shape": "dot", "size": 10}, {"id": "us_states", "label": "us_states", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"arrows": "to", "from": "products", "label": "order_details", "length": 300, "to": "orders", "weight": 1}, {"arrows": "to", "from": "products", "label": "products-to-categories", "length": 300, "to": "categories", "weight": 1}, {"arrows": "to", "from": "products", "label": "products-to-suppliers", "length": 300, "to": "suppliers", "weight": 1}, {"arrows": "to", "from": "employees", "label": "employees-to-employees", "length": 300, "to": "employees", "weight": 1}, {"arrows": "to", "from": "territories", "label": "employee_territories", "length": 300, "to": "employees", "weight": 1}, {"arrows": "to", "from": "territories", "label": "territories-to-region", "length": 300, "to": "region", "weight": 1}, {"arrows": "to", "from": "orders", "label": "orders-to-customers", "length": 300, "to": "customers", "weight": 1}, {"arrows": "to", "from": "orders", "label": "orders-to-employees", "length": 300, "to": "employees", "weight": 1}, {"arrows": "to", "from": "orders", "label": "orders-to-shippers", "length": 300, "to": "shippers", "weight": 1}, {"arrows": "to", "from": "customer_demographics", "label": "customer_customer_demo", "length": 300, "to": "customers", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
