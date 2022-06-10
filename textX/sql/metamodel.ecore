@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ecore:EPackage xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:version="2.0" name="sql" nsURI="http://sql/" nsPrefix="sql">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//select" upperBound="-1" lowerBound="1" containment="true" name="statements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="select">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Expression" upperBound="-1" containment="true" name="expressions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//fromSection" lowerBound="1" containment="true" name="fromSection" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//WhereClause" lowerBound="1" containment="true" name="whereClause" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//GroupClause" lowerBound="1" containment="true" name="groupClause" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//HavingClause" lowerBound="1" containment="true" name="havingClause" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="fromSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//FromItem" lowerBound="1" containment="true" name="fromItem" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FromItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" lowerBound="1" name="tableName" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//select" lowerBound="1" containment="true" name="select_expr" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//FromItem" lowerBound="1" containment="true" name="rhs" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//BoolExpression" lowerBound="1" containment="true" name="bool_expr" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WhereClause">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//BoolExpression" lowerBound="1" containment="true" name="boolExpression" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Term" lowerBound="1" containment="true" name="lhs" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Term" lowerBound="1" containment="true" name="rhs" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Factor" lowerBound="1" containment="true" name="lhs" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Factor" lowerBound="1" containment="true" name="rhs" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Factor">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Factor" lowerBound="1" containment="true" name="factor" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//BoolExpression" lowerBound="1" containment="true" name="expr" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Binary" lowerBound="1" containment="true" name="binexp" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Binary">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Column" lowerBound="1" containment="true" name="lhs" unique="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Column" lowerBound="1" containment="true" name="rhs" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Column">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" lowerBound="1" name="name" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GroupClause">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Expression" upperBound="-1" lowerBound="1" containment="true" name="expressions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HavingClause">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//BoolExpression" lowerBound="1" containment="true" name="expr" unique="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="#//Column" lowerBound="1" containment="true" name="col" unique="false"/>
+  </eClassifiers>
+</ecore:EPackage>

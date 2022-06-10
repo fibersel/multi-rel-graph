@@ -11,20 +11,20 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.s2c.sQL.Binary;
+import org.xtext.example.s2c.sQL.BoolExpression;
 import org.xtext.example.s2c.sQL.Column;
+import org.xtext.example.s2c.sQL.Expression;
 import org.xtext.example.s2c.sQL.Factor;
+import org.xtext.example.s2c.sQL.FromItem;
+import org.xtext.example.s2c.sQL.GroupClause;
+import org.xtext.example.s2c.sQL.HavingClause;
 import org.xtext.example.s2c.sQL.Model;
 import org.xtext.example.s2c.sQL.SQLFactory;
 import org.xtext.example.s2c.sQL.SQLPackage;
 import org.xtext.example.s2c.sQL.Term;
-import org.xtext.example.s2c.sQL.boolExpression;
-import org.xtext.example.s2c.sQL.expression;
-import org.xtext.example.s2c.sQL.fromItem;
+import org.xtext.example.s2c.sQL.WhereClause;
 import org.xtext.example.s2c.sQL.fromSection;
-import org.xtext.example.s2c.sQL.group_clause;
-import org.xtext.example.s2c.sQL.having_clause;
 import org.xtext.example.s2c.sQL.select;
-import org.xtext.example.s2c.sQL.where_clause;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass where_clauseEClass = null;
+  private EClass whereClauseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,14 +109,14 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass group_clauseEClass = null;
+  private EClass groupClauseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass having_clauseEClass = null;
+  private EClass havingClauseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -238,7 +238,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getselect_From_section()
+  public EReference getselect_FromSection()
   {
     return (EReference)selectEClass.getEStructuralFeatures().get(1);
   }
@@ -249,7 +249,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getselect_Where_section()
+  public EReference getselect_WhereClause()
   {
     return (EReference)selectEClass.getEStructuralFeatures().get(2);
   }
@@ -260,7 +260,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getselect_Group_section()
+  public EReference getselect_GroupClause()
   {
     return (EReference)selectEClass.getEStructuralFeatures().get(3);
   }
@@ -271,7 +271,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getselect_Having_section()
+  public EReference getselect_HavingClause()
   {
     return (EReference)selectEClass.getEStructuralFeatures().get(4);
   }
@@ -293,7 +293,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getfromSection_From_item()
+  public EReference getfromSection_FromItem()
   {
     return (EReference)fromSectionEClass.getEStructuralFeatures().get(0);
   }
@@ -304,7 +304,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getfromItem()
+  public EClass getFromItem()
   {
     return fromItemEClass;
   }
@@ -315,7 +315,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EAttribute getfromItem_Table_name()
+  public EAttribute getFromItem_TableName()
   {
     return (EAttribute)fromItemEClass.getEStructuralFeatures().get(0);
   }
@@ -326,7 +326,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getfromItem_Select_expr()
+  public EReference getFromItem_Select_expr()
   {
     return (EReference)fromItemEClass.getEStructuralFeatures().get(1);
   }
@@ -337,7 +337,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getfromItem_Rhs()
+  public EReference getFromItem_Rhs()
   {
     return (EReference)fromItemEClass.getEStructuralFeatures().get(2);
   }
@@ -348,7 +348,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getfromItem_Bool_expr()
+  public EReference getFromItem_Bool_expr()
   {
     return (EReference)fromItemEClass.getEStructuralFeatures().get(3);
   }
@@ -359,9 +359,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getwhere_clause()
+  public EClass getWhereClause()
   {
-    return where_clauseEClass;
+    return whereClauseEClass;
   }
 
   /**
@@ -370,9 +370,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getwhere_clause_Bool_expr()
+  public EReference getWhereClause_BoolExpression()
   {
-    return (EReference)where_clauseEClass.getEStructuralFeatures().get(0);
+    return (EReference)whereClauseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -381,7 +381,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getboolExpression()
+  public EClass getBoolExpression()
   {
     return boolExpressionEClass;
   }
@@ -392,7 +392,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getboolExpression_Lhs()
+  public EReference getBoolExpression_Lhs()
   {
     return (EReference)boolExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -403,7 +403,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getboolExpression_Rhs()
+  public EReference getBoolExpression_Rhs()
   {
     return (EReference)boolExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -546,9 +546,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getgroup_clause()
+  public EClass getGroupClause()
   {
-    return group_clauseEClass;
+    return groupClauseEClass;
   }
 
   /**
@@ -557,9 +557,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getgroup_clause_Expressions()
+  public EReference getGroupClause_Expressions()
   {
-    return (EReference)group_clauseEClass.getEStructuralFeatures().get(0);
+    return (EReference)groupClauseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -568,9 +568,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass gethaving_clause()
+  public EClass getHavingClause()
   {
-    return having_clauseEClass;
+    return havingClauseEClass;
   }
 
   /**
@@ -579,9 +579,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference gethaving_clause_Expr()
+  public EReference getHavingClause_Expr()
   {
-    return (EReference)having_clauseEClass.getEStructuralFeatures().get(0);
+    return (EReference)havingClauseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -590,7 +590,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EClass getexpression()
+  public EClass getExpression()
   {
     return expressionEClass;
   }
@@ -601,7 +601,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
    * @generated
    */
   @Override
-  public EReference getexpression_Col()
+  public EReference getExpression_Col()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -643,9 +643,9 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     selectEClass = createEClass(SELECT);
     createEReference(selectEClass, SELECT__EXPRESSIONS);
     createEReference(selectEClass, SELECT__FROM_SECTION);
-    createEReference(selectEClass, SELECT__WHERE_SECTION);
-    createEReference(selectEClass, SELECT__GROUP_SECTION);
-    createEReference(selectEClass, SELECT__HAVING_SECTION);
+    createEReference(selectEClass, SELECT__WHERE_CLAUSE);
+    createEReference(selectEClass, SELECT__GROUP_CLAUSE);
+    createEReference(selectEClass, SELECT__HAVING_CLAUSE);
 
     fromSectionEClass = createEClass(FROM_SECTION);
     createEReference(fromSectionEClass, FROM_SECTION__FROM_ITEM);
@@ -656,8 +656,8 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     createEReference(fromItemEClass, FROM_ITEM__RHS);
     createEReference(fromItemEClass, FROM_ITEM__BOOL_EXPR);
 
-    where_clauseEClass = createEClass(WHERE_CLAUSE);
-    createEReference(where_clauseEClass, WHERE_CLAUSE__BOOL_EXPR);
+    whereClauseEClass = createEClass(WHERE_CLAUSE);
+    createEReference(whereClauseEClass, WHERE_CLAUSE__BOOL_EXPRESSION);
 
     boolExpressionEClass = createEClass(BOOL_EXPRESSION);
     createEReference(boolExpressionEClass, BOOL_EXPRESSION__LHS);
@@ -679,11 +679,11 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     columnEClass = createEClass(COLUMN);
     createEAttribute(columnEClass, COLUMN__NAME);
 
-    group_clauseEClass = createEClass(GROUP_CLAUSE);
-    createEReference(group_clauseEClass, GROUP_CLAUSE__EXPRESSIONS);
+    groupClauseEClass = createEClass(GROUP_CLAUSE);
+    createEReference(groupClauseEClass, GROUP_CLAUSE__EXPRESSIONS);
 
-    having_clauseEClass = createEClass(HAVING_CLAUSE);
-    createEReference(having_clauseEClass, HAVING_CLAUSE__EXPR);
+    havingClauseEClass = createEClass(HAVING_CLAUSE);
+    createEReference(havingClauseEClass, HAVING_CLAUSE__EXPR);
 
     expressionEClass = createEClass(EXPRESSION);
     createEReference(expressionEClass, EXPRESSION__COL);
@@ -724,27 +724,27 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     initEReference(getModel_Statements(), this.getselect(), null, "statements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(selectEClass, select.class, "select", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getselect_Expressions(), this.getexpression(), null, "expressions", null, 0, -1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getselect_From_section(), this.getfromSection(), null, "from_section", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getselect_Where_section(), this.getwhere_clause(), null, "where_section", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getselect_Group_section(), this.getgroup_clause(), null, "group_section", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getselect_Having_section(), this.gethaving_clause(), null, "having_section", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getselect_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getselect_FromSection(), this.getfromSection(), null, "fromSection", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getselect_WhereClause(), this.getWhereClause(), null, "whereClause", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getselect_GroupClause(), this.getGroupClause(), null, "groupClause", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getselect_HavingClause(), this.getHavingClause(), null, "havingClause", null, 0, 1, select.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fromSectionEClass, fromSection.class, "fromSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getfromSection_From_item(), this.getfromItem(), null, "from_item", null, 0, 1, fromSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfromSection_FromItem(), this.getFromItem(), null, "fromItem", null, 0, 1, fromSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(fromItemEClass, fromItem.class, "fromItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getfromItem_Table_name(), ecorePackage.getEString(), "table_name", null, 0, 1, fromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfromItem_Select_expr(), this.getselect(), null, "select_expr", null, 0, 1, fromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfromItem_Rhs(), this.getfromItem(), null, "rhs", null, 0, 1, fromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfromItem_Bool_expr(), this.getboolExpression(), null, "bool_expr", null, 0, 1, fromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(fromItemEClass, FromItem.class, "FromItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFromItem_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, FromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFromItem_Select_expr(), this.getselect(), null, "select_expr", null, 0, 1, FromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFromItem_Rhs(), this.getFromItem(), null, "rhs", null, 0, 1, FromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFromItem_Bool_expr(), this.getBoolExpression(), null, "bool_expr", null, 0, 1, FromItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(where_clauseEClass, where_clause.class, "where_clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getwhere_clause_Bool_expr(), this.getboolExpression(), null, "bool_expr", null, 0, 1, where_clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(whereClauseEClass, WhereClause.class, "WhereClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhereClause_BoolExpression(), this.getBoolExpression(), null, "boolExpression", null, 0, 1, WhereClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(boolExpressionEClass, boolExpression.class, "boolExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getboolExpression_Lhs(), this.getTerm(), null, "lhs", null, 0, 1, boolExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getboolExpression_Rhs(), this.getTerm(), null, "rhs", null, 0, 1, boolExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(boolExpressionEClass, BoolExpression.class, "BoolExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBoolExpression_Lhs(), this.getTerm(), null, "lhs", null, 0, 1, BoolExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBoolExpression_Rhs(), this.getTerm(), null, "rhs", null, 0, 1, BoolExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTerm_Lhs(), this.getFactor(), null, "lhs", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -752,7 +752,7 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
 
     initEClass(factorEClass, Factor.class, "Factor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFactor_Factor(), this.getFactor(), null, "factor", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFactor_Expr(), this.getboolExpression(), null, "expr", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFactor_Expr(), this.getBoolExpression(), null, "expr", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFactor_Binexp(), this.getBinary(), null, "binexp", null, 0, 1, Factor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(binaryEClass, Binary.class, "Binary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -762,14 +762,14 @@ public class SQLPackageImpl extends EPackageImpl implements SQLPackage
     initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColumn_Name(), ecorePackage.getEString(), "name", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(group_clauseEClass, group_clause.class, "group_clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getgroup_clause_Expressions(), this.getexpression(), null, "expressions", null, 0, -1, group_clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(groupClauseEClass, GroupClause.class, "GroupClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGroupClause_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, GroupClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(having_clauseEClass, having_clause.class, "having_clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(gethaving_clause_Expr(), this.getboolExpression(), null, "expr", null, 0, 1, having_clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(havingClauseEClass, HavingClause.class, "HavingClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getHavingClause_Expr(), this.getBoolExpression(), null, "expr", null, 0, 1, HavingClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(expressionEClass, expression.class, "expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getexpression_Col(), this.getColumn(), null, "col", null, 0, 1, expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpression_Col(), this.getColumn(), null, "col", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

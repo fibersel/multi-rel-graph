@@ -6,29 +6,29 @@ Model:
 	statements+=select;
 
 select:
-	'SELECT' expressions+=expression (',' expressions+=expression)*
-	(from_section=fromSection)? 
-	(where_section=where_clause)? 
-	(group_section=group_clause)? 
-	(having_section=having_clause)?;
+	'SELECT' expressions+=Expression (',' expressions+=Expression)*
+	(fromSection=fromSection)? 
+	(whereClause=WhereClause)? 
+	(groupClause=GroupClause)? 
+	(havingClause=HavingClause)?;
 
 fromSection:
-	'FROM' from_item=fromItem;
+	'FROM' fromItem=FromItem;
 
-fromItem:
-	(table_name=ID | '('select_expr=select')') ('JOIN' rhs=fromItem 'ON' bool_expr=boolExpression)?;
+FromItem:
+	(tableName=ID | '('select_expr=select')') ('JOIN' rhs=FromItem 'ON' bool_expr=BoolExpression)?;
 
-where_clause:
-	'WHERE' bool_expr=boolExpression;
+WhereClause:
+	'WHERE' boolExpression=BoolExpression;
 
-boolExpression:
+BoolExpression:
 	lhs=Term ('OR' rhs=Term)?;
 
 Term:
 	lhs=Factor ('AND' rhs=Factor);
 
 Factor:
-	'NOT' factor=Factor | '('expr=boolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
+	'NOT' factor=Factor | '('expr=BoolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
 
 Binary:
 	lhs=Column ('<' | '>' | '=' | '>=' | '<=') rhs=Column;
@@ -36,11 +36,11 @@ Binary:
 Column:
 	name=ID;
 
-group_clause:
-	'GROUP' 'BY' expressions+=expression (',' expressions+=expression)*;
+GroupClause:
+	'GROUP' 'BY' expressions+=Expression (',' expressions+=Expression)*;
 
-having_clause:
-	'HAVING' expr=boolExpression;
+HavingClause:
+	'HAVING' expr=BoolExpression;
 
-expression:
+Expression:
 	'*' | col=Column | 'count()' | 'sum('col=Column')';

@@ -15,19 +15,19 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.s2c.sQL.Binary;
+import org.xtext.example.s2c.sQL.BoolExpression;
 import org.xtext.example.s2c.sQL.Column;
+import org.xtext.example.s2c.sQL.Expression;
 import org.xtext.example.s2c.sQL.Factor;
+import org.xtext.example.s2c.sQL.FromItem;
+import org.xtext.example.s2c.sQL.GroupClause;
+import org.xtext.example.s2c.sQL.HavingClause;
 import org.xtext.example.s2c.sQL.Model;
 import org.xtext.example.s2c.sQL.SQLPackage;
 import org.xtext.example.s2c.sQL.Term;
-import org.xtext.example.s2c.sQL.boolExpression;
-import org.xtext.example.s2c.sQL.expression;
-import org.xtext.example.s2c.sQL.fromItem;
+import org.xtext.example.s2c.sQL.WhereClause;
 import org.xtext.example.s2c.sQL.fromSection;
-import org.xtext.example.s2c.sQL.group_clause;
-import org.xtext.example.s2c.sQL.having_clause;
 import org.xtext.example.s2c.sQL.select;
-import org.xtext.example.s2c.sQL.where_clause;
 import org.xtext.example.s2c.services.SQLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -47,11 +47,26 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.BINARY:
 				sequence_Binary(context, (Binary) semanticObject); 
 				return; 
+			case SQLPackage.BOOL_EXPRESSION:
+				sequence_BoolExpression(context, (BoolExpression) semanticObject); 
+				return; 
 			case SQLPackage.COLUMN:
 				sequence_Column(context, (Column) semanticObject); 
 				return; 
+			case SQLPackage.EXPRESSION:
+				sequence_Expression(context, (Expression) semanticObject); 
+				return; 
 			case SQLPackage.FACTOR:
 				sequence_Factor(context, (Factor) semanticObject); 
+				return; 
+			case SQLPackage.FROM_ITEM:
+				sequence_FromItem(context, (FromItem) semanticObject); 
+				return; 
+			case SQLPackage.GROUP_CLAUSE:
+				sequence_GroupClause(context, (GroupClause) semanticObject); 
+				return; 
+			case SQLPackage.HAVING_CLAUSE:
+				sequence_HavingClause(context, (HavingClause) semanticObject); 
 				return; 
 			case SQLPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -59,29 +74,14 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case SQLPackage.TERM:
 				sequence_Term(context, (Term) semanticObject); 
 				return; 
-			case SQLPackage.BOOL_EXPRESSION:
-				sequence_boolExpression(context, (boolExpression) semanticObject); 
-				return; 
-			case SQLPackage.EXPRESSION:
-				sequence_expression(context, (expression) semanticObject); 
-				return; 
-			case SQLPackage.FROM_ITEM:
-				sequence_fromItem(context, (fromItem) semanticObject); 
+			case SQLPackage.WHERE_CLAUSE:
+				sequence_WhereClause(context, (WhereClause) semanticObject); 
 				return; 
 			case SQLPackage.FROM_SECTION:
 				sequence_fromSection(context, (fromSection) semanticObject); 
 				return; 
-			case SQLPackage.GROUP_CLAUSE:
-				sequence_group_clause(context, (group_clause) semanticObject); 
-				return; 
-			case SQLPackage.HAVING_CLAUSE:
-				sequence_having_clause(context, (having_clause) semanticObject); 
-				return; 
 			case SQLPackage.SELECT:
 				sequence_select(context, (select) semanticObject); 
-				return; 
-			case SQLPackage.WHERE_CLAUSE:
-				sequence_where_clause(context, (where_clause) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -111,6 +111,18 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     BoolExpression returns BoolExpression
+	 *
+	 * Constraint:
+	 *     (lhs=Term rhs=Term?)
+	 */
+	protected void sequence_BoolExpression(ISerializationContext context, BoolExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Column returns Column
 	 *
 	 * Constraint:
@@ -129,13 +141,67 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Expression returns Expression
+	 *
+	 * Constraint:
+	 *     (col=Column | col=Column)
+	 */
+	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Factor returns Factor
 	 *
 	 * Constraint:
-	 *     (factor=Factor | expr=boolExpression | binexp=Binary)
+	 *     (factor=Factor | expr=BoolExpression | binexp=Binary)
 	 */
 	protected void sequence_Factor(ISerializationContext context, Factor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FromItem returns FromItem
+	 *
+	 * Constraint:
+	 *     ((tableName=ID | select_expr=select) (rhs=FromItem bool_expr=BoolExpression)?)
+	 */
+	protected void sequence_FromItem(ISerializationContext context, FromItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     GroupClause returns GroupClause
+	 *
+	 * Constraint:
+	 *     (expressions+=Expression expressions+=Expression*)
+	 */
+	protected void sequence_GroupClause(ISerializationContext context, GroupClause semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HavingClause returns HavingClause
+	 *
+	 * Constraint:
+	 *     expr=BoolExpression
+	 */
+	protected void sequence_HavingClause(ISerializationContext context, HavingClause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.HAVING_CLAUSE__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.HAVING_CLAUSE__EXPR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getHavingClauseAccess().getExprBoolExpressionParserRuleCall_1_0(), semanticObject.getExpr());
+		feeder.finish();
 	}
 	
 	
@@ -174,37 +240,19 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     boolExpression returns boolExpression
+	 *     WhereClause returns WhereClause
 	 *
 	 * Constraint:
-	 *     (lhs=Term rhs=Term?)
+	 *     boolExpression=BoolExpression
 	 */
-	protected void sequence_boolExpression(ISerializationContext context, boolExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     expression returns expression
-	 *
-	 * Constraint:
-	 *     (col=Column | col=Column)
-	 */
-	protected void sequence_expression(ISerializationContext context, expression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     fromItem returns fromItem
-	 *
-	 * Constraint:
-	 *     ((table_name=ID | select_expr=select) (rhs=fromItem bool_expr=boolExpression)?)
-	 */
-	protected void sequence_fromItem(ISerializationContext context, fromItem semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_WhereClause(ISerializationContext context, WhereClause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.WHERE_CLAUSE__BOOL_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.WHERE_CLAUSE__BOOL_EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWhereClauseAccess().getBoolExpressionBoolExpressionParserRuleCall_1_0(), semanticObject.getBoolExpression());
+		feeder.finish();
 	}
 	
 	
@@ -213,7 +261,7 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     fromSection returns fromSection
 	 *
 	 * Constraint:
-	 *     from_item=fromItem
+	 *     fromItem=FromItem
 	 */
 	protected void sequence_fromSection(ISerializationContext context, fromSection semanticObject) {
 		if (errorAcceptor != null) {
@@ -221,37 +269,7 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.FROM_SECTION__FROM_ITEM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFromSectionAccess().getFrom_itemFromItemParserRuleCall_1_0(), semanticObject.getFrom_item());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     group_clause returns group_clause
-	 *
-	 * Constraint:
-	 *     (expressions+=expression expressions+=expression*)
-	 */
-	protected void sequence_group_clause(ISerializationContext context, group_clause semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     having_clause returns having_clause
-	 *
-	 * Constraint:
-	 *     expr=boolExpression
-	 */
-	protected void sequence_having_clause(ISerializationContext context, having_clause semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.HAVING_CLAUSE__EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.HAVING_CLAUSE__EXPR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHaving_clauseAccess().getExprBoolExpressionParserRuleCall_1_0(), semanticObject.getExpr());
+		feeder.accept(grammarAccess.getFromSectionAccess().getFromItemFromItemParserRuleCall_1_0(), semanticObject.getFromItem());
 		feeder.finish();
 	}
 	
@@ -262,34 +280,16 @@ public class SQLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         expressions+=expression 
-	 *         expressions+=expression* 
-	 *         from_section=fromSection? 
-	 *         where_section=where_clause? 
-	 *         group_section=group_clause? 
-	 *         having_section=having_clause?
+	 *         expressions+=Expression 
+	 *         expressions+=Expression* 
+	 *         fromSection=fromSection? 
+	 *         whereClause=WhereClause? 
+	 *         groupClause=GroupClause? 
+	 *         havingClause=HavingClause?
 	 *     )
 	 */
 	protected void sequence_select(ISerializationContext context, select semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     where_clause returns where_clause
-	 *
-	 * Constraint:
-	 *     bool_expr=boolExpression
-	 */
-	protected void sequence_where_clause(ISerializationContext context, where_clause semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SQLPackage.Literals.WHERE_CLAUSE__BOOL_EXPR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SQLPackage.Literals.WHERE_CLAUSE__BOOL_EXPR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWhere_clauseAccess().getBool_exprBoolExpressionParserRuleCall_1_0(), semanticObject.getBool_expr());
-		feeder.finish();
 	}
 	
 	

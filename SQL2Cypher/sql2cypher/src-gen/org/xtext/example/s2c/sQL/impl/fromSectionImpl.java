@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.s2c.sQL.FromItem;
 import org.xtext.example.s2c.sQL.SQLPackage;
-import org.xtext.example.s2c.sQL.fromItem;
 import org.xtext.example.s2c.sQL.fromSection;
 
 /**
@@ -24,7 +24,7 @@ import org.xtext.example.s2c.sQL.fromSection;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.fromSectionImpl#getFrom_item <em>From item</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.fromSectionImpl#getFromItem <em>From Item</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.xtext.example.s2c.sQL.fromSection;
 public class fromSectionImpl extends MinimalEObjectImpl.Container implements fromSection
 {
   /**
-   * The cached value of the '{@link #getFrom_item() <em>From item</em>}' containment reference.
+   * The cached value of the '{@link #getFromItem() <em>From Item</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFrom_item()
+   * @see #getFromItem()
    * @generated
    * @ordered
    */
-  protected fromItem from_item;
+  protected FromItem fromItem;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
    * @generated
    */
   @Override
-  public fromItem getFrom_item()
+  public FromItem getFromItem()
   {
-    return from_item;
+    return fromItem;
   }
 
   /**
@@ -78,13 +78,13 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFrom_item(fromItem newFrom_item, NotificationChain msgs)
+  public NotificationChain basicSetFromItem(FromItem newFromItem, NotificationChain msgs)
   {
-    fromItem oldFrom_item = from_item;
-    from_item = newFrom_item;
+    FromItem oldFromItem = fromItem;
+    fromItem = newFromItem;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.FROM_SECTION__FROM_ITEM, oldFrom_item, newFrom_item);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.FROM_SECTION__FROM_ITEM, oldFromItem, newFromItem);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
    * @generated
    */
   @Override
-  public void setFrom_item(fromItem newFrom_item)
+  public void setFromItem(FromItem newFromItem)
   {
-    if (newFrom_item != from_item)
+    if (newFromItem != fromItem)
     {
       NotificationChain msgs = null;
-      if (from_item != null)
-        msgs = ((InternalEObject)from_item).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.FROM_SECTION__FROM_ITEM, null, msgs);
-      if (newFrom_item != null)
-        msgs = ((InternalEObject)newFrom_item).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.FROM_SECTION__FROM_ITEM, null, msgs);
-      msgs = basicSetFrom_item(newFrom_item, msgs);
+      if (fromItem != null)
+        msgs = ((InternalEObject)fromItem).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.FROM_SECTION__FROM_ITEM, null, msgs);
+      if (newFromItem != null)
+        msgs = ((InternalEObject)newFromItem).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.FROM_SECTION__FROM_ITEM, null, msgs);
+      msgs = basicSetFromItem(newFromItem, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.FROM_SECTION__FROM_ITEM, newFrom_item, newFrom_item));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.FROM_SECTION__FROM_ITEM, newFromItem, newFromItem));
   }
 
   /**
@@ -123,7 +123,7 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
     switch (featureID)
     {
       case SQLPackage.FROM_SECTION__FROM_ITEM:
-        return basicSetFrom_item(null, msgs);
+        return basicSetFromItem(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -139,7 +139,7 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
     switch (featureID)
     {
       case SQLPackage.FROM_SECTION__FROM_ITEM:
-        return getFrom_item();
+        return getFromItem();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,7 +155,7 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
     switch (featureID)
     {
       case SQLPackage.FROM_SECTION__FROM_ITEM:
-        setFrom_item((fromItem)newValue);
+        setFromItem((FromItem)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +172,7 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
     switch (featureID)
     {
       case SQLPackage.FROM_SECTION__FROM_ITEM:
-        setFrom_item((fromItem)null);
+        setFromItem((FromItem)null);
         return;
     }
     super.eUnset(featureID);
@@ -189,7 +189,7 @@ public class fromSectionImpl extends MinimalEObjectImpl.Container implements fro
     switch (featureID)
     {
       case SQLPackage.FROM_SECTION__FROM_ITEM:
-        return from_item != null;
+        return fromItem != null;
     }
     return super.eIsSet(featureID);
   }

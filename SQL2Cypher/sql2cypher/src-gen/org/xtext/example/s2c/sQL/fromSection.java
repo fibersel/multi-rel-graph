@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.fromSection#getFrom_item <em>From item</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.fromSection#getFromItem <em>From Item</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.s2c.sQL.SQLPackage#getfromSection()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface fromSection extends EObject
 {
   /**
-   * Returns the value of the '<em><b>From item</b></em>' containment reference.
+   * Returns the value of the '<em><b>From Item</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>From item</em>' containment reference.
-   * @see #setFrom_item(fromItem)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getfromSection_From_item()
+   * @return the value of the '<em>From Item</em>' containment reference.
+   * @see #setFromItem(FromItem)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getfromSection_FromItem()
    * @model containment="true"
    * @generated
    */
-  fromItem getFrom_item();
+  FromItem getFromItem();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.fromSection#getFrom_item <em>From item</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.fromSection#getFromItem <em>From Item</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>From item</em>' containment reference.
-   * @see #getFrom_item()
+   * @param value the new value of the '<em>From Item</em>' containment reference.
+   * @see #getFromItem()
    * @generated
    */
-  void setFrom_item(fromItem value);
+  void setFromItem(FromItem value);
 
 } // fromSection

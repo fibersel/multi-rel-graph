@@ -1,0 +1,174 @@
+
+Cypher:
+    queries+=Query;
+
+Query: // SingleQuery
+    SinglePartQuery;
+    //MultiPartQuery | SinglePartQuery;
+
+SinglePartQuery:
+    (readingClauses+=ReadingClause)* return=Return;
+
+//MultiPartQuery:
+//    (subQueries+=MultiPartSubQuery)+ singlePartQuery=SinglePartQuery;
+
+ReadingClause:
+    Match;
+
+Match:
+    optional?='OPTIONAL' 'MATCH' pattern=Pattern; //where=Where?; //hints*=Hint
+
+Pattern:
+    patterns+=PatternPart[',']; // (',' patterns+=PatternPart)*;
+    
+PatternPart:
+    (var=VariableDeclaration '=' part=AnonymousPatternPart) | AnonymousPatternPart;
+
+AnonymousPatternPart:
+    PatternElement;
+
+PatternElement:
+    (nodepattern=NodePattern chain*=PatternElementChain) | '(' PatternElement ')';
+
+PatternElementChain:
+    relationshipPattern=RelationshipPattern nodePattern=NodePattern;
+
+RelationshipPattern:
+    (incoming?=LeftArrowHead? Dash detail=RelationshipDetail? Dash outgoing?=RightArrowHead?);
+
+RelationshipDetail:
+    '[' variable=VariableDeclaration? optional?='?'? RelationshipTypes? properties=Properties? ']';
+
+RelationshipTypes:
+    ':' relTypeName=ID;
+
+
+NodePattern:
+    '(' variable=VariableDeclaration? NodeLabels? properties=Properties? ')';
+
+NodeLabels:
+    nodeLabels+=NodeLabel;
+
+Properties:
+    MapLiteral;
+
+MapLiteral:
+    '{' entries+=MapLiteralEntry[','] '}';
+
+MapLiteralEntry:
+    key=ID ':' value=Expression;
+
+// Expression
+
+Expression:
+    OrExpression;   
+
+OrExpression:
+    left=XorExpression (operator='OR' right=XorExpression)*;
+
+XorExpression:
+    left=AndExpression (operator='XOR' right=AndExpression)*;
+
+AndExpression:
+   left=NotExpression (operator='AND' right=NotExpression)*;
+
+NotExpression:
+    (operator='NOT' left=NotExpression) | ComparisonExpression;
+
+ComparisonExpression:
+    left=AddOrSubtractExpression; //operator=('=' | '<>' | '<' | '>' | '<=' | '>='); // right*=AddOrSubtractExpression;
+
+AddOrSubtractExpression:
+    left=MultiplyDivideModuloExpression ; //(operator=('+' | '-') right=MultiplyDivideModuloExpression)*;
+
+MultiplyDivideModuloExpression:
+    left=PowerOfExpression; //(operator=('*' | '/' | '%') right=PowerOfExpression)*;
+
+PowerOfExpression:
+    left=UnaryAddOrSubtractExpression (operator='^' right=UnaryAddOrSubtractExpression)*;
+
+UnaryAddOrSubtractExpression:
+    left=StringListNullOperatorExpression ; //| operator=('+' | '-') left=UnaryAddOrSubtractExpression;
+
+StringListNullOperatorExpression:
+    prop=PropertyOrLabelsExpression expressions*=NullOperatorExpression;
+
+
+NullOperatorExpression:
+    'IS' 'NULL' | 'IS' 'NOT' 'NULL';
+
+PropertyOrLabelsExpression:
+    atom=Atom (propertyLookups+=PropertyLookup+)? (NodeLabels)?;
+
+Atom:
+    count='COUNT' '(' '*' ')' | Literal;
+
+PropertyLookup:
+    '.' (propertyKeyName=ID propertyOperator='?' | propertyKeyName=ID); // ('?' | '!')
+
+NodeLabel:
+    ':' labelName=ID;
+
+VariableDeclaration:
+    name=ID;
+
+Literal:
+    NumberLiteral | StringLiteral | 'NULL' | BooleanLiteral | MapLiteral;
+
+StringLiteral:
+    value=ID;
+
+NumberLiteral:
+    value=Number;
+
+BooleanLiteral:
+    value='TRUE'; // | 'FALSE');
+
+Number:
+    int?=INT | float?=FLOAT;
+
+Dash:
+    '-';
+
+    /*
+ID:
+    /([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*|->/;
+    // ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')* | ('`'->'`');
+
+INT:
+    /[0-9][0-9];
+    //'0'..'9' ('0'..'9')*;
+*/
+
+LeftArrowHead:
+    '<';
+
+RightArrowHead:
+    '>';
+
+
+// Return statement
+
+Return:
+    (return='RETURN'  body=ReturnBody);
+
+ReturnBody:
+    distinct?='DISTINCT'? returnItems=ReturnItems (order=Order)? (skip=Skip)? (limit=Limit)?;
+
+ReturnItems:
+    (all='*' (',' items+=ReturnItem)*) | items*=ReturnItem[','];
+    
+ReturnItem:
+    expression=Expression ('AS' alias=VariableDeclaration)?;
+
+Order:
+    'ORDER' 'BY' orderBy+=SortItem (',' orderBy+=SortItem)*;
+
+Skip:
+    'SKIP' skip=Expression;
+
+Limit:
+    'LIMIT' limit=Expression;
+
+SortItem:
+    (expression=Expression sort='DESC'?); // ('DESCENDING' | 'DESC' | 'ASCENDING' | 'ASC')

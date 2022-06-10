@@ -47,104 +47,104 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cExpressionsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cExpressionsExpressionParserRuleCall_2_1_0 = (RuleCall)cExpressionsAssignment_2_1.eContents().get(0);
-		private final Assignment cFrom_sectionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFrom_sectionFromSectionParserRuleCall_3_0 = (RuleCall)cFrom_sectionAssignment_3.eContents().get(0);
-		private final Assignment cWhere_sectionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cWhere_sectionWhere_clauseParserRuleCall_4_0 = (RuleCall)cWhere_sectionAssignment_4.eContents().get(0);
-		private final Assignment cGroup_sectionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cGroup_sectionGroup_clauseParserRuleCall_5_0 = (RuleCall)cGroup_sectionAssignment_5.eContents().get(0);
-		private final Assignment cHaving_sectionAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cHaving_sectionHaving_clauseParserRuleCall_6_0 = (RuleCall)cHaving_sectionAssignment_6.eContents().get(0);
+		private final Assignment cFromSectionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFromSectionFromSectionParserRuleCall_3_0 = (RuleCall)cFromSectionAssignment_3.eContents().get(0);
+		private final Assignment cWhereClauseAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cWhereClauseWhereClauseParserRuleCall_4_0 = (RuleCall)cWhereClauseAssignment_4.eContents().get(0);
+		private final Assignment cGroupClauseAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cGroupClauseGroupClauseParserRuleCall_5_0 = (RuleCall)cGroupClauseAssignment_5.eContents().get(0);
+		private final Assignment cHavingClauseAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cHavingClauseHavingClauseParserRuleCall_6_0 = (RuleCall)cHavingClauseAssignment_6.eContents().get(0);
 		
 		//select:
-		//    'SELECT' expressions+=expression (',' expressions+=expression)*
-		//    (from_section=fromSection)?
-		//    (where_section=where_clause)?
-		//    (group_section=group_clause)?
-		//    (having_section=having_clause)?;
+		//    'SELECT' expressions+=Expression (',' expressions+=Expression)*
+		//    (fromSection=fromSection)?
+		//    (whereClause=WhereClause)?
+		//    (groupClause=GroupClause)?
+		//    (havingClause=HavingClause)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SELECT' expressions+=expression (',' expressions+=expression)*
-		//(from_section=fromSection)?
-		//(where_section=where_clause)?
-		//(group_section=group_clause)?
-		//(having_section=having_clause)?
+		//'SELECT' expressions+=Expression (',' expressions+=Expression)*
+		//(fromSection=fromSection)?
+		//(whereClause=WhereClause)?
+		//(groupClause=GroupClause)?
+		//(havingClause=HavingClause)?
 		public Group getGroup() { return cGroup; }
 		
 		//'SELECT'
 		public Keyword getSELECTKeyword_0() { return cSELECTKeyword_0; }
 		
-		//expressions+=expression
+		//expressions+=Expression
 		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
 		
-		//expression
+		//Expression
 		public RuleCall getExpressionsExpressionParserRuleCall_1_0() { return cExpressionsExpressionParserRuleCall_1_0; }
 		
-		//(',' expressions+=expression)*
+		//(',' expressions+=Expression)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//expressions+=expression
+		//expressions+=Expression
 		public Assignment getExpressionsAssignment_2_1() { return cExpressionsAssignment_2_1; }
 		
-		//expression
+		//Expression
 		public RuleCall getExpressionsExpressionParserRuleCall_2_1_0() { return cExpressionsExpressionParserRuleCall_2_1_0; }
 		
-		//(from_section=fromSection)?
-		public Assignment getFrom_sectionAssignment_3() { return cFrom_sectionAssignment_3; }
+		//(fromSection=fromSection)?
+		public Assignment getFromSectionAssignment_3() { return cFromSectionAssignment_3; }
 		
 		//fromSection
-		public RuleCall getFrom_sectionFromSectionParserRuleCall_3_0() { return cFrom_sectionFromSectionParserRuleCall_3_0; }
+		public RuleCall getFromSectionFromSectionParserRuleCall_3_0() { return cFromSectionFromSectionParserRuleCall_3_0; }
 		
-		//(where_section=where_clause)?
-		public Assignment getWhere_sectionAssignment_4() { return cWhere_sectionAssignment_4; }
+		//(whereClause=WhereClause)?
+		public Assignment getWhereClauseAssignment_4() { return cWhereClauseAssignment_4; }
 		
-		//where_clause
-		public RuleCall getWhere_sectionWhere_clauseParserRuleCall_4_0() { return cWhere_sectionWhere_clauseParserRuleCall_4_0; }
+		//WhereClause
+		public RuleCall getWhereClauseWhereClauseParserRuleCall_4_0() { return cWhereClauseWhereClauseParserRuleCall_4_0; }
 		
-		//(group_section=group_clause)?
-		public Assignment getGroup_sectionAssignment_5() { return cGroup_sectionAssignment_5; }
+		//(groupClause=GroupClause)?
+		public Assignment getGroupClauseAssignment_5() { return cGroupClauseAssignment_5; }
 		
-		//group_clause
-		public RuleCall getGroup_sectionGroup_clauseParserRuleCall_5_0() { return cGroup_sectionGroup_clauseParserRuleCall_5_0; }
+		//GroupClause
+		public RuleCall getGroupClauseGroupClauseParserRuleCall_5_0() { return cGroupClauseGroupClauseParserRuleCall_5_0; }
 		
-		//(having_section=having_clause)?
-		public Assignment getHaving_sectionAssignment_6() { return cHaving_sectionAssignment_6; }
+		//(havingClause=HavingClause)?
+		public Assignment getHavingClauseAssignment_6() { return cHavingClauseAssignment_6; }
 		
-		//having_clause
-		public RuleCall getHaving_sectionHaving_clauseParserRuleCall_6_0() { return cHaving_sectionHaving_clauseParserRuleCall_6_0; }
+		//HavingClause
+		public RuleCall getHavingClauseHavingClauseParserRuleCall_6_0() { return cHavingClauseHavingClauseParserRuleCall_6_0; }
 	}
 	public class FromSectionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.fromSection");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFROMKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFrom_itemAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFrom_itemFromItemParserRuleCall_1_0 = (RuleCall)cFrom_itemAssignment_1.eContents().get(0);
+		private final Assignment cFromItemAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFromItemFromItemParserRuleCall_1_0 = (RuleCall)cFromItemAssignment_1.eContents().get(0);
 		
 		//fromSection:
-		//    'FROM' from_item=fromItem;
+		//    'FROM' fromItem=FromItem;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'FROM' from_item=fromItem
+		//'FROM' fromItem=FromItem
 		public Group getGroup() { return cGroup; }
 		
 		//'FROM'
 		public Keyword getFROMKeyword_0() { return cFROMKeyword_0; }
 		
-		//from_item=fromItem
-		public Assignment getFrom_itemAssignment_1() { return cFrom_itemAssignment_1; }
+		//fromItem=FromItem
+		public Assignment getFromItemAssignment_1() { return cFromItemAssignment_1; }
 		
-		//fromItem
-		public RuleCall getFrom_itemFromItemParserRuleCall_1_0() { return cFrom_itemFromItemParserRuleCall_1_0; }
+		//FromItem
+		public RuleCall getFromItemFromItemParserRuleCall_1_0() { return cFromItemFromItemParserRuleCall_1_0; }
 	}
 	public class FromItemElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.fromItem");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.FromItem");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Assignment cTable_nameAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final RuleCall cTable_nameIDTerminalRuleCall_0_0_0 = (RuleCall)cTable_nameAssignment_0_0.eContents().get(0);
+		private final Assignment cTableNameAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final RuleCall cTableNameIDTerminalRuleCall_0_0_0 = (RuleCall)cTableNameAssignment_0_0.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
 		private final Assignment cSelect_exprAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
@@ -158,21 +158,21 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cBool_exprAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
 		private final RuleCall cBool_exprBoolExpressionParserRuleCall_1_3_0 = (RuleCall)cBool_exprAssignment_1_3.eContents().get(0);
 		
-		//fromItem:
-		//    (table_name=ID | '('select_expr=select')') ('JOIN' rhs=fromItem 'ON' bool_expr=boolExpression)?;
+		//FromItem:
+		//    (tableName=ID | '('select_expr=select')') ('JOIN' rhs=FromItem 'ON' bool_expr=BoolExpression)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(table_name=ID | '('select_expr=select')') ('JOIN' rhs=fromItem 'ON' bool_expr=boolExpression)?
+		//(tableName=ID | '('select_expr=select')') ('JOIN' rhs=FromItem 'ON' bool_expr=BoolExpression)?
 		public Group getGroup() { return cGroup; }
 		
-		//(table_name=ID | '('select_expr=select')')
+		//(tableName=ID | '('select_expr=select')')
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//table_name=ID
-		public Assignment getTable_nameAssignment_0_0() { return cTable_nameAssignment_0_0; }
+		//tableName=ID
+		public Assignment getTableNameAssignment_0_0() { return cTableNameAssignment_0_0; }
 		
 		//ID
-		public RuleCall getTable_nameIDTerminalRuleCall_0_0_0() { return cTable_nameIDTerminalRuleCall_0_0_0; }
+		public RuleCall getTableNameIDTerminalRuleCall_0_0_0() { return cTableNameIDTerminalRuleCall_0_0_0; }
 		
 		//'('select_expr=select')'
 		public Group getGroup_0_1() { return cGroup_0_1; }
@@ -189,52 +189,52 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//')'
 		public Keyword getRightParenthesisKeyword_0_1_2() { return cRightParenthesisKeyword_0_1_2; }
 		
-		//('JOIN' rhs=fromItem 'ON' bool_expr=boolExpression)?
+		//('JOIN' rhs=FromItem 'ON' bool_expr=BoolExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'JOIN'
 		public Keyword getJOINKeyword_1_0() { return cJOINKeyword_1_0; }
 		
-		//rhs=fromItem
+		//rhs=FromItem
 		public Assignment getRhsAssignment_1_1() { return cRhsAssignment_1_1; }
 		
-		//fromItem
+		//FromItem
 		public RuleCall getRhsFromItemParserRuleCall_1_1_0() { return cRhsFromItemParserRuleCall_1_1_0; }
 		
 		//'ON'
 		public Keyword getONKeyword_1_2() { return cONKeyword_1_2; }
 		
-		//bool_expr=boolExpression
+		//bool_expr=BoolExpression
 		public Assignment getBool_exprAssignment_1_3() { return cBool_exprAssignment_1_3; }
 		
-		//boolExpression
+		//BoolExpression
 		public RuleCall getBool_exprBoolExpressionParserRuleCall_1_3_0() { return cBool_exprBoolExpressionParserRuleCall_1_3_0; }
 	}
-	public class Where_clauseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.where_clause");
+	public class WhereClauseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.WhereClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWHEREKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBool_exprAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBool_exprBoolExpressionParserRuleCall_1_0 = (RuleCall)cBool_exprAssignment_1.eContents().get(0);
+		private final Assignment cBoolExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBoolExpressionBoolExpressionParserRuleCall_1_0 = (RuleCall)cBoolExpressionAssignment_1.eContents().get(0);
 		
-		//where_clause:
-		//    'WHERE' bool_expr=boolExpression;
+		//WhereClause:
+		//    'WHERE' boolExpression=BoolExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'WHERE' bool_expr=boolExpression
+		//'WHERE' boolExpression=BoolExpression
 		public Group getGroup() { return cGroup; }
 		
 		//'WHERE'
 		public Keyword getWHEREKeyword_0() { return cWHEREKeyword_0; }
 		
-		//bool_expr=boolExpression
-		public Assignment getBool_exprAssignment_1() { return cBool_exprAssignment_1; }
+		//boolExpression=BoolExpression
+		public Assignment getBoolExpressionAssignment_1() { return cBoolExpressionAssignment_1; }
 		
-		//boolExpression
-		public RuleCall getBool_exprBoolExpressionParserRuleCall_1_0() { return cBool_exprBoolExpressionParserRuleCall_1_0; }
+		//BoolExpression
+		public RuleCall getBoolExpressionBoolExpressionParserRuleCall_1_0() { return cBoolExpressionBoolExpressionParserRuleCall_1_0; }
 	}
 	public class BoolExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.boolExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.BoolExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cLhsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cLhsTermParserRuleCall_0_0 = (RuleCall)cLhsAssignment_0.eContents().get(0);
@@ -243,7 +243,7 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cRhsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRhsTermParserRuleCall_1_1_0 = (RuleCall)cRhsAssignment_1_1.eContents().get(0);
 		
-		//boolExpression:
+		//BoolExpression:
 		//    lhs=Term ('OR' rhs=Term)?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -321,10 +321,10 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cBinexpBinaryParserRuleCall_4_0 = (RuleCall)cBinexpAssignment_4.eContents().get(0);
 		
 		//Factor:
-		//    'NOT' factor=Factor | '('expr=boolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
+		//    'NOT' factor=Factor | '('expr=BoolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'NOT' factor=Factor | '('expr=boolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary
+		//'NOT' factor=Factor | '('expr=BoolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'NOT' factor=Factor
@@ -339,16 +339,16 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Factor
 		public RuleCall getFactorFactorParserRuleCall_0_1_0() { return cFactorFactorParserRuleCall_0_1_0; }
 		
-		//'('expr=boolExpression ')'
+		//'('expr=BoolExpression ')'
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 		
-		//expr=boolExpression
+		//expr=BoolExpression
 		public Assignment getExprAssignment_1_1() { return cExprAssignment_1_1; }
 		
-		//boolExpression
+		//BoolExpression
 		public RuleCall getExprBoolExpressionParserRuleCall_1_1_0() { return cExprBoolExpressionParserRuleCall_1_1_0; }
 		
 		//')'
@@ -432,8 +432,8 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
-	public class Group_clauseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.group_clause");
+	public class GroupClauseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.GroupClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGROUPKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cBYKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -444,11 +444,11 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cExpressionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cExpressionsExpressionParserRuleCall_3_1_0 = (RuleCall)cExpressionsAssignment_3_1.eContents().get(0);
 		
-		//group_clause:
-		//    'GROUP' 'BY' expressions+=expression (',' expressions+=expression)*;
+		//GroupClause:
+		//    'GROUP' 'BY' expressions+=Expression (',' expressions+=Expression)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'GROUP' 'BY' expressions+=expression (',' expressions+=expression)*
+		//'GROUP' 'BY' expressions+=Expression (',' expressions+=Expression)*
 		public Group getGroup() { return cGroup; }
 		
 		//'GROUP'
@@ -457,49 +457,49 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'BY'
 		public Keyword getBYKeyword_1() { return cBYKeyword_1; }
 		
-		//expressions+=expression
+		//expressions+=Expression
 		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
 		
-		//expression
+		//Expression
 		public RuleCall getExpressionsExpressionParserRuleCall_2_0() { return cExpressionsExpressionParserRuleCall_2_0; }
 		
-		//(',' expressions+=expression)*
+		//(',' expressions+=Expression)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 		
-		//expressions+=expression
+		//expressions+=Expression
 		public Assignment getExpressionsAssignment_3_1() { return cExpressionsAssignment_3_1; }
 		
-		//expression
+		//Expression
 		public RuleCall getExpressionsExpressionParserRuleCall_3_1_0() { return cExpressionsExpressionParserRuleCall_3_1_0; }
 	}
-	public class Having_clauseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.having_clause");
+	public class HavingClauseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.HavingClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHAVINGKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cExprAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExprBoolExpressionParserRuleCall_1_0 = (RuleCall)cExprAssignment_1.eContents().get(0);
 		
-		//having_clause:
-		//    'HAVING' expr=boolExpression;
+		//HavingClause:
+		//    'HAVING' expr=BoolExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'HAVING' expr=boolExpression
+		//'HAVING' expr=BoolExpression
 		public Group getGroup() { return cGroup; }
 		
 		//'HAVING'
 		public Keyword getHAVINGKeyword_0() { return cHAVINGKeyword_0; }
 		
-		//expr=boolExpression
+		//expr=BoolExpression
 		public Assignment getExprAssignment_1() { return cExprAssignment_1; }
 		
-		//boolExpression
+		//BoolExpression
 		public RuleCall getExprBoolExpressionParserRuleCall_1_0() { return cExprBoolExpressionParserRuleCall_1_0; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.expression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.s2c.SQL.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cAsteriskKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Assignment cColAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
@@ -511,7 +511,7 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cColColumnParserRuleCall_3_1_0 = (RuleCall)cColAssignment_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
-		//expression:
+		//Expression:
 		//    '*' | col=Column | 'count()' | 'sum('col=Column')';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -551,14 +551,14 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final SelectElements pSelect;
 	private final FromSectionElements pFromSection;
 	private final FromItemElements pFromItem;
-	private final Where_clauseElements pWhere_clause;
+	private final WhereClauseElements pWhereClause;
 	private final BoolExpressionElements pBoolExpression;
 	private final TermElements pTerm;
 	private final FactorElements pFactor;
 	private final BinaryElements pBinary;
 	private final ColumnElements pColumn;
-	private final Group_clauseElements pGroup_clause;
-	private final Having_clauseElements pHaving_clause;
+	private final GroupClauseElements pGroupClause;
+	private final HavingClauseElements pHavingClause;
 	private final ExpressionElements pExpression;
 	
 	private final Grammar grammar;
@@ -574,14 +574,14 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pSelect = new SelectElements();
 		this.pFromSection = new FromSectionElements();
 		this.pFromItem = new FromItemElements();
-		this.pWhere_clause = new Where_clauseElements();
+		this.pWhereClause = new WhereClauseElements();
 		this.pBoolExpression = new BoolExpressionElements();
 		this.pTerm = new TermElements();
 		this.pFactor = new FactorElements();
 		this.pBinary = new BinaryElements();
 		this.pColumn = new ColumnElements();
-		this.pGroup_clause = new Group_clauseElements();
-		this.pHaving_clause = new Having_clauseElements();
+		this.pGroupClause = new GroupClauseElements();
+		this.pHavingClause = new HavingClauseElements();
 		this.pExpression = new ExpressionElements();
 	}
 	
@@ -623,11 +623,11 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//select:
-	//    'SELECT' expressions+=expression (',' expressions+=expression)*
-	//    (from_section=fromSection)?
-	//    (where_section=where_clause)?
-	//    (group_section=group_clause)?
-	//    (having_section=having_clause)?;
+	//    'SELECT' expressions+=Expression (',' expressions+=Expression)*
+	//    (fromSection=fromSection)?
+	//    (whereClause=WhereClause)?
+	//    (groupClause=GroupClause)?
+	//    (havingClause=HavingClause)?;
 	public SelectElements getSelectAccess() {
 		return pSelect;
 	}
@@ -637,7 +637,7 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//fromSection:
-	//    'FROM' from_item=fromItem;
+	//    'FROM' fromItem=FromItem;
 	public FromSectionElements getFromSectionAccess() {
 		return pFromSection;
 	}
@@ -646,8 +646,8 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getFromSectionAccess().getRule();
 	}
 	
-	//fromItem:
-	//    (table_name=ID | '('select_expr=select')') ('JOIN' rhs=fromItem 'ON' bool_expr=boolExpression)?;
+	//FromItem:
+	//    (tableName=ID | '('select_expr=select')') ('JOIN' rhs=FromItem 'ON' bool_expr=BoolExpression)?;
 	public FromItemElements getFromItemAccess() {
 		return pFromItem;
 	}
@@ -656,17 +656,17 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getFromItemAccess().getRule();
 	}
 	
-	//where_clause:
-	//    'WHERE' bool_expr=boolExpression;
-	public Where_clauseElements getWhere_clauseAccess() {
-		return pWhere_clause;
+	//WhereClause:
+	//    'WHERE' boolExpression=BoolExpression;
+	public WhereClauseElements getWhereClauseAccess() {
+		return pWhereClause;
 	}
 	
-	public ParserRule getWhere_clauseRule() {
-		return getWhere_clauseAccess().getRule();
+	public ParserRule getWhereClauseRule() {
+		return getWhereClauseAccess().getRule();
 	}
 	
-	//boolExpression:
+	//BoolExpression:
 	//    lhs=Term ('OR' rhs=Term)?;
 	public BoolExpressionElements getBoolExpressionAccess() {
 		return pBoolExpression;
@@ -687,7 +687,7 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Factor:
-	//    'NOT' factor=Factor | '('expr=boolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
+	//    'NOT' factor=Factor | '('expr=BoolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
 	public FactorElements getFactorAccess() {
 		return pFactor;
 	}
@@ -716,27 +716,27 @@ public class SQLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getColumnAccess().getRule();
 	}
 	
-	//group_clause:
-	//    'GROUP' 'BY' expressions+=expression (',' expressions+=expression)*;
-	public Group_clauseElements getGroup_clauseAccess() {
-		return pGroup_clause;
+	//GroupClause:
+	//    'GROUP' 'BY' expressions+=Expression (',' expressions+=Expression)*;
+	public GroupClauseElements getGroupClauseAccess() {
+		return pGroupClause;
 	}
 	
-	public ParserRule getGroup_clauseRule() {
-		return getGroup_clauseAccess().getRule();
+	public ParserRule getGroupClauseRule() {
+		return getGroupClauseAccess().getRule();
 	}
 	
-	//having_clause:
-	//    'HAVING' expr=boolExpression;
-	public Having_clauseElements getHaving_clauseAccess() {
-		return pHaving_clause;
+	//HavingClause:
+	//    'HAVING' expr=BoolExpression;
+	public HavingClauseElements getHavingClauseAccess() {
+		return pHavingClause;
 	}
 	
-	public ParserRule getHaving_clauseRule() {
-		return getHaving_clauseAccess().getRule();
+	public ParserRule getHavingClauseRule() {
+		return getHavingClauseAccess().getRule();
 	}
 	
-	//expression:
+	//Expression:
 	//    '*' | col=Column | 'count()' | 'sum('col=Column')';
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;

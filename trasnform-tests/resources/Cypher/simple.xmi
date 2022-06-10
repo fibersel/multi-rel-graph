@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openCypher:Cypher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.codekontor.io/opencypher/xtext/OpenCypher">
+  <queryOptions xsi:type="openCypher:AllOptions"/>
+  <statements xsi:type="openCypher:SinglePartQuery">
+    <readingClauses xsi:type="openCypher:Match">
+      <pattern>
+        <patterns xsi:type="openCypher:PatternElement">
+          <nodepattern>
+            <nodeLabels labelName="Person"/>
+            <variable name="tom"/>
+            <properties xsi:type="openCypher:MapLiteral">
+              <entries key="name">
+                <value xsi:type="openCypher:StringLiteral" value="'Tom Hanks'"/>
+              </entries>
+            </properties>
+          </nodepattern>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="openCypher:VariableRef">
+              <variableRef href="__synthetic0.cypher#|0"/>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+</openCypher:Cypher>

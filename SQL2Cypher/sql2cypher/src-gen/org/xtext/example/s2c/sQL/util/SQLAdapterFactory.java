@@ -91,19 +91,19 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createfromSectionAdapter();
       }
       @Override
-      public Adapter casefromItem(fromItem object)
+      public Adapter caseFromItem(FromItem object)
       {
-        return createfromItemAdapter();
+        return createFromItemAdapter();
       }
       @Override
-      public Adapter casewhere_clause(where_clause object)
+      public Adapter caseWhereClause(WhereClause object)
       {
-        return createwhere_clauseAdapter();
+        return createWhereClauseAdapter();
       }
       @Override
-      public Adapter caseboolExpression(boolExpression object)
+      public Adapter caseBoolExpression(BoolExpression object)
       {
-        return createboolExpressionAdapter();
+        return createBoolExpressionAdapter();
       }
       @Override
       public Adapter caseTerm(Term object)
@@ -126,19 +126,19 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
         return createColumnAdapter();
       }
       @Override
-      public Adapter casegroup_clause(group_clause object)
+      public Adapter caseGroupClause(GroupClause object)
       {
-        return creategroup_clauseAdapter();
+        return createGroupClauseAdapter();
       }
       @Override
-      public Adapter casehaving_clause(having_clause object)
+      public Adapter caseHavingClause(HavingClause object)
       {
-        return createhaving_clauseAdapter();
+        return createHavingClauseAdapter();
       }
       @Override
-      public Adapter caseexpression(expression object)
+      public Adapter caseExpression(Expression object)
       {
-        return createexpressionAdapter();
+        return createExpressionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -208,46 +208,46 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.fromItem <em>from Item</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.FromItem <em>From Item</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.s2c.sQL.fromItem
+   * @see org.xtext.example.s2c.sQL.FromItem
    * @generated
    */
-  public Adapter createfromItemAdapter()
+  public Adapter createFromItemAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.where_clause <em>where clause</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.WhereClause <em>Where Clause</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.s2c.sQL.where_clause
+   * @see org.xtext.example.s2c.sQL.WhereClause
    * @generated
    */
-  public Adapter createwhere_clauseAdapter()
+  public Adapter createWhereClauseAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.boolExpression <em>bool Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.BoolExpression <em>Bool Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.s2c.sQL.boolExpression
+   * @see org.xtext.example.s2c.sQL.BoolExpression
    * @generated
    */
-  public Adapter createboolExpressionAdapter()
+  public Adapter createBoolExpressionAdapter()
   {
     return null;
   }
@@ -313,46 +313,46 @@ public class SQLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.group_clause <em>group clause</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.GroupClause <em>Group Clause</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.s2c.sQL.group_clause
+   * @see org.xtext.example.s2c.sQL.GroupClause
    * @generated
    */
-  public Adapter creategroup_clauseAdapter()
+  public Adapter createGroupClauseAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.having_clause <em>having clause</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.HavingClause <em>Having Clause</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.s2c.sQL.having_clause
+   * @see org.xtext.example.s2c.sQL.HavingClause
    * @generated
    */
-  public Adapter createhaving_clauseAdapter()
+  public Adapter createHavingClauseAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.expression <em>expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.s2c.sQL.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.s2c.sQL.expression
+   * @see org.xtext.example.s2c.sQL.Expression
    * @generated
    */
-  public Adapter createexpressionAdapter()
+  public Adapter createExpressionAdapter()
   {
     return null;
   }

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ecore:EPackage xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:cypher_draft="http://cypher_draft/" xmi:version="2.0" name="cypher_draft" nsURI="http://cypher_draft/" nsPrefix="cypher_draft">
+  <eClassifiers xsi:type="ecore:EClass" name="Cypher">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="queries" containment="true" eType="#//Query" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="Query"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SinglePartQuery" eSuperTypes="#//Query">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="readingClauses" containment="true" eType="#//ReadingClause" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="return" containment="true" eType="#//Return"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="ReadingClause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Match" eSuperTypes="#//ReadingClause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="optional" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="pattern" containment="true" eType="#//Pattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="patterns" containment="true" eType="#//PatternPart" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="var" containment="true" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="part" containment="true" eType="#//AnonymousPatternPart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="AnonymousPatternPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternElement" eSuperTypes="#//AnonymousPatternPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="nodepattern" containment="true" eType="#//NodePattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" unique="false" name="chain" containment="true" eType="#//PatternElementChain" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternElementChain">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="relationshipPattern" containment="true" eType="#//RelationshipPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="nodePattern" containment="true" eType="#//NodePattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="incoming" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="detail" containment="true" eType="#//RelationshipDetail"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="outgoing" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipDetail">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="variable" containment="true" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="optional" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="properties" containment="true" eType="#//Properties"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipTypes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="relTypeName" eType="#//RelTypeName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodePattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="variable" containment="true" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="properties" containment="true" eType="#//Properties"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabels">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="nodeLabels" containment="true" eType="#//NodeLabel" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="Properties"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MapLiteral" eSuperTypes="#//Properties #//Literal">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="entries" containment="true" eType="#//MapLiteralEntry" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MapLiteralEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="key" eType="#//PropertyKeyName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="value" containment="true" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="operator" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" unique="false" name="right" containment="true" eType="#//XorExpression" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XorExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="operator" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" unique="false" name="right" containment="true" eType="#//AndExpression" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="operator" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" unique="false" name="right" containment="true" eType="#//NotExpression" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="operator" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="left" containment="true" eType="#//NotExpression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="ComparisonExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="AddOrSubtractExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="MultiplyDivideModuloExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PowerOfExpression" eSuperTypes="#//ComparisonExpression #//AddOrSubtractExpression #//MultiplyDivideModuloExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="operator" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" unique="false" name="right" containment="true" eType="#//UnaryAddOrSubtractExpression" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="UnaryAddOrSubtractExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringListNullOperatorExpression" eSuperTypes="#//UnaryAddOrSubtractExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="expressions" eType="#//NullOperatorExpression" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyOrLabelsExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="propertyLookups" containment="true" eType="#//PropertyLookup" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="Atom"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyLookup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="propertyKeyName" eType="#//PropertyKeyName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="propertyOperator" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="labelName" eType="#//ID"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="name" eType="#//ID"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" abstract="true" name="Literal" eSuperTypes="#//Atom"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="value" eType="#//ID"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="value" eType="#//Number"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="#//Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="value" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="cypher_draft:EEnum" name="Dash">
+    <eLiterals xsi:type="ecore:EEnumLiteral" name="-"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="cypher_draft:EEnum" name="LeftArrowHead">
+    <eLiterals xsi:type="ecore:EEnumLiteral" name="&lt;"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="cypher_draft:EEnum" name="RightArrowHead">
+    <eLiterals xsi:type="ecore:EEnumLiteral" name="&gt;"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Return">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="return" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="body" containment="true" eType="#//ReturnBody"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnBody">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" unique="false" name="distinct" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="returnItems" containment="true" eType="#//ReturnItems"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="order" containment="true" eType="#//Order"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="skip" containment="true" eType="#//Skip"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="limit" containment="true" eType="#//Limit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnItems">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="all" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="items" containment="true" eType="#//ReturnItem" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="expression" containment="true" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="alias" containment="true" eType="#//VariableDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Order">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="orderBy" containment="true" eType="#//SortItem" upperBound="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Skip">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="skip" containment="true" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Limit">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="limit" containment="true" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" unique="false" name="expression" containment="true" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" lowerBound="1" unique="false" name="sort" eType="cypher_draft:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="cypher_draft:EDataType" name="ID"/>
+  <eClassifiers xsi:type="cypher_draft:EDataType" name="RelTypeName"/>
+  <eClassifiers xsi:type="cypher_draft:EDataType" name="PropertyKeyName"/>
+  <eClassifiers xsi:type="cypher_draft:EDataType" name="NullOperatorExpression"/>
+  <eClassifiers xsi:type="cypher_draft:EDataType" name="INT"/>
+  <eClassifiers xsi:type="cypher_draft:EDataType" name="Number"/>
+</ecore:EPackage>

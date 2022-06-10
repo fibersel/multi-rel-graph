@@ -12,25 +12,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.s2c.sQL.BoolExpression;
 import org.xtext.example.s2c.sQL.SQLPackage;
 import org.xtext.example.s2c.sQL.Term;
-import org.xtext.example.s2c.sQL.boolExpression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>bool Expression</b></em>'.
+ * An implementation of the model object '<em><b>Bool Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.boolExpressionImpl#getLhs <em>Lhs</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.boolExpressionImpl#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.BoolExpressionImpl#getLhs <em>Lhs</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.BoolExpressionImpl#getRhs <em>Rhs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class boolExpressionImpl extends MinimalEObjectImpl.Container implements boolExpression
+public class BoolExpressionImpl extends MinimalEObjectImpl.Container implements BoolExpression
 {
   /**
    * The cached value of the '{@link #getLhs() <em>Lhs</em>}' containment reference.
@@ -57,7 +57,7 @@ public class boolExpressionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  protected boolExpressionImpl()
+  protected BoolExpressionImpl()
   {
     super();
   }
@@ -267,4 +267,4 @@ public class boolExpressionImpl extends MinimalEObjectImpl.Container implements 
     return super.eIsSet(featureID);
   }
 
-} //boolExpressionImpl
+} //BoolExpressionImpl

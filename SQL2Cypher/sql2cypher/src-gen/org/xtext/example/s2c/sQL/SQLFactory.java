@@ -51,31 +51,31 @@ public interface SQLFactory extends EFactory
   fromSection createfromSection();
 
   /**
-   * Returns a new object of class '<em>from Item</em>'.
+   * Returns a new object of class '<em>From Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>from Item</em>'.
+   * @return a new object of class '<em>From Item</em>'.
    * @generated
    */
-  fromItem createfromItem();
+  FromItem createFromItem();
 
   /**
-   * Returns a new object of class '<em>where clause</em>'.
+   * Returns a new object of class '<em>Where Clause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>where clause</em>'.
+   * @return a new object of class '<em>Where Clause</em>'.
    * @generated
    */
-  where_clause createwhere_clause();
+  WhereClause createWhereClause();
 
   /**
-   * Returns a new object of class '<em>bool Expression</em>'.
+   * Returns a new object of class '<em>Bool Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>bool Expression</em>'.
+   * @return a new object of class '<em>Bool Expression</em>'.
    * @generated
    */
-  boolExpression createboolExpression();
+  BoolExpression createBoolExpression();
 
   /**
    * Returns a new object of class '<em>Term</em>'.
@@ -114,31 +114,31 @@ public interface SQLFactory extends EFactory
   Column createColumn();
 
   /**
-   * Returns a new object of class '<em>group clause</em>'.
+   * Returns a new object of class '<em>Group Clause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>group clause</em>'.
+   * @return a new object of class '<em>Group Clause</em>'.
    * @generated
    */
-  group_clause creategroup_clause();
+  GroupClause createGroupClause();
 
   /**
-   * Returns a new object of class '<em>having clause</em>'.
+   * Returns a new object of class '<em>Having Clause</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>having clause</em>'.
+   * @return a new object of class '<em>Having Clause</em>'.
    * @generated
    */
-  having_clause createhaving_clause();
+  HavingClause createHavingClause();
 
   /**
-   * Returns a new object of class '<em>expression</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>expression</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  expression createexpression();
+  Expression createExpression();
 
   /**
    * Returns the package supported by this factory.

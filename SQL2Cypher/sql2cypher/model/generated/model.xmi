@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sql:Model xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sql="http://sql/" xmi:version="2.0">
+  <statements>
+    <fromSection>
+      <fromItem tableName="table"/>
+    </fromSection>
+    <expressions>
+      <col name="col1"/>
+    </expressions>
+    <expressions>
+      <col name="col2"/>
+    </expressions>
+  </statements>
+</sql:Model>

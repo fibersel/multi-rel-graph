@@ -23,22 +23,22 @@ public abstract class AbstractSQLProposalProvider extends TerminalsProposalProvi
 	public void completeSelect_Expressions(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeSelect_From_section(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeSelect_FromSection(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeSelect_Where_section(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeSelect_WhereClause(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeSelect_Group_section(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeSelect_GroupClause(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeSelect_Having_section(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeSelect_HavingClause(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeFromSection_From_item(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeFromSection_FromItem(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeFromItem_Table_name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeFromItem_TableName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeFromItem_Select_expr(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -50,7 +50,7 @@ public abstract class AbstractSQLProposalProvider extends TerminalsProposalProvi
 	public void completeFromItem_Bool_expr(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeWhere_clause_Bool_expr(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeWhereClause_BoolExpression(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeBoolExpression_Lhs(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -83,10 +83,10 @@ public abstract class AbstractSQLProposalProvider extends TerminalsProposalProvi
 	public void completeColumn_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeGroup_clause_Expressions(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeGroupClause_Expressions(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
-	public void completeHaving_clause_Expr(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeHavingClause_Expr(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
 	public void completeExpression_Col(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -102,13 +102,13 @@ public abstract class AbstractSQLProposalProvider extends TerminalsProposalProvi
 	public void complete_fromSection(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_fromItem(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_FromItem(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_where_clause(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_WhereClause(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_boolExpression(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_BoolExpression(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 	public void complete_Term(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -123,13 +123,13 @@ public abstract class AbstractSQLProposalProvider extends TerminalsProposalProvi
 	public void complete_Column(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_group_clause(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_GroupClause(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_having_clause(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_HavingClause(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_expression(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void complete_Expression(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 }

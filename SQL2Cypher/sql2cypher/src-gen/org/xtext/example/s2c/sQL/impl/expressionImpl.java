@@ -13,23 +13,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.s2c.sQL.Column;
+import org.xtext.example.s2c.sQL.Expression;
 import org.xtext.example.s2c.sQL.SQLPackage;
-import org.xtext.example.s2c.sQL.expression;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>expression</b></em>'.
+ * An implementation of the model object '<em><b>Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.expressionImpl#getCol <em>Col</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.ExpressionImpl#getCol <em>Col</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class expressionImpl extends MinimalEObjectImpl.Container implements expression
+public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
 {
   /**
    * The cached value of the '{@link #getCol() <em>Col</em>}' containment reference.
@@ -46,7 +46,7 @@ public class expressionImpl extends MinimalEObjectImpl.Container implements expr
    * <!-- end-user-doc -->
    * @generated
    */
-  protected expressionImpl()
+  protected ExpressionImpl()
   {
     super();
   }
@@ -194,4 +194,4 @@ public class expressionImpl extends MinimalEObjectImpl.Container implements expr
     return super.eIsSet(featureID);
   }
 
-} //expressionImpl
+} //ExpressionImpl

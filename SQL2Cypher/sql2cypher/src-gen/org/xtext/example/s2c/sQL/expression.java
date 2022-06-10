@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>expression</b></em>'.
+ * A representation of the model object '<em><b>Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.expression#getCol <em>Col</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.Expression#getCol <em>Col</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.s2c.sQL.SQLPackage#getexpression()
+ * @see org.xtext.example.s2c.sQL.SQLPackage#getExpression()
  * @model
  * @generated
  */
-public interface expression extends EObject
+public interface Expression extends EObject
 {
   /**
    * Returns the value of the '<em><b>Col</b></em>' containment reference.
@@ -29,14 +29,14 @@ public interface expression extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Col</em>' containment reference.
    * @see #setCol(Column)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getexpression_Col()
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getExpression_Col()
    * @model containment="true"
    * @generated
    */
   Column getCol();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.expression#getCol <em>Col</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.Expression#getCol <em>Col</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Col</em>' containment reference.
@@ -45,4 +45,4 @@ public interface expression extends EObject
    */
   void setCol(Column value);
 
-} // expression
+} // Expression

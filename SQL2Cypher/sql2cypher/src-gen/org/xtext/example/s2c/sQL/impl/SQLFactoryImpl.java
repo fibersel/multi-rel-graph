@@ -68,16 +68,16 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
       case SQLPackage.MODEL: return createModel();
       case SQLPackage.SELECT: return createselect();
       case SQLPackage.FROM_SECTION: return createfromSection();
-      case SQLPackage.FROM_ITEM: return createfromItem();
-      case SQLPackage.WHERE_CLAUSE: return createwhere_clause();
-      case SQLPackage.BOOL_EXPRESSION: return createboolExpression();
+      case SQLPackage.FROM_ITEM: return createFromItem();
+      case SQLPackage.WHERE_CLAUSE: return createWhereClause();
+      case SQLPackage.BOOL_EXPRESSION: return createBoolExpression();
       case SQLPackage.TERM: return createTerm();
       case SQLPackage.FACTOR: return createFactor();
       case SQLPackage.BINARY: return createBinary();
       case SQLPackage.COLUMN: return createColumn();
-      case SQLPackage.GROUP_CLAUSE: return creategroup_clause();
-      case SQLPackage.HAVING_CLAUSE: return createhaving_clause();
-      case SQLPackage.EXPRESSION: return createexpression();
+      case SQLPackage.GROUP_CLAUSE: return createGroupClause();
+      case SQLPackage.HAVING_CLAUSE: return createHavingClause();
+      case SQLPackage.EXPRESSION: return createExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -125,9 +125,9 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public fromItem createfromItem()
+  public FromItem createFromItem()
   {
-    fromItemImpl fromItem = new fromItemImpl();
+    FromItemImpl fromItem = new FromItemImpl();
     return fromItem;
   }
 
@@ -137,10 +137,10 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public where_clause createwhere_clause()
+  public WhereClause createWhereClause()
   {
-    where_clauseImpl where_clause = new where_clauseImpl();
-    return where_clause;
+    WhereClauseImpl whereClause = new WhereClauseImpl();
+    return whereClause;
   }
 
   /**
@@ -149,9 +149,9 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public boolExpression createboolExpression()
+  public BoolExpression createBoolExpression()
   {
-    boolExpressionImpl boolExpression = new boolExpressionImpl();
+    BoolExpressionImpl boolExpression = new BoolExpressionImpl();
     return boolExpression;
   }
 
@@ -209,10 +209,10 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public group_clause creategroup_clause()
+  public GroupClause createGroupClause()
   {
-    group_clauseImpl group_clause = new group_clauseImpl();
-    return group_clause;
+    GroupClauseImpl groupClause = new GroupClauseImpl();
+    return groupClause;
   }
 
   /**
@@ -221,10 +221,10 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public having_clause createhaving_clause()
+  public HavingClause createHavingClause()
   {
-    having_clauseImpl having_clause = new having_clauseImpl();
-    return having_clause;
+    HavingClauseImpl havingClause = new HavingClauseImpl();
+    return havingClause;
   }
 
   /**
@@ -233,9 +233,9 @@ public class SQLFactoryImpl extends EFactoryImpl implements SQLFactory
    * @generated
    */
   @Override
-  public expression createexpression()
+  public Expression createExpression()
   {
-    expressionImpl expression = new expressionImpl();
+    ExpressionImpl expression = new ExpressionImpl();
     return expression;
   }
 

@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.example.s2c.sQL.Expression;
+import org.xtext.example.s2c.sQL.GroupClause;
+import org.xtext.example.s2c.sQL.HavingClause;
 import org.xtext.example.s2c.sQL.SQLPackage;
-import org.xtext.example.s2c.sQL.expression;
+import org.xtext.example.s2c.sQL.WhereClause;
 import org.xtext.example.s2c.sQL.fromSection;
-import org.xtext.example.s2c.sQL.group_clause;
-import org.xtext.example.s2c.sQL.having_clause;
 import org.xtext.example.s2c.sQL.select;
-import org.xtext.example.s2c.sQL.where_clause;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,10 +36,10 @@ import org.xtext.example.s2c.sQL.where_clause;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getExpressions <em>Expressions</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getFrom_section <em>From section</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getWhere_section <em>Where section</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getGroup_section <em>Group section</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getHaving_section <em>Having section</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getFromSection <em>From Section</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getWhereClause <em>Where Clause</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getGroupClause <em>Group Clause</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.selectImpl#getHavingClause <em>Having Clause</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,47 +54,47 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    * @ordered
    */
-  protected EList<expression> expressions;
+  protected EList<Expression> expressions;
 
   /**
-   * The cached value of the '{@link #getFrom_section() <em>From section</em>}' containment reference.
+   * The cached value of the '{@link #getFromSection() <em>From Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFrom_section()
+   * @see #getFromSection()
    * @generated
    * @ordered
    */
-  protected fromSection from_section;
+  protected fromSection fromSection;
 
   /**
-   * The cached value of the '{@link #getWhere_section() <em>Where section</em>}' containment reference.
+   * The cached value of the '{@link #getWhereClause() <em>Where Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWhere_section()
+   * @see #getWhereClause()
    * @generated
    * @ordered
    */
-  protected where_clause where_section;
+  protected WhereClause whereClause;
 
   /**
-   * The cached value of the '{@link #getGroup_section() <em>Group section</em>}' containment reference.
+   * The cached value of the '{@link #getGroupClause() <em>Group Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroup_section()
+   * @see #getGroupClause()
    * @generated
    * @ordered
    */
-  protected group_clause group_section;
+  protected GroupClause groupClause;
 
   /**
-   * The cached value of the '{@link #getHaving_section() <em>Having section</em>}' containment reference.
+   * The cached value of the '{@link #getHavingClause() <em>Having Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHaving_section()
+   * @see #getHavingClause()
    * @generated
    * @ordered
    */
-  protected having_clause having_section;
+  protected HavingClause havingClause;
 
   /**
    * <!-- begin-user-doc -->
@@ -123,11 +123,11 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public EList<expression> getExpressions()
+  public EList<Expression> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EObjectContainmentEList<expression>(expression.class, this, SQLPackage.SELECT__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, SQLPackage.SELECT__EXPRESSIONS);
     }
     return expressions;
   }
@@ -138,9 +138,9 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public fromSection getFrom_section()
+  public fromSection getFromSection()
   {
-    return from_section;
+    return fromSection;
   }
 
   /**
@@ -148,13 +148,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFrom_section(fromSection newFrom_section, NotificationChain msgs)
+  public NotificationChain basicSetFromSection(fromSection newFromSection, NotificationChain msgs)
   {
-    fromSection oldFrom_section = from_section;
-    from_section = newFrom_section;
+    fromSection oldFromSection = fromSection;
+    fromSection = newFromSection;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__FROM_SECTION, oldFrom_section, newFrom_section);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__FROM_SECTION, oldFromSection, newFromSection);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -166,20 +166,20 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public void setFrom_section(fromSection newFrom_section)
+  public void setFromSection(fromSection newFromSection)
   {
-    if (newFrom_section != from_section)
+    if (newFromSection != fromSection)
     {
       NotificationChain msgs = null;
-      if (from_section != null)
-        msgs = ((InternalEObject)from_section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__FROM_SECTION, null, msgs);
-      if (newFrom_section != null)
-        msgs = ((InternalEObject)newFrom_section).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__FROM_SECTION, null, msgs);
-      msgs = basicSetFrom_section(newFrom_section, msgs);
+      if (fromSection != null)
+        msgs = ((InternalEObject)fromSection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__FROM_SECTION, null, msgs);
+      if (newFromSection != null)
+        msgs = ((InternalEObject)newFromSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__FROM_SECTION, null, msgs);
+      msgs = basicSetFromSection(newFromSection, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__FROM_SECTION, newFrom_section, newFrom_section));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__FROM_SECTION, newFromSection, newFromSection));
   }
 
   /**
@@ -188,9 +188,9 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public where_clause getWhere_section()
+  public WhereClause getWhereClause()
   {
-    return where_section;
+    return whereClause;
   }
 
   /**
@@ -198,13 +198,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetWhere_section(where_clause newWhere_section, NotificationChain msgs)
+  public NotificationChain basicSetWhereClause(WhereClause newWhereClause, NotificationChain msgs)
   {
-    where_clause oldWhere_section = where_section;
-    where_section = newWhere_section;
+    WhereClause oldWhereClause = whereClause;
+    whereClause = newWhereClause;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__WHERE_SECTION, oldWhere_section, newWhere_section);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__WHERE_CLAUSE, oldWhereClause, newWhereClause);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -216,20 +216,20 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public void setWhere_section(where_clause newWhere_section)
+  public void setWhereClause(WhereClause newWhereClause)
   {
-    if (newWhere_section != where_section)
+    if (newWhereClause != whereClause)
     {
       NotificationChain msgs = null;
-      if (where_section != null)
-        msgs = ((InternalEObject)where_section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__WHERE_SECTION, null, msgs);
-      if (newWhere_section != null)
-        msgs = ((InternalEObject)newWhere_section).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__WHERE_SECTION, null, msgs);
-      msgs = basicSetWhere_section(newWhere_section, msgs);
+      if (whereClause != null)
+        msgs = ((InternalEObject)whereClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__WHERE_CLAUSE, null, msgs);
+      if (newWhereClause != null)
+        msgs = ((InternalEObject)newWhereClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__WHERE_CLAUSE, null, msgs);
+      msgs = basicSetWhereClause(newWhereClause, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__WHERE_SECTION, newWhere_section, newWhere_section));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__WHERE_CLAUSE, newWhereClause, newWhereClause));
   }
 
   /**
@@ -238,9 +238,9 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public group_clause getGroup_section()
+  public GroupClause getGroupClause()
   {
-    return group_section;
+    return groupClause;
   }
 
   /**
@@ -248,13 +248,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetGroup_section(group_clause newGroup_section, NotificationChain msgs)
+  public NotificationChain basicSetGroupClause(GroupClause newGroupClause, NotificationChain msgs)
   {
-    group_clause oldGroup_section = group_section;
-    group_section = newGroup_section;
+    GroupClause oldGroupClause = groupClause;
+    groupClause = newGroupClause;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__GROUP_SECTION, oldGroup_section, newGroup_section);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__GROUP_CLAUSE, oldGroupClause, newGroupClause);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -266,20 +266,20 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public void setGroup_section(group_clause newGroup_section)
+  public void setGroupClause(GroupClause newGroupClause)
   {
-    if (newGroup_section != group_section)
+    if (newGroupClause != groupClause)
     {
       NotificationChain msgs = null;
-      if (group_section != null)
-        msgs = ((InternalEObject)group_section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__GROUP_SECTION, null, msgs);
-      if (newGroup_section != null)
-        msgs = ((InternalEObject)newGroup_section).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__GROUP_SECTION, null, msgs);
-      msgs = basicSetGroup_section(newGroup_section, msgs);
+      if (groupClause != null)
+        msgs = ((InternalEObject)groupClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__GROUP_CLAUSE, null, msgs);
+      if (newGroupClause != null)
+        msgs = ((InternalEObject)newGroupClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__GROUP_CLAUSE, null, msgs);
+      msgs = basicSetGroupClause(newGroupClause, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__GROUP_SECTION, newGroup_section, newGroup_section));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__GROUP_CLAUSE, newGroupClause, newGroupClause));
   }
 
   /**
@@ -288,9 +288,9 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public having_clause getHaving_section()
+  public HavingClause getHavingClause()
   {
-    return having_section;
+    return havingClause;
   }
 
   /**
@@ -298,13 +298,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetHaving_section(having_clause newHaving_section, NotificationChain msgs)
+  public NotificationChain basicSetHavingClause(HavingClause newHavingClause, NotificationChain msgs)
   {
-    having_clause oldHaving_section = having_section;
-    having_section = newHaving_section;
+    HavingClause oldHavingClause = havingClause;
+    havingClause = newHavingClause;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__HAVING_SECTION, oldHaving_section, newHaving_section);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__HAVING_CLAUSE, oldHavingClause, newHavingClause);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -316,20 +316,20 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
    * @generated
    */
   @Override
-  public void setHaving_section(having_clause newHaving_section)
+  public void setHavingClause(HavingClause newHavingClause)
   {
-    if (newHaving_section != having_section)
+    if (newHavingClause != havingClause)
     {
       NotificationChain msgs = null;
-      if (having_section != null)
-        msgs = ((InternalEObject)having_section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__HAVING_SECTION, null, msgs);
-      if (newHaving_section != null)
-        msgs = ((InternalEObject)newHaving_section).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__HAVING_SECTION, null, msgs);
-      msgs = basicSetHaving_section(newHaving_section, msgs);
+      if (havingClause != null)
+        msgs = ((InternalEObject)havingClause).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__HAVING_CLAUSE, null, msgs);
+      if (newHavingClause != null)
+        msgs = ((InternalEObject)newHavingClause).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SQLPackage.SELECT__HAVING_CLAUSE, null, msgs);
+      msgs = basicSetHavingClause(newHavingClause, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__HAVING_SECTION, newHaving_section, newHaving_section));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.SELECT__HAVING_CLAUSE, newHavingClause, newHavingClause));
   }
 
   /**
@@ -345,13 +345,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
       case SQLPackage.SELECT__EXPRESSIONS:
         return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
       case SQLPackage.SELECT__FROM_SECTION:
-        return basicSetFrom_section(null, msgs);
-      case SQLPackage.SELECT__WHERE_SECTION:
-        return basicSetWhere_section(null, msgs);
-      case SQLPackage.SELECT__GROUP_SECTION:
-        return basicSetGroup_section(null, msgs);
-      case SQLPackage.SELECT__HAVING_SECTION:
-        return basicSetHaving_section(null, msgs);
+        return basicSetFromSection(null, msgs);
+      case SQLPackage.SELECT__WHERE_CLAUSE:
+        return basicSetWhereClause(null, msgs);
+      case SQLPackage.SELECT__GROUP_CLAUSE:
+        return basicSetGroupClause(null, msgs);
+      case SQLPackage.SELECT__HAVING_CLAUSE:
+        return basicSetHavingClause(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -369,13 +369,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
       case SQLPackage.SELECT__EXPRESSIONS:
         return getExpressions();
       case SQLPackage.SELECT__FROM_SECTION:
-        return getFrom_section();
-      case SQLPackage.SELECT__WHERE_SECTION:
-        return getWhere_section();
-      case SQLPackage.SELECT__GROUP_SECTION:
-        return getGroup_section();
-      case SQLPackage.SELECT__HAVING_SECTION:
-        return getHaving_section();
+        return getFromSection();
+      case SQLPackage.SELECT__WHERE_CLAUSE:
+        return getWhereClause();
+      case SQLPackage.SELECT__GROUP_CLAUSE:
+        return getGroupClause();
+      case SQLPackage.SELECT__HAVING_CLAUSE:
+        return getHavingClause();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -393,19 +393,19 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
     {
       case SQLPackage.SELECT__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends expression>)newValue);
+        getExpressions().addAll((Collection<? extends Expression>)newValue);
         return;
       case SQLPackage.SELECT__FROM_SECTION:
-        setFrom_section((fromSection)newValue);
+        setFromSection((fromSection)newValue);
         return;
-      case SQLPackage.SELECT__WHERE_SECTION:
-        setWhere_section((where_clause)newValue);
+      case SQLPackage.SELECT__WHERE_CLAUSE:
+        setWhereClause((WhereClause)newValue);
         return;
-      case SQLPackage.SELECT__GROUP_SECTION:
-        setGroup_section((group_clause)newValue);
+      case SQLPackage.SELECT__GROUP_CLAUSE:
+        setGroupClause((GroupClause)newValue);
         return;
-      case SQLPackage.SELECT__HAVING_SECTION:
-        setHaving_section((having_clause)newValue);
+      case SQLPackage.SELECT__HAVING_CLAUSE:
+        setHavingClause((HavingClause)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -425,16 +425,16 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
         getExpressions().clear();
         return;
       case SQLPackage.SELECT__FROM_SECTION:
-        setFrom_section((fromSection)null);
+        setFromSection((fromSection)null);
         return;
-      case SQLPackage.SELECT__WHERE_SECTION:
-        setWhere_section((where_clause)null);
+      case SQLPackage.SELECT__WHERE_CLAUSE:
+        setWhereClause((WhereClause)null);
         return;
-      case SQLPackage.SELECT__GROUP_SECTION:
-        setGroup_section((group_clause)null);
+      case SQLPackage.SELECT__GROUP_CLAUSE:
+        setGroupClause((GroupClause)null);
         return;
-      case SQLPackage.SELECT__HAVING_SECTION:
-        setHaving_section((having_clause)null);
+      case SQLPackage.SELECT__HAVING_CLAUSE:
+        setHavingClause((HavingClause)null);
         return;
     }
     super.eUnset(featureID);
@@ -453,13 +453,13 @@ public class selectImpl extends MinimalEObjectImpl.Container implements select
       case SQLPackage.SELECT__EXPRESSIONS:
         return expressions != null && !expressions.isEmpty();
       case SQLPackage.SELECT__FROM_SECTION:
-        return from_section != null;
-      case SQLPackage.SELECT__WHERE_SECTION:
-        return where_section != null;
-      case SQLPackage.SELECT__GROUP_SECTION:
-        return group_section != null;
-      case SQLPackage.SELECT__HAVING_SECTION:
-        return having_section != null;
+        return fromSection != null;
+      case SQLPackage.SELECT__WHERE_CLAUSE:
+        return whereClause != null;
+      case SQLPackage.SELECT__GROUP_CLAUSE:
+        return groupClause != null;
+      case SQLPackage.SELECT__HAVING_CLAUSE:
+        return havingClause != null;
     }
     return super.eIsSet(featureID);
   }

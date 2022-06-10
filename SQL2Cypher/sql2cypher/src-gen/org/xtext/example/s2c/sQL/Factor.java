@@ -52,12 +52,12 @@ public interface Factor extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expr</em>' containment reference.
-   * @see #setExpr(boolExpression)
+   * @see #setExpr(BoolExpression)
    * @see org.xtext.example.s2c.sQL.SQLPackage#getFactor_Expr()
    * @model containment="true"
    * @generated
    */
-  boolExpression getExpr();
+  BoolExpression getExpr();
 
   /**
    * Sets the value of the '{@link org.xtext.example.s2c.sQL.Factor#getExpr <em>Expr</em>}' containment reference.
@@ -67,7 +67,7 @@ public interface Factor extends EObject
    * @see #getExpr()
    * @generated
    */
-  void setExpr(boolExpression value);
+  void setExpr(BoolExpression value);
 
   /**
    * Returns the value of the '<em><b>Binexp</b></em>' containment reference.

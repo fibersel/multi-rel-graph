@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.s2c.sQL.Binary;
+import org.xtext.example.s2c.sQL.BoolExpression;
 import org.xtext.example.s2c.sQL.Factor;
 import org.xtext.example.s2c.sQL.SQLPackage;
-import org.xtext.example.s2c.sQL.boolExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
    * @generated
    * @ordered
    */
-  protected boolExpression expr;
+  protected BoolExpression expr;
 
   /**
    * The cached value of the '{@link #getBinexp() <em>Binexp</em>}' containment reference.
@@ -141,7 +141,7 @@ public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
    * @generated
    */
   @Override
-  public boolExpression getExpr()
+  public BoolExpression getExpr()
   {
     return expr;
   }
@@ -151,9 +151,9 @@ public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpr(boolExpression newExpr, NotificationChain msgs)
+  public NotificationChain basicSetExpr(BoolExpression newExpr, NotificationChain msgs)
   {
-    boolExpression oldExpr = expr;
+    BoolExpression oldExpr = expr;
     expr = newExpr;
     if (eNotificationRequired())
     {
@@ -169,7 +169,7 @@ public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
    * @generated
    */
   @Override
-  public void setExpr(boolExpression newExpr)
+  public void setExpr(BoolExpression newExpr)
   {
     if (newExpr != expr)
     {
@@ -289,7 +289,7 @@ public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
         setFactor((Factor)newValue);
         return;
       case SQLPackage.FACTOR__EXPR:
-        setExpr((boolExpression)newValue);
+        setExpr((BoolExpression)newValue);
         return;
       case SQLPackage.FACTOR__BINEXP:
         setBinexp((Binary)newValue);
@@ -312,7 +312,7 @@ public class FactorImpl extends MinimalEObjectImpl.Container implements Factor
         setFactor((Factor)null);
         return;
       case SQLPackage.FACTOR__EXPR:
-        setExpr((boolExpression)null);
+        setExpr((BoolExpression)null);
         return;
       case SQLPackage.FACTOR__BINEXP:
         setBinexp((Binary)null);

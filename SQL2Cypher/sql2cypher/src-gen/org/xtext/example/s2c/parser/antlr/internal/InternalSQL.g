@@ -121,7 +121,7 @@ ruleselect returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getSelectAccess().getExpressionsExpressionParserRuleCall_1_0());
 				}
-				lv_expressions_1_0=ruleexpression
+				lv_expressions_1_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSelectRule());
@@ -130,7 +130,7 @@ ruleselect returns [EObject current=null]
 						$current,
 						"expressions",
 						lv_expressions_1_0,
-						"org.xtext.example.s2c.SQL.expression");
+						"org.xtext.example.s2c.SQL.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -145,7 +145,7 @@ ruleselect returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getSelectAccess().getExpressionsExpressionParserRuleCall_2_1_0());
 					}
-					lv_expressions_3_0=ruleexpression
+					lv_expressions_3_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSelectRule());
@@ -154,7 +154,7 @@ ruleselect returns [EObject current=null]
 							$current,
 							"expressions",
 							lv_expressions_3_0,
-							"org.xtext.example.s2c.SQL.expression");
+							"org.xtext.example.s2c.SQL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -163,17 +163,17 @@ ruleselect returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSelectAccess().getFrom_sectionFromSectionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSelectAccess().getFromSectionFromSectionParserRuleCall_3_0());
 				}
-				lv_from_section_4_0=rulefromSection
+				lv_fromSection_4_0=rulefromSection
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSelectRule());
 					}
 					set(
 						$current,
-						"from_section",
-						lv_from_section_4_0,
+						"fromSection",
+						lv_fromSection_4_0,
 						"org.xtext.example.s2c.SQL.fromSection");
 					afterParserOrEnumRuleCall();
 				}
@@ -182,18 +182,18 @@ ruleselect returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSelectAccess().getWhere_sectionWhere_clauseParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getSelectAccess().getWhereClauseWhereClauseParserRuleCall_4_0());
 				}
-				lv_where_section_5_0=rulewhere_clause
+				lv_whereClause_5_0=ruleWhereClause
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSelectRule());
 					}
 					set(
 						$current,
-						"where_section",
-						lv_where_section_5_0,
-						"org.xtext.example.s2c.SQL.where_clause");
+						"whereClause",
+						lv_whereClause_5_0,
+						"org.xtext.example.s2c.SQL.WhereClause");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -201,18 +201,18 @@ ruleselect returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSelectAccess().getGroup_sectionGroup_clauseParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSelectAccess().getGroupClauseGroupClauseParserRuleCall_5_0());
 				}
-				lv_group_section_6_0=rulegroup_clause
+				lv_groupClause_6_0=ruleGroupClause
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSelectRule());
 					}
 					set(
 						$current,
-						"group_section",
-						lv_group_section_6_0,
-						"org.xtext.example.s2c.SQL.group_clause");
+						"groupClause",
+						lv_groupClause_6_0,
+						"org.xtext.example.s2c.SQL.GroupClause");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -220,18 +220,18 @@ ruleselect returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSelectAccess().getHaving_sectionHaving_clauseParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getSelectAccess().getHavingClauseHavingClauseParserRuleCall_6_0());
 				}
-				lv_having_section_7_0=rulehaving_clause
+				lv_havingClause_7_0=ruleHavingClause
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSelectRule());
 					}
 					set(
 						$current,
-						"having_section",
-						lv_having_section_7_0,
-						"org.xtext.example.s2c.SQL.having_clause");
+						"havingClause",
+						lv_havingClause_7_0,
+						"org.xtext.example.s2c.SQL.HavingClause");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -262,18 +262,18 @@ rulefromSection returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFromSectionAccess().getFrom_itemFromItemParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getFromSectionAccess().getFromItemFromItemParserRuleCall_1_0());
 				}
-				lv_from_item_1_0=rulefromItem
+				lv_fromItem_1_0=ruleFromItem
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFromSectionRule());
 					}
 					set(
 						$current,
-						"from_item",
-						lv_from_item_1_0,
-						"org.xtext.example.s2c.SQL.fromItem");
+						"fromItem",
+						lv_fromItem_1_0,
+						"org.xtext.example.s2c.SQL.FromItem");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -281,15 +281,15 @@ rulefromSection returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulefromItem
-entryRulefromItem returns [EObject current=null]:
+// Entry rule entryRuleFromItem
+entryRuleFromItem returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getFromItemRule()); }
-	iv_rulefromItem=rulefromItem
-	{ $current=$iv_rulefromItem.current; }
+	iv_ruleFromItem=ruleFromItem
+	{ $current=$iv_ruleFromItem.current; }
 	EOF;
 
-// Rule fromItem
-rulefromItem returns [EObject current=null]
+// Rule FromItem
+ruleFromItem returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -300,9 +300,9 @@ rulefromItem returns [EObject current=null]
 		(
 			(
 				(
-					lv_table_name_0_0=RULE_ID
+					lv_tableName_0_0=RULE_ID
 					{
-						newLeafNode(lv_table_name_0_0, grammarAccess.getFromItemAccess().getTable_nameIDTerminalRuleCall_0_0_0());
+						newLeafNode(lv_tableName_0_0, grammarAccess.getFromItemAccess().getTableNameIDTerminalRuleCall_0_0_0());
 					}
 					{
 						if ($current==null) {
@@ -310,8 +310,8 @@ rulefromItem returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"table_name",
-							lv_table_name_0_0,
+							"tableName",
+							lv_tableName_0_0,
 							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
@@ -357,7 +357,7 @@ rulefromItem returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getFromItemAccess().getRhsFromItemParserRuleCall_1_1_0());
 					}
-					lv_rhs_5_0=rulefromItem
+					lv_rhs_5_0=ruleFromItem
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFromItemRule());
@@ -366,7 +366,7 @@ rulefromItem returns [EObject current=null]
 							$current,
 							"rhs",
 							lv_rhs_5_0,
-							"org.xtext.example.s2c.SQL.fromItem");
+							"org.xtext.example.s2c.SQL.FromItem");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -380,7 +380,7 @@ rulefromItem returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getFromItemAccess().getBool_exprBoolExpressionParserRuleCall_1_3_0());
 					}
-					lv_bool_expr_7_0=ruleboolExpression
+					lv_bool_expr_7_0=ruleBoolExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFromItemRule());
@@ -389,7 +389,7 @@ rulefromItem returns [EObject current=null]
 							$current,
 							"bool_expr",
 							lv_bool_expr_7_0,
-							"org.xtext.example.s2c.SQL.boolExpression");
+							"org.xtext.example.s2c.SQL.BoolExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -398,15 +398,15 @@ rulefromItem returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulewhere_clause
-entryRulewhere_clause returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getWhere_clauseRule()); }
-	iv_rulewhere_clause=rulewhere_clause
-	{ $current=$iv_rulewhere_clause.current; }
+// Entry rule entryRuleWhereClause
+entryRuleWhereClause returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWhereClauseRule()); }
+	iv_ruleWhereClause=ruleWhereClause
+	{ $current=$iv_ruleWhereClause.current; }
 	EOF;
 
-// Rule where_clause
-rulewhere_clause returns [EObject current=null]
+// Rule WhereClause
+ruleWhereClause returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -416,23 +416,23 @@ rulewhere_clause returns [EObject current=null]
 	(
 		otherlv_0='WHERE'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getWhere_clauseAccess().getWHEREKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getWhereClauseAccess().getWHEREKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWhere_clauseAccess().getBool_exprBoolExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getWhereClauseAccess().getBoolExpressionBoolExpressionParserRuleCall_1_0());
 				}
-				lv_bool_expr_1_0=ruleboolExpression
+				lv_boolExpression_1_0=ruleBoolExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getWhere_clauseRule());
+						$current = createModelElementForParent(grammarAccess.getWhereClauseRule());
 					}
 					set(
 						$current,
-						"bool_expr",
-						lv_bool_expr_1_0,
-						"org.xtext.example.s2c.SQL.boolExpression");
+						"boolExpression",
+						lv_boolExpression_1_0,
+						"org.xtext.example.s2c.SQL.BoolExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -440,15 +440,15 @@ rulewhere_clause returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleboolExpression
-entryRuleboolExpression returns [EObject current=null]:
+// Entry rule entryRuleBoolExpression
+entryRuleBoolExpression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getBoolExpressionRule()); }
-	iv_ruleboolExpression=ruleboolExpression
-	{ $current=$iv_ruleboolExpression.current; }
+	iv_ruleBoolExpression=ruleBoolExpression
+	{ $current=$iv_ruleBoolExpression.current; }
 	EOF;
 
-// Rule boolExpression
-ruleboolExpression returns [EObject current=null]
+// Rule BoolExpression
+ruleBoolExpression returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -618,7 +618,7 @@ ruleFactor returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getFactorAccess().getExprBoolExpressionParserRuleCall_1_1_0());
 					}
-					lv_expr_3_0=ruleboolExpression
+					lv_expr_3_0=ruleBoolExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFactorRule());
@@ -627,7 +627,7 @@ ruleFactor returns [EObject current=null]
 							$current,
 							"expr",
 							lv_expr_3_0,
-							"org.xtext.example.s2c.SQL.boolExpression");
+							"org.xtext.example.s2c.SQL.BoolExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -788,15 +788,15 @@ ruleColumn returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulegroup_clause
-entryRulegroup_clause returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGroup_clauseRule()); }
-	iv_rulegroup_clause=rulegroup_clause
-	{ $current=$iv_rulegroup_clause.current; }
+// Entry rule entryRuleGroupClause
+entryRuleGroupClause returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGroupClauseRule()); }
+	iv_ruleGroupClause=ruleGroupClause
+	{ $current=$iv_ruleGroupClause.current; }
 	EOF;
 
-// Rule group_clause
-rulegroup_clause returns [EObject current=null]
+// Rule GroupClause
+ruleGroupClause returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -806,27 +806,27 @@ rulegroup_clause returns [EObject current=null]
 	(
 		otherlv_0='GROUP'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGroup_clauseAccess().getGROUPKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getGroupClauseAccess().getGROUPKeyword_0());
 		}
 		otherlv_1='BY'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGroup_clauseAccess().getBYKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGroupClauseAccess().getBYKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGroup_clauseAccess().getExpressionsExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getGroupClauseAccess().getExpressionsExpressionParserRuleCall_2_0());
 				}
-				lv_expressions_2_0=ruleexpression
+				lv_expressions_2_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGroup_clauseRule());
+						$current = createModelElementForParent(grammarAccess.getGroupClauseRule());
 					}
 					add(
 						$current,
 						"expressions",
 						lv_expressions_2_0,
-						"org.xtext.example.s2c.SQL.expression");
+						"org.xtext.example.s2c.SQL.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -834,23 +834,23 @@ rulegroup_clause returns [EObject current=null]
 		(
 			otherlv_3=','
 			{
-				newLeafNode(otherlv_3, grammarAccess.getGroup_clauseAccess().getCommaKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getGroupClauseAccess().getCommaKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getGroup_clauseAccess().getExpressionsExpressionParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getGroupClauseAccess().getExpressionsExpressionParserRuleCall_3_1_0());
 					}
-					lv_expressions_4_0=ruleexpression
+					lv_expressions_4_0=ruleExpression
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGroup_clauseRule());
+							$current = createModelElementForParent(grammarAccess.getGroupClauseRule());
 						}
 						add(
 							$current,
 							"expressions",
 							lv_expressions_4_0,
-							"org.xtext.example.s2c.SQL.expression");
+							"org.xtext.example.s2c.SQL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -859,15 +859,15 @@ rulegroup_clause returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRulehaving_clause
-entryRulehaving_clause returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getHaving_clauseRule()); }
-	iv_rulehaving_clause=rulehaving_clause
-	{ $current=$iv_rulehaving_clause.current; }
+// Entry rule entryRuleHavingClause
+entryRuleHavingClause returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHavingClauseRule()); }
+	iv_ruleHavingClause=ruleHavingClause
+	{ $current=$iv_ruleHavingClause.current; }
 	EOF;
 
-// Rule having_clause
-rulehaving_clause returns [EObject current=null]
+// Rule HavingClause
+ruleHavingClause returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -877,23 +877,23 @@ rulehaving_clause returns [EObject current=null]
 	(
 		otherlv_0='HAVING'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getHaving_clauseAccess().getHAVINGKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getHavingClauseAccess().getHAVINGKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHaving_clauseAccess().getExprBoolExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getHavingClauseAccess().getExprBoolExpressionParserRuleCall_1_0());
 				}
-				lv_expr_1_0=ruleboolExpression
+				lv_expr_1_0=ruleBoolExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getHaving_clauseRule());
+						$current = createModelElementForParent(grammarAccess.getHavingClauseRule());
 					}
 					set(
 						$current,
 						"expr",
 						lv_expr_1_0,
-						"org.xtext.example.s2c.SQL.boolExpression");
+						"org.xtext.example.s2c.SQL.BoolExpression");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -901,15 +901,15 @@ rulehaving_clause returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleexpression
-entryRuleexpression returns [EObject current=null]:
+// Entry rule entryRuleExpression
+entryRuleExpression returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getExpressionRule()); }
-	iv_ruleexpression=ruleexpression
-	{ $current=$iv_ruleexpression.current; }
+	iv_ruleExpression=ruleExpression
+	{ $current=$iv_ruleExpression.current; }
 	EOF;
 
-// Rule expression
-ruleexpression returns [EObject current=null]
+// Rule Expression
+ruleExpression returns [EObject current=null]
 @init {
 	enterRule();
 }

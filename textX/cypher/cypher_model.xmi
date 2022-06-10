@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<cypher_draft:Cypher xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cypher_draft="http://cypher_draft/" xmi:version="2.0">
+  <queries xsi:type="cypher_draft:SinglePartQuery">
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher_draft:OrExpression">
+              <left>
+                <left>
+                  <left/>
+                </left>
+              </left>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+    <readingClauses xsi:type="cypher_draft:Match">
+      <pattern>
+        <patterns/>
+      </pattern>
+    </readingClauses>
+  </queries>
+</cypher_draft:Cypher>

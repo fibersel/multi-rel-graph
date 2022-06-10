@@ -7,22 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>bool Expression</b></em>'.
+ * A representation of the model object '<em><b>Bool Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.boolExpression#getLhs <em>Lhs</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.boolExpression#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.BoolExpression#getLhs <em>Lhs</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.BoolExpression#getRhs <em>Rhs</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.s2c.sQL.SQLPackage#getboolExpression()
+ * @see org.xtext.example.s2c.sQL.SQLPackage#getBoolExpression()
  * @model
  * @generated
  */
-public interface boolExpression extends EObject
+public interface BoolExpression extends EObject
 {
   /**
    * Returns the value of the '<em><b>Lhs</b></em>' containment reference.
@@ -30,14 +30,14 @@ public interface boolExpression extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Lhs</em>' containment reference.
    * @see #setLhs(Term)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getboolExpression_Lhs()
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getBoolExpression_Lhs()
    * @model containment="true"
    * @generated
    */
   Term getLhs();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.boolExpression#getLhs <em>Lhs</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.BoolExpression#getLhs <em>Lhs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Lhs</em>' containment reference.
@@ -52,14 +52,14 @@ public interface boolExpression extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rhs</em>' containment reference.
    * @see #setRhs(Term)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getboolExpression_Rhs()
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getBoolExpression_Rhs()
    * @model containment="true"
    * @generated
    */
   Term getRhs();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.boolExpression#getRhs <em>Rhs</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.BoolExpression#getRhs <em>Rhs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Rhs</em>' containment reference.
@@ -68,4 +68,4 @@ public interface boolExpression extends EObject
    */
   void setRhs(Term value);
 
-} // boolExpression
+} // BoolExpression

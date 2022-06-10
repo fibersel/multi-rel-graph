@@ -7,46 +7,46 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>from Item</b></em>'.
+ * A representation of the model object '<em><b>From Item</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.fromItem#getTable_name <em>Table name</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.fromItem#getSelect_expr <em>Select expr</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.fromItem#getRhs <em>Rhs</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.fromItem#getBool_expr <em>Bool expr</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.FromItem#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.FromItem#getSelect_expr <em>Select expr</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.FromItem#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.FromItem#getBool_expr <em>Bool expr</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.s2c.sQL.SQLPackage#getfromItem()
+ * @see org.xtext.example.s2c.sQL.SQLPackage#getFromItem()
  * @model
  * @generated
  */
-public interface fromItem extends EObject
+public interface FromItem extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Table name</b></em>' attribute.
+   * Returns the value of the '<em><b>Table Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Table name</em>' attribute.
-   * @see #setTable_name(String)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getfromItem_Table_name()
+   * @return the value of the '<em>Table Name</em>' attribute.
+   * @see #setTableName(String)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getFromItem_TableName()
    * @model
    * @generated
    */
-  String getTable_name();
+  String getTableName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.fromItem#getTable_name <em>Table name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.FromItem#getTableName <em>Table Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Table name</em>' attribute.
-   * @see #getTable_name()
+   * @param value the new value of the '<em>Table Name</em>' attribute.
+   * @see #getTableName()
    * @generated
    */
-  void setTable_name(String value);
+  void setTableName(String value);
 
   /**
    * Returns the value of the '<em><b>Select expr</b></em>' containment reference.
@@ -54,14 +54,14 @@ public interface fromItem extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Select expr</em>' containment reference.
    * @see #setSelect_expr(select)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getfromItem_Select_expr()
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getFromItem_Select_expr()
    * @model containment="true"
    * @generated
    */
   select getSelect_expr();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.fromItem#getSelect_expr <em>Select expr</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.FromItem#getSelect_expr <em>Select expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Select expr</em>' containment reference.
@@ -75,43 +75,43 @@ public interface fromItem extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rhs</em>' containment reference.
-   * @see #setRhs(fromItem)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getfromItem_Rhs()
+   * @see #setRhs(FromItem)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getFromItem_Rhs()
    * @model containment="true"
    * @generated
    */
-  fromItem getRhs();
+  FromItem getRhs();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.fromItem#getRhs <em>Rhs</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.FromItem#getRhs <em>Rhs</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Rhs</em>' containment reference.
    * @see #getRhs()
    * @generated
    */
-  void setRhs(fromItem value);
+  void setRhs(FromItem value);
 
   /**
    * Returns the value of the '<em><b>Bool expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Bool expr</em>' containment reference.
-   * @see #setBool_expr(boolExpression)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getfromItem_Bool_expr()
+   * @see #setBool_expr(BoolExpression)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getFromItem_Bool_expr()
    * @model containment="true"
    * @generated
    */
-  boolExpression getBool_expr();
+  BoolExpression getBool_expr();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.fromItem#getBool_expr <em>Bool expr</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.FromItem#getBool_expr <em>Bool expr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Bool expr</em>' containment reference.
    * @see #getBool_expr()
    * @generated
    */
-  void setBool_expr(boolExpression value);
+  void setBool_expr(BoolExpression value);
 
-} // fromItem
+} // FromItem

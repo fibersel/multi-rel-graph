@@ -7,34 +7,34 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="select">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
-        eType="#//expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from_section" eType="#//fromSection"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromSection" eType="#//fromSection"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="where_section" eType="#//where_clause"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whereClause" eType="#//WhereClause"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="group_section" eType="#//group_clause"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupClause" eType="#//GroupClause"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="having_section" eType="#//having_clause"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="havingClause" eType="#//HavingClause"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="fromSection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from_item" eType="#//fromItem"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromItem" eType="#//FromItem"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="fromItem">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="table_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FromItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="select_expr" eType="#//select"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//fromItem"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//FromItem"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bool_expr" eType="#//boolExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="where_clause">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bool_expr" eType="#//boolExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bool_expr" eType="#//BoolExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="boolExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="WhereClause">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boolExpression" eType="#//BoolExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//Term" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//Term" containment="true"/>
   </eClassifiers>
@@ -47,7 +47,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Factor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="factor" eType="#//Factor"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//boolExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//BoolExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="binexp" eType="#//Binary"
         containment="true"/>
@@ -61,15 +61,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Column">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="group_clause">
+  <eClassifiers xsi:type="ecore:EClass" name="GroupClause">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
-        eType="#//expression" containment="true"/>
+        eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="having_clause">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//boolExpression"
+  <eClassifiers xsi:type="ecore:EClass" name="HavingClause">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//BoolExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="expression">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="col" eType="#//Column"
         containment="true"/>
   </eClassifiers>

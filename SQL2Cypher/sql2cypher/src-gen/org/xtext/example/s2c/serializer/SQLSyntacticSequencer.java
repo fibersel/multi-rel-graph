@@ -22,15 +22,15 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SQLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Binary_EqualsSignKeyword_1_2_or_GreaterThanSignEqualsSignKeyword_1_3_or_GreaterThanSignKeyword_1_1_or_LessThanSignEqualsSignKeyword_1_4_or_LessThanSignKeyword_1_0;
+	protected AbstractElementAlias match_Expression_AsteriskKeyword_0_or_CountKeyword_2;
 	protected AbstractElementAlias match_Factor_FALSEKeyword_3_or_TRUEKeyword_2;
-	protected AbstractElementAlias match_expression_AsteriskKeyword_0_or_CountKeyword_2;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SQLGrammarAccess) access;
 		match_Binary_EqualsSignKeyword_1_2_or_GreaterThanSignEqualsSignKeyword_1_3_or_GreaterThanSignKeyword_1_1_or_LessThanSignEqualsSignKeyword_1_4_or_LessThanSignKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBinaryAccess().getEqualsSignKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getBinaryAccess().getGreaterThanSignEqualsSignKeyword_1_3()), new TokenAlias(false, false, grammarAccess.getBinaryAccess().getGreaterThanSignKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getBinaryAccess().getLessThanSignEqualsSignKeyword_1_4()), new TokenAlias(false, false, grammarAccess.getBinaryAccess().getLessThanSignKeyword_1_0()));
+		match_Expression_AsteriskKeyword_0_or_CountKeyword_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getExpressionAccess().getAsteriskKeyword_0()), new TokenAlias(false, false, grammarAccess.getExpressionAccess().getCountKeyword_2()));
 		match_Factor_FALSEKeyword_3_or_TRUEKeyword_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getFALSEKeyword_3()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getTRUEKeyword_2()));
-		match_expression_AsteriskKeyword_0_or_CountKeyword_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getExpressionAccess().getAsteriskKeyword_0()), new TokenAlias(false, false, grammarAccess.getExpressionAccess().getCountKeyword_2()));
 	}
 	
 	@Override
@@ -47,10 +47,10 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Binary_EqualsSignKeyword_1_2_or_GreaterThanSignEqualsSignKeyword_1_3_or_GreaterThanSignKeyword_1_1_or_LessThanSignEqualsSignKeyword_1_4_or_LessThanSignKeyword_1_0.equals(syntax))
 				emit_Binary_EqualsSignKeyword_1_2_or_GreaterThanSignEqualsSignKeyword_1_3_or_GreaterThanSignKeyword_1_1_or_LessThanSignEqualsSignKeyword_1_4_or_LessThanSignKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Expression_AsteriskKeyword_0_or_CountKeyword_2.equals(syntax))
+				emit_Expression_AsteriskKeyword_0_or_CountKeyword_2(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Factor_FALSEKeyword_3_or_TRUEKeyword_2.equals(syntax))
 				emit_Factor_FALSEKeyword_3_or_TRUEKeyword_2(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_expression_AsteriskKeyword_0_or_CountKeyword_2.equals(syntax))
-				emit_expression_AsteriskKeyword_0_or_CountKeyword_2(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -68,23 +68,23 @@ public class SQLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
+	 *     '*' | 'count()'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_Expression_AsteriskKeyword_0_or_CountKeyword_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
 	 *     'TRUE' | 'FALSE'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
 	protected void emit_Factor_FALSEKeyword_3_or_TRUEKeyword_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     '*' | 'count()'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 */
-	protected void emit_expression_AsteriskKeyword_0_or_CountKeyword_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

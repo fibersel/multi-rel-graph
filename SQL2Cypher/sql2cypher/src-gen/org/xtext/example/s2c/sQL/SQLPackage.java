@@ -105,7 +105,7 @@ public interface SQLPackage extends EPackage
   int SELECT__EXPRESSIONS = 0;
 
   /**
-   * The feature id for the '<em><b>From section</b></em>' containment reference.
+   * The feature id for the '<em><b>From Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -114,31 +114,31 @@ public interface SQLPackage extends EPackage
   int SELECT__FROM_SECTION = 1;
 
   /**
-   * The feature id for the '<em><b>Where section</b></em>' containment reference.
+   * The feature id for the '<em><b>Where Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECT__WHERE_SECTION = 2;
+  int SELECT__WHERE_CLAUSE = 2;
 
   /**
-   * The feature id for the '<em><b>Group section</b></em>' containment reference.
+   * The feature id for the '<em><b>Group Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECT__GROUP_SECTION = 3;
+  int SELECT__GROUP_CLAUSE = 3;
 
   /**
-   * The feature id for the '<em><b>Having section</b></em>' containment reference.
+   * The feature id for the '<em><b>Having Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECT__HAVING_SECTION = 4;
+  int SELECT__HAVING_CLAUSE = 4;
 
   /**
    * The number of structural features of the '<em>select</em>' class.
@@ -160,7 +160,7 @@ public interface SQLPackage extends EPackage
   int FROM_SECTION = 2;
 
   /**
-   * The feature id for the '<em><b>From item</b></em>' containment reference.
+   * The feature id for the '<em><b>From Item</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -178,17 +178,17 @@ public interface SQLPackage extends EPackage
   int FROM_SECTION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.fromItemImpl <em>from Item</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.FromItemImpl <em>From Item</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.s2c.sQL.impl.fromItemImpl
-   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getfromItem()
+   * @see org.xtext.example.s2c.sQL.impl.FromItemImpl
+   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getFromItem()
    * @generated
    */
   int FROM_ITEM = 3;
 
   /**
-   * The feature id for the '<em><b>Table name</b></em>' attribute.
+   * The feature id for the '<em><b>Table Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -224,7 +224,7 @@ public interface SQLPackage extends EPackage
   int FROM_ITEM__BOOL_EXPR = 3;
 
   /**
-   * The number of structural features of the '<em>from Item</em>' class.
+   * The number of structural features of the '<em>From Item</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -233,26 +233,26 @@ public interface SQLPackage extends EPackage
   int FROM_ITEM_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.where_clauseImpl <em>where clause</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.WhereClauseImpl <em>Where Clause</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.s2c.sQL.impl.where_clauseImpl
-   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getwhere_clause()
+   * @see org.xtext.example.s2c.sQL.impl.WhereClauseImpl
+   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getWhereClause()
    * @generated
    */
   int WHERE_CLAUSE = 4;
 
   /**
-   * The feature id for the '<em><b>Bool expr</b></em>' containment reference.
+   * The feature id for the '<em><b>Bool Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WHERE_CLAUSE__BOOL_EXPR = 0;
+  int WHERE_CLAUSE__BOOL_EXPRESSION = 0;
 
   /**
-   * The number of structural features of the '<em>where clause</em>' class.
+   * The number of structural features of the '<em>Where Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -261,11 +261,11 @@ public interface SQLPackage extends EPackage
   int WHERE_CLAUSE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.boolExpressionImpl <em>bool Expression</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.BoolExpressionImpl <em>Bool Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.s2c.sQL.impl.boolExpressionImpl
-   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getboolExpression()
+   * @see org.xtext.example.s2c.sQL.impl.BoolExpressionImpl
+   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getBoolExpression()
    * @generated
    */
   int BOOL_EXPRESSION = 5;
@@ -289,7 +289,7 @@ public interface SQLPackage extends EPackage
   int BOOL_EXPRESSION__RHS = 1;
 
   /**
-   * The number of structural features of the '<em>bool Expression</em>' class.
+   * The number of structural features of the '<em>Bool Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -446,11 +446,11 @@ public interface SQLPackage extends EPackage
   int COLUMN_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.group_clauseImpl <em>group clause</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.GroupClauseImpl <em>Group Clause</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.s2c.sQL.impl.group_clauseImpl
-   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getgroup_clause()
+   * @see org.xtext.example.s2c.sQL.impl.GroupClauseImpl
+   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getGroupClause()
    * @generated
    */
   int GROUP_CLAUSE = 10;
@@ -465,7 +465,7 @@ public interface SQLPackage extends EPackage
   int GROUP_CLAUSE__EXPRESSIONS = 0;
 
   /**
-   * The number of structural features of the '<em>group clause</em>' class.
+   * The number of structural features of the '<em>Group Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -474,11 +474,11 @@ public interface SQLPackage extends EPackage
   int GROUP_CLAUSE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.having_clauseImpl <em>having clause</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.HavingClauseImpl <em>Having Clause</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.s2c.sQL.impl.having_clauseImpl
-   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#gethaving_clause()
+   * @see org.xtext.example.s2c.sQL.impl.HavingClauseImpl
+   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getHavingClause()
    * @generated
    */
   int HAVING_CLAUSE = 11;
@@ -493,7 +493,7 @@ public interface SQLPackage extends EPackage
   int HAVING_CLAUSE__EXPR = 0;
 
   /**
-   * The number of structural features of the '<em>having clause</em>' class.
+   * The number of structural features of the '<em>Having Clause</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -502,11 +502,11 @@ public interface SQLPackage extends EPackage
   int HAVING_CLAUSE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.expressionImpl <em>expression</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.s2c.sQL.impl.ExpressionImpl <em>Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.s2c.sQL.impl.expressionImpl
-   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getexpression()
+   * @see org.xtext.example.s2c.sQL.impl.ExpressionImpl
+   * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getExpression()
    * @generated
    */
   int EXPRESSION = 12;
@@ -521,7 +521,7 @@ public interface SQLPackage extends EPackage
   int EXPRESSION__COL = 0;
 
   /**
-   * The number of structural features of the '<em>expression</em>' class.
+   * The number of structural features of the '<em>Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -573,48 +573,48 @@ public interface SQLPackage extends EPackage
   EReference getselect_Expressions();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getFrom_section <em>From section</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getFromSection <em>From Section</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>From section</em>'.
-   * @see org.xtext.example.s2c.sQL.select#getFrom_section()
+   * @return the meta object for the containment reference '<em>From Section</em>'.
+   * @see org.xtext.example.s2c.sQL.select#getFromSection()
    * @see #getselect()
    * @generated
    */
-  EReference getselect_From_section();
+  EReference getselect_FromSection();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getWhere_section <em>Where section</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getWhereClause <em>Where Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Where section</em>'.
-   * @see org.xtext.example.s2c.sQL.select#getWhere_section()
+   * @return the meta object for the containment reference '<em>Where Clause</em>'.
+   * @see org.xtext.example.s2c.sQL.select#getWhereClause()
    * @see #getselect()
    * @generated
    */
-  EReference getselect_Where_section();
+  EReference getselect_WhereClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getGroup_section <em>Group section</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getGroupClause <em>Group Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Group section</em>'.
-   * @see org.xtext.example.s2c.sQL.select#getGroup_section()
+   * @return the meta object for the containment reference '<em>Group Clause</em>'.
+   * @see org.xtext.example.s2c.sQL.select#getGroupClause()
    * @see #getselect()
    * @generated
    */
-  EReference getselect_Group_section();
+  EReference getselect_GroupClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getHaving_section <em>Having section</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.select#getHavingClause <em>Having Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Having section</em>'.
-   * @see org.xtext.example.s2c.sQL.select#getHaving_section()
+   * @return the meta object for the containment reference '<em>Having Clause</em>'.
+   * @see org.xtext.example.s2c.sQL.select#getHavingClause()
    * @see #getselect()
    * @generated
    */
-  EReference getselect_Having_section();
+  EReference getselect_HavingClause();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.fromSection <em>from Section</em>}'.
@@ -627,122 +627,122 @@ public interface SQLPackage extends EPackage
   EClass getfromSection();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.fromSection#getFrom_item <em>From item</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.fromSection#getFromItem <em>From Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>From item</em>'.
-   * @see org.xtext.example.s2c.sQL.fromSection#getFrom_item()
+   * @return the meta object for the containment reference '<em>From Item</em>'.
+   * @see org.xtext.example.s2c.sQL.fromSection#getFromItem()
    * @see #getfromSection()
    * @generated
    */
-  EReference getfromSection_From_item();
+  EReference getfromSection_FromItem();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.fromItem <em>from Item</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.FromItem <em>From Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>from Item</em>'.
-   * @see org.xtext.example.s2c.sQL.fromItem
+   * @return the meta object for class '<em>From Item</em>'.
+   * @see org.xtext.example.s2c.sQL.FromItem
    * @generated
    */
-  EClass getfromItem();
+  EClass getFromItem();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.s2c.sQL.fromItem#getTable_name <em>Table name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.s2c.sQL.FromItem#getTableName <em>Table Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Table name</em>'.
-   * @see org.xtext.example.s2c.sQL.fromItem#getTable_name()
-   * @see #getfromItem()
+   * @return the meta object for the attribute '<em>Table Name</em>'.
+   * @see org.xtext.example.s2c.sQL.FromItem#getTableName()
+   * @see #getFromItem()
    * @generated
    */
-  EAttribute getfromItem_Table_name();
+  EAttribute getFromItem_TableName();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.fromItem#getSelect_expr <em>Select expr</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.FromItem#getSelect_expr <em>Select expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Select expr</em>'.
-   * @see org.xtext.example.s2c.sQL.fromItem#getSelect_expr()
-   * @see #getfromItem()
+   * @see org.xtext.example.s2c.sQL.FromItem#getSelect_expr()
+   * @see #getFromItem()
    * @generated
    */
-  EReference getfromItem_Select_expr();
+  EReference getFromItem_Select_expr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.fromItem#getRhs <em>Rhs</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.FromItem#getRhs <em>Rhs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Rhs</em>'.
-   * @see org.xtext.example.s2c.sQL.fromItem#getRhs()
-   * @see #getfromItem()
+   * @see org.xtext.example.s2c.sQL.FromItem#getRhs()
+   * @see #getFromItem()
    * @generated
    */
-  EReference getfromItem_Rhs();
+  EReference getFromItem_Rhs();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.fromItem#getBool_expr <em>Bool expr</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.FromItem#getBool_expr <em>Bool expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Bool expr</em>'.
-   * @see org.xtext.example.s2c.sQL.fromItem#getBool_expr()
-   * @see #getfromItem()
+   * @see org.xtext.example.s2c.sQL.FromItem#getBool_expr()
+   * @see #getFromItem()
    * @generated
    */
-  EReference getfromItem_Bool_expr();
+  EReference getFromItem_Bool_expr();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.where_clause <em>where clause</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.WhereClause <em>Where Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>where clause</em>'.
-   * @see org.xtext.example.s2c.sQL.where_clause
+   * @return the meta object for class '<em>Where Clause</em>'.
+   * @see org.xtext.example.s2c.sQL.WhereClause
    * @generated
    */
-  EClass getwhere_clause();
+  EClass getWhereClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.where_clause#getBool_expr <em>Bool expr</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.WhereClause#getBoolExpression <em>Bool Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bool expr</em>'.
-   * @see org.xtext.example.s2c.sQL.where_clause#getBool_expr()
-   * @see #getwhere_clause()
+   * @return the meta object for the containment reference '<em>Bool Expression</em>'.
+   * @see org.xtext.example.s2c.sQL.WhereClause#getBoolExpression()
+   * @see #getWhereClause()
    * @generated
    */
-  EReference getwhere_clause_Bool_expr();
+  EReference getWhereClause_BoolExpression();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.boolExpression <em>bool Expression</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.BoolExpression <em>Bool Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>bool Expression</em>'.
-   * @see org.xtext.example.s2c.sQL.boolExpression
+   * @return the meta object for class '<em>Bool Expression</em>'.
+   * @see org.xtext.example.s2c.sQL.BoolExpression
    * @generated
    */
-  EClass getboolExpression();
+  EClass getBoolExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.boolExpression#getLhs <em>Lhs</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.BoolExpression#getLhs <em>Lhs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Lhs</em>'.
-   * @see org.xtext.example.s2c.sQL.boolExpression#getLhs()
-   * @see #getboolExpression()
+   * @see org.xtext.example.s2c.sQL.BoolExpression#getLhs()
+   * @see #getBoolExpression()
    * @generated
    */
-  EReference getboolExpression_Lhs();
+  EReference getBoolExpression_Lhs();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.boolExpression#getRhs <em>Rhs</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.BoolExpression#getRhs <em>Rhs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Rhs</em>'.
-   * @see org.xtext.example.s2c.sQL.boolExpression#getRhs()
-   * @see #getboolExpression()
+   * @see org.xtext.example.s2c.sQL.BoolExpression#getRhs()
+   * @see #getBoolExpression()
    * @generated
    */
-  EReference getboolExpression_Rhs();
+  EReference getBoolExpression_Rhs();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.Term <em>Term</em>}'.
@@ -873,67 +873,67 @@ public interface SQLPackage extends EPackage
   EAttribute getColumn_Name();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.group_clause <em>group clause</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.GroupClause <em>Group Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>group clause</em>'.
-   * @see org.xtext.example.s2c.sQL.group_clause
+   * @return the meta object for class '<em>Group Clause</em>'.
+   * @see org.xtext.example.s2c.sQL.GroupClause
    * @generated
    */
-  EClass getgroup_clause();
+  EClass getGroupClause();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.s2c.sQL.group_clause#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.s2c.sQL.GroupClause#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see org.xtext.example.s2c.sQL.group_clause#getExpressions()
-   * @see #getgroup_clause()
+   * @see org.xtext.example.s2c.sQL.GroupClause#getExpressions()
+   * @see #getGroupClause()
    * @generated
    */
-  EReference getgroup_clause_Expressions();
+  EReference getGroupClause_Expressions();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.having_clause <em>having clause</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.HavingClause <em>Having Clause</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>having clause</em>'.
-   * @see org.xtext.example.s2c.sQL.having_clause
+   * @return the meta object for class '<em>Having Clause</em>'.
+   * @see org.xtext.example.s2c.sQL.HavingClause
    * @generated
    */
-  EClass gethaving_clause();
+  EClass getHavingClause();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.having_clause#getExpr <em>Expr</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.HavingClause#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see org.xtext.example.s2c.sQL.having_clause#getExpr()
-   * @see #gethaving_clause()
+   * @see org.xtext.example.s2c.sQL.HavingClause#getExpr()
+   * @see #getHavingClause()
    * @generated
    */
-  EReference gethaving_clause_Expr();
+  EReference getHavingClause_Expr();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.expression <em>expression</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.s2c.sQL.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>expression</em>'.
-   * @see org.xtext.example.s2c.sQL.expression
+   * @return the meta object for class '<em>Expression</em>'.
+   * @see org.xtext.example.s2c.sQL.Expression
    * @generated
    */
-  EClass getexpression();
+  EClass getExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.expression#getCol <em>Col</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.s2c.sQL.Expression#getCol <em>Col</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Col</em>'.
-   * @see org.xtext.example.s2c.sQL.expression#getCol()
-   * @see #getexpression()
+   * @see org.xtext.example.s2c.sQL.Expression#getCol()
+   * @see #getExpression()
    * @generated
    */
-  EReference getexpression_Col();
+  EReference getExpression_Col();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -995,36 +995,36 @@ public interface SQLPackage extends EPackage
     EReference SELECT__EXPRESSIONS = eINSTANCE.getselect_Expressions();
 
     /**
-     * The meta object literal for the '<em><b>From section</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>From Section</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECT__FROM_SECTION = eINSTANCE.getselect_From_section();
+    EReference SELECT__FROM_SECTION = eINSTANCE.getselect_FromSection();
 
     /**
-     * The meta object literal for the '<em><b>Where section</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Where Clause</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECT__WHERE_SECTION = eINSTANCE.getselect_Where_section();
+    EReference SELECT__WHERE_CLAUSE = eINSTANCE.getselect_WhereClause();
 
     /**
-     * The meta object literal for the '<em><b>Group section</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Group Clause</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECT__GROUP_SECTION = eINSTANCE.getselect_Group_section();
+    EReference SELECT__GROUP_CLAUSE = eINSTANCE.getselect_GroupClause();
 
     /**
-     * The meta object literal for the '<em><b>Having section</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Having Clause</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELECT__HAVING_SECTION = eINSTANCE.getselect_Having_section();
+    EReference SELECT__HAVING_CLAUSE = eINSTANCE.getselect_HavingClause();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.fromSectionImpl <em>from Section</em>}' class.
@@ -1037,30 +1037,30 @@ public interface SQLPackage extends EPackage
     EClass FROM_SECTION = eINSTANCE.getfromSection();
 
     /**
-     * The meta object literal for the '<em><b>From item</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>From Item</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FROM_SECTION__FROM_ITEM = eINSTANCE.getfromSection_From_item();
+    EReference FROM_SECTION__FROM_ITEM = eINSTANCE.getfromSection_FromItem();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.fromItemImpl <em>from Item</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.FromItemImpl <em>From Item</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.s2c.sQL.impl.fromItemImpl
-     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getfromItem()
+     * @see org.xtext.example.s2c.sQL.impl.FromItemImpl
+     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getFromItem()
      * @generated
      */
-    EClass FROM_ITEM = eINSTANCE.getfromItem();
+    EClass FROM_ITEM = eINSTANCE.getFromItem();
 
     /**
-     * The meta object literal for the '<em><b>Table name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Table Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FROM_ITEM__TABLE_NAME = eINSTANCE.getfromItem_Table_name();
+    EAttribute FROM_ITEM__TABLE_NAME = eINSTANCE.getFromItem_TableName();
 
     /**
      * The meta object literal for the '<em><b>Select expr</b></em>' containment reference feature.
@@ -1068,7 +1068,7 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FROM_ITEM__SELECT_EXPR = eINSTANCE.getfromItem_Select_expr();
+    EReference FROM_ITEM__SELECT_EXPR = eINSTANCE.getFromItem_Select_expr();
 
     /**
      * The meta object literal for the '<em><b>Rhs</b></em>' containment reference feature.
@@ -1076,7 +1076,7 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FROM_ITEM__RHS = eINSTANCE.getfromItem_Rhs();
+    EReference FROM_ITEM__RHS = eINSTANCE.getFromItem_Rhs();
 
     /**
      * The meta object literal for the '<em><b>Bool expr</b></em>' containment reference feature.
@@ -1084,35 +1084,35 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FROM_ITEM__BOOL_EXPR = eINSTANCE.getfromItem_Bool_expr();
+    EReference FROM_ITEM__BOOL_EXPR = eINSTANCE.getFromItem_Bool_expr();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.where_clauseImpl <em>where clause</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.WhereClauseImpl <em>Where Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.s2c.sQL.impl.where_clauseImpl
-     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getwhere_clause()
+     * @see org.xtext.example.s2c.sQL.impl.WhereClauseImpl
+     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getWhereClause()
      * @generated
      */
-    EClass WHERE_CLAUSE = eINSTANCE.getwhere_clause();
+    EClass WHERE_CLAUSE = eINSTANCE.getWhereClause();
 
     /**
-     * The meta object literal for the '<em><b>Bool expr</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Bool Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference WHERE_CLAUSE__BOOL_EXPR = eINSTANCE.getwhere_clause_Bool_expr();
+    EReference WHERE_CLAUSE__BOOL_EXPRESSION = eINSTANCE.getWhereClause_BoolExpression();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.boolExpressionImpl <em>bool Expression</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.BoolExpressionImpl <em>Bool Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.s2c.sQL.impl.boolExpressionImpl
-     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getboolExpression()
+     * @see org.xtext.example.s2c.sQL.impl.BoolExpressionImpl
+     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getBoolExpression()
      * @generated
      */
-    EClass BOOL_EXPRESSION = eINSTANCE.getboolExpression();
+    EClass BOOL_EXPRESSION = eINSTANCE.getBoolExpression();
 
     /**
      * The meta object literal for the '<em><b>Lhs</b></em>' containment reference feature.
@@ -1120,7 +1120,7 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOL_EXPRESSION__LHS = eINSTANCE.getboolExpression_Lhs();
+    EReference BOOL_EXPRESSION__LHS = eINSTANCE.getBoolExpression_Lhs();
 
     /**
      * The meta object literal for the '<em><b>Rhs</b></em>' containment reference feature.
@@ -1128,7 +1128,7 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOOL_EXPRESSION__RHS = eINSTANCE.getboolExpression_Rhs();
+    EReference BOOL_EXPRESSION__RHS = eINSTANCE.getBoolExpression_Rhs();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.TermImpl <em>Term</em>}' class.
@@ -1235,14 +1235,14 @@ public interface SQLPackage extends EPackage
     EAttribute COLUMN__NAME = eINSTANCE.getColumn_Name();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.group_clauseImpl <em>group clause</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.GroupClauseImpl <em>Group Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.s2c.sQL.impl.group_clauseImpl
-     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getgroup_clause()
+     * @see org.xtext.example.s2c.sQL.impl.GroupClauseImpl
+     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getGroupClause()
      * @generated
      */
-    EClass GROUP_CLAUSE = eINSTANCE.getgroup_clause();
+    EClass GROUP_CLAUSE = eINSTANCE.getGroupClause();
 
     /**
      * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
@@ -1250,17 +1250,17 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GROUP_CLAUSE__EXPRESSIONS = eINSTANCE.getgroup_clause_Expressions();
+    EReference GROUP_CLAUSE__EXPRESSIONS = eINSTANCE.getGroupClause_Expressions();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.having_clauseImpl <em>having clause</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.HavingClauseImpl <em>Having Clause</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.s2c.sQL.impl.having_clauseImpl
-     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#gethaving_clause()
+     * @see org.xtext.example.s2c.sQL.impl.HavingClauseImpl
+     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getHavingClause()
      * @generated
      */
-    EClass HAVING_CLAUSE = eINSTANCE.gethaving_clause();
+    EClass HAVING_CLAUSE = eINSTANCE.getHavingClause();
 
     /**
      * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
@@ -1268,17 +1268,17 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HAVING_CLAUSE__EXPR = eINSTANCE.gethaving_clause_Expr();
+    EReference HAVING_CLAUSE__EXPR = eINSTANCE.getHavingClause_Expr();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.expressionImpl <em>expression</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.s2c.sQL.impl.ExpressionImpl <em>Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.s2c.sQL.impl.expressionImpl
-     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getexpression()
+     * @see org.xtext.example.s2c.sQL.impl.ExpressionImpl
+     * @see org.xtext.example.s2c.sQL.impl.SQLPackageImpl#getExpression()
      * @generated
      */
-    EClass EXPRESSION = eINSTANCE.getexpression();
+    EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
      * The meta object literal for the '<em><b>Col</b></em>' containment reference feature.
@@ -1286,7 +1286,7 @@ public interface SQLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__COL = eINSTANCE.getexpression_Col();
+    EReference EXPRESSION__COL = eINSTANCE.getExpression_Col();
 
   }
 

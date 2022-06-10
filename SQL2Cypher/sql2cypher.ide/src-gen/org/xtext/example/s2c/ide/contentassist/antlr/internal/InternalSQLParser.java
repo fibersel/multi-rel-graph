@@ -323,16 +323,16 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rulefromSection"
 
 
-    // $ANTLR start "entryRulefromItem"
-    // InternalSQL.g:128:1: entryRulefromItem : rulefromItem EOF ;
-    public final void entryRulefromItem() throws RecognitionException {
+    // $ANTLR start "entryRuleFromItem"
+    // InternalSQL.g:128:1: entryRuleFromItem : ruleFromItem EOF ;
+    public final void entryRuleFromItem() throws RecognitionException {
         try {
-            // InternalSQL.g:129:1: ( rulefromItem EOF )
-            // InternalSQL.g:130:1: rulefromItem EOF
+            // InternalSQL.g:129:1: ( ruleFromItem EOF )
+            // InternalSQL.g:130:1: ruleFromItem EOF
             {
              before(grammarAccess.getFromItemRule()); 
             pushFollow(FOLLOW_1);
-            rulefromItem();
+            ruleFromItem();
 
             state._fsp--;
 
@@ -350,12 +350,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulefromItem"
+    // $ANTLR end "entryRuleFromItem"
 
 
-    // $ANTLR start "rulefromItem"
-    // InternalSQL.g:137:1: rulefromItem : ( ( rule__FromItem__Group__0 ) ) ;
-    public final void rulefromItem() throws RecognitionException {
+    // $ANTLR start "ruleFromItem"
+    // InternalSQL.g:137:1: ruleFromItem : ( ( rule__FromItem__Group__0 ) ) ;
+    public final void ruleFromItem() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -397,23 +397,23 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulefromItem"
+    // $ANTLR end "ruleFromItem"
 
 
-    // $ANTLR start "entryRulewhere_clause"
-    // InternalSQL.g:153:1: entryRulewhere_clause : rulewhere_clause EOF ;
-    public final void entryRulewhere_clause() throws RecognitionException {
+    // $ANTLR start "entryRuleWhereClause"
+    // InternalSQL.g:153:1: entryRuleWhereClause : ruleWhereClause EOF ;
+    public final void entryRuleWhereClause() throws RecognitionException {
         try {
-            // InternalSQL.g:154:1: ( rulewhere_clause EOF )
-            // InternalSQL.g:155:1: rulewhere_clause EOF
+            // InternalSQL.g:154:1: ( ruleWhereClause EOF )
+            // InternalSQL.g:155:1: ruleWhereClause EOF
             {
-             before(grammarAccess.getWhere_clauseRule()); 
+             before(grammarAccess.getWhereClauseRule()); 
             pushFollow(FOLLOW_1);
-            rulewhere_clause();
+            ruleWhereClause();
 
             state._fsp--;
 
-             after(grammarAccess.getWhere_clauseRule()); 
+             after(grammarAccess.getWhereClauseRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -427,35 +427,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulewhere_clause"
+    // $ANTLR end "entryRuleWhereClause"
 
 
-    // $ANTLR start "rulewhere_clause"
-    // InternalSQL.g:162:1: rulewhere_clause : ( ( rule__Where_clause__Group__0 ) ) ;
-    public final void rulewhere_clause() throws RecognitionException {
+    // $ANTLR start "ruleWhereClause"
+    // InternalSQL.g:162:1: ruleWhereClause : ( ( rule__WhereClause__Group__0 ) ) ;
+    public final void ruleWhereClause() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:166:2: ( ( ( rule__Where_clause__Group__0 ) ) )
-            // InternalSQL.g:167:2: ( ( rule__Where_clause__Group__0 ) )
+            // InternalSQL.g:166:2: ( ( ( rule__WhereClause__Group__0 ) ) )
+            // InternalSQL.g:167:2: ( ( rule__WhereClause__Group__0 ) )
             {
-            // InternalSQL.g:167:2: ( ( rule__Where_clause__Group__0 ) )
-            // InternalSQL.g:168:3: ( rule__Where_clause__Group__0 )
+            // InternalSQL.g:167:2: ( ( rule__WhereClause__Group__0 ) )
+            // InternalSQL.g:168:3: ( rule__WhereClause__Group__0 )
             {
-             before(grammarAccess.getWhere_clauseAccess().getGroup()); 
-            // InternalSQL.g:169:3: ( rule__Where_clause__Group__0 )
-            // InternalSQL.g:169:4: rule__Where_clause__Group__0
+             before(grammarAccess.getWhereClauseAccess().getGroup()); 
+            // InternalSQL.g:169:3: ( rule__WhereClause__Group__0 )
+            // InternalSQL.g:169:4: rule__WhereClause__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Where_clause__Group__0();
+            rule__WhereClause__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getWhere_clauseAccess().getGroup()); 
+             after(grammarAccess.getWhereClauseAccess().getGroup()); 
 
             }
 
@@ -474,19 +474,19 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulewhere_clause"
+    // $ANTLR end "ruleWhereClause"
 
 
-    // $ANTLR start "entryRuleboolExpression"
-    // InternalSQL.g:178:1: entryRuleboolExpression : ruleboolExpression EOF ;
-    public final void entryRuleboolExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleBoolExpression"
+    // InternalSQL.g:178:1: entryRuleBoolExpression : ruleBoolExpression EOF ;
+    public final void entryRuleBoolExpression() throws RecognitionException {
         try {
-            // InternalSQL.g:179:1: ( ruleboolExpression EOF )
-            // InternalSQL.g:180:1: ruleboolExpression EOF
+            // InternalSQL.g:179:1: ( ruleBoolExpression EOF )
+            // InternalSQL.g:180:1: ruleBoolExpression EOF
             {
              before(grammarAccess.getBoolExpressionRule()); 
             pushFollow(FOLLOW_1);
-            ruleboolExpression();
+            ruleBoolExpression();
 
             state._fsp--;
 
@@ -504,12 +504,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleboolExpression"
+    // $ANTLR end "entryRuleBoolExpression"
 
 
-    // $ANTLR start "ruleboolExpression"
-    // InternalSQL.g:187:1: ruleboolExpression : ( ( rule__BoolExpression__Group__0 ) ) ;
-    public final void ruleboolExpression() throws RecognitionException {
+    // $ANTLR start "ruleBoolExpression"
+    // InternalSQL.g:187:1: ruleBoolExpression : ( ( rule__BoolExpression__Group__0 ) ) ;
+    public final void ruleBoolExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -551,7 +551,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleboolExpression"
+    // $ANTLR end "ruleBoolExpression"
 
 
     // $ANTLR start "entryRuleTerm"
@@ -862,20 +862,20 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleColumn"
 
 
-    // $ANTLR start "entryRulegroup_clause"
-    // InternalSQL.g:303:1: entryRulegroup_clause : rulegroup_clause EOF ;
-    public final void entryRulegroup_clause() throws RecognitionException {
+    // $ANTLR start "entryRuleGroupClause"
+    // InternalSQL.g:303:1: entryRuleGroupClause : ruleGroupClause EOF ;
+    public final void entryRuleGroupClause() throws RecognitionException {
         try {
-            // InternalSQL.g:304:1: ( rulegroup_clause EOF )
-            // InternalSQL.g:305:1: rulegroup_clause EOF
+            // InternalSQL.g:304:1: ( ruleGroupClause EOF )
+            // InternalSQL.g:305:1: ruleGroupClause EOF
             {
-             before(grammarAccess.getGroup_clauseRule()); 
+             before(grammarAccess.getGroupClauseRule()); 
             pushFollow(FOLLOW_1);
-            rulegroup_clause();
+            ruleGroupClause();
 
             state._fsp--;
 
-             after(grammarAccess.getGroup_clauseRule()); 
+             after(grammarAccess.getGroupClauseRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -889,35 +889,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulegroup_clause"
+    // $ANTLR end "entryRuleGroupClause"
 
 
-    // $ANTLR start "rulegroup_clause"
-    // InternalSQL.g:312:1: rulegroup_clause : ( ( rule__Group_clause__Group__0 ) ) ;
-    public final void rulegroup_clause() throws RecognitionException {
+    // $ANTLR start "ruleGroupClause"
+    // InternalSQL.g:312:1: ruleGroupClause : ( ( rule__GroupClause__Group__0 ) ) ;
+    public final void ruleGroupClause() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:316:2: ( ( ( rule__Group_clause__Group__0 ) ) )
-            // InternalSQL.g:317:2: ( ( rule__Group_clause__Group__0 ) )
+            // InternalSQL.g:316:2: ( ( ( rule__GroupClause__Group__0 ) ) )
+            // InternalSQL.g:317:2: ( ( rule__GroupClause__Group__0 ) )
             {
-            // InternalSQL.g:317:2: ( ( rule__Group_clause__Group__0 ) )
-            // InternalSQL.g:318:3: ( rule__Group_clause__Group__0 )
+            // InternalSQL.g:317:2: ( ( rule__GroupClause__Group__0 ) )
+            // InternalSQL.g:318:3: ( rule__GroupClause__Group__0 )
             {
-             before(grammarAccess.getGroup_clauseAccess().getGroup()); 
-            // InternalSQL.g:319:3: ( rule__Group_clause__Group__0 )
-            // InternalSQL.g:319:4: rule__Group_clause__Group__0
+             before(grammarAccess.getGroupClauseAccess().getGroup()); 
+            // InternalSQL.g:319:3: ( rule__GroupClause__Group__0 )
+            // InternalSQL.g:319:4: rule__GroupClause__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group__0();
+            rule__GroupClause__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGroup_clauseAccess().getGroup()); 
+             after(grammarAccess.getGroupClauseAccess().getGroup()); 
 
             }
 
@@ -936,23 +936,23 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulegroup_clause"
+    // $ANTLR end "ruleGroupClause"
 
 
-    // $ANTLR start "entryRulehaving_clause"
-    // InternalSQL.g:328:1: entryRulehaving_clause : rulehaving_clause EOF ;
-    public final void entryRulehaving_clause() throws RecognitionException {
+    // $ANTLR start "entryRuleHavingClause"
+    // InternalSQL.g:328:1: entryRuleHavingClause : ruleHavingClause EOF ;
+    public final void entryRuleHavingClause() throws RecognitionException {
         try {
-            // InternalSQL.g:329:1: ( rulehaving_clause EOF )
-            // InternalSQL.g:330:1: rulehaving_clause EOF
+            // InternalSQL.g:329:1: ( ruleHavingClause EOF )
+            // InternalSQL.g:330:1: ruleHavingClause EOF
             {
-             before(grammarAccess.getHaving_clauseRule()); 
+             before(grammarAccess.getHavingClauseRule()); 
             pushFollow(FOLLOW_1);
-            rulehaving_clause();
+            ruleHavingClause();
 
             state._fsp--;
 
-             after(grammarAccess.getHaving_clauseRule()); 
+             after(grammarAccess.getHavingClauseRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -966,35 +966,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRulehaving_clause"
+    // $ANTLR end "entryRuleHavingClause"
 
 
-    // $ANTLR start "rulehaving_clause"
-    // InternalSQL.g:337:1: rulehaving_clause : ( ( rule__Having_clause__Group__0 ) ) ;
-    public final void rulehaving_clause() throws RecognitionException {
+    // $ANTLR start "ruleHavingClause"
+    // InternalSQL.g:337:1: ruleHavingClause : ( ( rule__HavingClause__Group__0 ) ) ;
+    public final void ruleHavingClause() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:341:2: ( ( ( rule__Having_clause__Group__0 ) ) )
-            // InternalSQL.g:342:2: ( ( rule__Having_clause__Group__0 ) )
+            // InternalSQL.g:341:2: ( ( ( rule__HavingClause__Group__0 ) ) )
+            // InternalSQL.g:342:2: ( ( rule__HavingClause__Group__0 ) )
             {
-            // InternalSQL.g:342:2: ( ( rule__Having_clause__Group__0 ) )
-            // InternalSQL.g:343:3: ( rule__Having_clause__Group__0 )
+            // InternalSQL.g:342:2: ( ( rule__HavingClause__Group__0 ) )
+            // InternalSQL.g:343:3: ( rule__HavingClause__Group__0 )
             {
-             before(grammarAccess.getHaving_clauseAccess().getGroup()); 
-            // InternalSQL.g:344:3: ( rule__Having_clause__Group__0 )
-            // InternalSQL.g:344:4: rule__Having_clause__Group__0
+             before(grammarAccess.getHavingClauseAccess().getGroup()); 
+            // InternalSQL.g:344:3: ( rule__HavingClause__Group__0 )
+            // InternalSQL.g:344:4: rule__HavingClause__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Having_clause__Group__0();
+            rule__HavingClause__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getHaving_clauseAccess().getGroup()); 
+             after(grammarAccess.getHavingClauseAccess().getGroup()); 
 
             }
 
@@ -1013,19 +1013,19 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rulehaving_clause"
+    // $ANTLR end "ruleHavingClause"
 
 
-    // $ANTLR start "entryRuleexpression"
-    // InternalSQL.g:353:1: entryRuleexpression : ruleexpression EOF ;
-    public final void entryRuleexpression() throws RecognitionException {
+    // $ANTLR start "entryRuleExpression"
+    // InternalSQL.g:353:1: entryRuleExpression : ruleExpression EOF ;
+    public final void entryRuleExpression() throws RecognitionException {
         try {
-            // InternalSQL.g:354:1: ( ruleexpression EOF )
-            // InternalSQL.g:355:1: ruleexpression EOF
+            // InternalSQL.g:354:1: ( ruleExpression EOF )
+            // InternalSQL.g:355:1: ruleExpression EOF
             {
              before(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
-            ruleexpression();
+            ruleExpression();
 
             state._fsp--;
 
@@ -1043,12 +1043,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleexpression"
+    // $ANTLR end "entryRuleExpression"
 
 
-    // $ANTLR start "ruleexpression"
-    // InternalSQL.g:362:1: ruleexpression : ( ( rule__Expression__Alternatives ) ) ;
-    public final void ruleexpression() throws RecognitionException {
+    // $ANTLR start "ruleExpression"
+    // InternalSQL.g:362:1: ruleExpression : ( ( rule__Expression__Alternatives ) ) ;
+    public final void ruleExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -1090,17 +1090,17 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleexpression"
+    // $ANTLR end "ruleExpression"
 
 
     // $ANTLR start "rule__FromItem__Alternatives_0"
-    // InternalSQL.g:377:1: rule__FromItem__Alternatives_0 : ( ( ( rule__FromItem__Table_nameAssignment_0_0 ) ) | ( ( rule__FromItem__Group_0_1__0 ) ) );
+    // InternalSQL.g:377:1: rule__FromItem__Alternatives_0 : ( ( ( rule__FromItem__TableNameAssignment_0_0 ) ) | ( ( rule__FromItem__Group_0_1__0 ) ) );
     public final void rule__FromItem__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:381:1: ( ( ( rule__FromItem__Table_nameAssignment_0_0 ) ) | ( ( rule__FromItem__Group_0_1__0 ) ) )
+            // InternalSQL.g:381:1: ( ( ( rule__FromItem__TableNameAssignment_0_0 ) ) | ( ( rule__FromItem__Group_0_1__0 ) ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1118,24 +1118,24 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSQL.g:382:2: ( ( rule__FromItem__Table_nameAssignment_0_0 ) )
+                    // InternalSQL.g:382:2: ( ( rule__FromItem__TableNameAssignment_0_0 ) )
                     {
-                    // InternalSQL.g:382:2: ( ( rule__FromItem__Table_nameAssignment_0_0 ) )
-                    // InternalSQL.g:383:3: ( rule__FromItem__Table_nameAssignment_0_0 )
+                    // InternalSQL.g:382:2: ( ( rule__FromItem__TableNameAssignment_0_0 ) )
+                    // InternalSQL.g:383:3: ( rule__FromItem__TableNameAssignment_0_0 )
                     {
-                     before(grammarAccess.getFromItemAccess().getTable_nameAssignment_0_0()); 
-                    // InternalSQL.g:384:3: ( rule__FromItem__Table_nameAssignment_0_0 )
-                    // InternalSQL.g:384:4: rule__FromItem__Table_nameAssignment_0_0
+                     before(grammarAccess.getFromItemAccess().getTableNameAssignment_0_0()); 
+                    // InternalSQL.g:384:3: ( rule__FromItem__TableNameAssignment_0_0 )
+                    // InternalSQL.g:384:4: rule__FromItem__TableNameAssignment_0_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__FromItem__Table_nameAssignment_0_0();
+                    rule__FromItem__TableNameAssignment_0_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getFromItemAccess().getTable_nameAssignment_0_0()); 
+                     after(grammarAccess.getFromItemAccess().getTableNameAssignment_0_0()); 
 
                     }
 
@@ -1921,20 +1921,20 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Select__Group__3__Impl"
-    // InternalSQL.g:602:1: rule__Select__Group__3__Impl : ( ( rule__Select__From_sectionAssignment_3 )? ) ;
+    // InternalSQL.g:602:1: rule__Select__Group__3__Impl : ( ( rule__Select__FromSectionAssignment_3 )? ) ;
     public final void rule__Select__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:606:1: ( ( ( rule__Select__From_sectionAssignment_3 )? ) )
-            // InternalSQL.g:607:1: ( ( rule__Select__From_sectionAssignment_3 )? )
+            // InternalSQL.g:606:1: ( ( ( rule__Select__FromSectionAssignment_3 )? ) )
+            // InternalSQL.g:607:1: ( ( rule__Select__FromSectionAssignment_3 )? )
             {
-            // InternalSQL.g:607:1: ( ( rule__Select__From_sectionAssignment_3 )? )
-            // InternalSQL.g:608:2: ( rule__Select__From_sectionAssignment_3 )?
+            // InternalSQL.g:607:1: ( ( rule__Select__FromSectionAssignment_3 )? )
+            // InternalSQL.g:608:2: ( rule__Select__FromSectionAssignment_3 )?
             {
-             before(grammarAccess.getSelectAccess().getFrom_sectionAssignment_3()); 
-            // InternalSQL.g:609:2: ( rule__Select__From_sectionAssignment_3 )?
+             before(grammarAccess.getSelectAccess().getFromSectionAssignment_3()); 
+            // InternalSQL.g:609:2: ( rule__Select__FromSectionAssignment_3 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1943,10 +1943,10 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSQL.g:609:3: rule__Select__From_sectionAssignment_3
+                    // InternalSQL.g:609:3: rule__Select__FromSectionAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Select__From_sectionAssignment_3();
+                    rule__Select__FromSectionAssignment_3();
 
                     state._fsp--;
 
@@ -1956,7 +1956,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getSelectAccess().getFrom_sectionAssignment_3()); 
+             after(grammarAccess.getSelectAccess().getFromSectionAssignment_3()); 
 
             }
 
@@ -2017,20 +2017,20 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Select__Group__4__Impl"
-    // InternalSQL.g:629:1: rule__Select__Group__4__Impl : ( ( rule__Select__Where_sectionAssignment_4 )? ) ;
+    // InternalSQL.g:629:1: rule__Select__Group__4__Impl : ( ( rule__Select__WhereClauseAssignment_4 )? ) ;
     public final void rule__Select__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:633:1: ( ( ( rule__Select__Where_sectionAssignment_4 )? ) )
-            // InternalSQL.g:634:1: ( ( rule__Select__Where_sectionAssignment_4 )? )
+            // InternalSQL.g:633:1: ( ( ( rule__Select__WhereClauseAssignment_4 )? ) )
+            // InternalSQL.g:634:1: ( ( rule__Select__WhereClauseAssignment_4 )? )
             {
-            // InternalSQL.g:634:1: ( ( rule__Select__Where_sectionAssignment_4 )? )
-            // InternalSQL.g:635:2: ( rule__Select__Where_sectionAssignment_4 )?
+            // InternalSQL.g:634:1: ( ( rule__Select__WhereClauseAssignment_4 )? )
+            // InternalSQL.g:635:2: ( rule__Select__WhereClauseAssignment_4 )?
             {
-             before(grammarAccess.getSelectAccess().getWhere_sectionAssignment_4()); 
-            // InternalSQL.g:636:2: ( rule__Select__Where_sectionAssignment_4 )?
+             before(grammarAccess.getSelectAccess().getWhereClauseAssignment_4()); 
+            // InternalSQL.g:636:2: ( rule__Select__WhereClauseAssignment_4 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2039,10 +2039,10 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalSQL.g:636:3: rule__Select__Where_sectionAssignment_4
+                    // InternalSQL.g:636:3: rule__Select__WhereClauseAssignment_4
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Select__Where_sectionAssignment_4();
+                    rule__Select__WhereClauseAssignment_4();
 
                     state._fsp--;
 
@@ -2052,7 +2052,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getSelectAccess().getWhere_sectionAssignment_4()); 
+             after(grammarAccess.getSelectAccess().getWhereClauseAssignment_4()); 
 
             }
 
@@ -2113,20 +2113,20 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Select__Group__5__Impl"
-    // InternalSQL.g:656:1: rule__Select__Group__5__Impl : ( ( rule__Select__Group_sectionAssignment_5 )? ) ;
+    // InternalSQL.g:656:1: rule__Select__Group__5__Impl : ( ( rule__Select__GroupClauseAssignment_5 )? ) ;
     public final void rule__Select__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:660:1: ( ( ( rule__Select__Group_sectionAssignment_5 )? ) )
-            // InternalSQL.g:661:1: ( ( rule__Select__Group_sectionAssignment_5 )? )
+            // InternalSQL.g:660:1: ( ( ( rule__Select__GroupClauseAssignment_5 )? ) )
+            // InternalSQL.g:661:1: ( ( rule__Select__GroupClauseAssignment_5 )? )
             {
-            // InternalSQL.g:661:1: ( ( rule__Select__Group_sectionAssignment_5 )? )
-            // InternalSQL.g:662:2: ( rule__Select__Group_sectionAssignment_5 )?
+            // InternalSQL.g:661:1: ( ( rule__Select__GroupClauseAssignment_5 )? )
+            // InternalSQL.g:662:2: ( rule__Select__GroupClauseAssignment_5 )?
             {
-             before(grammarAccess.getSelectAccess().getGroup_sectionAssignment_5()); 
-            // InternalSQL.g:663:2: ( rule__Select__Group_sectionAssignment_5 )?
+             before(grammarAccess.getSelectAccess().getGroupClauseAssignment_5()); 
+            // InternalSQL.g:663:2: ( rule__Select__GroupClauseAssignment_5 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2135,10 +2135,10 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalSQL.g:663:3: rule__Select__Group_sectionAssignment_5
+                    // InternalSQL.g:663:3: rule__Select__GroupClauseAssignment_5
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Select__Group_sectionAssignment_5();
+                    rule__Select__GroupClauseAssignment_5();
 
                     state._fsp--;
 
@@ -2148,7 +2148,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getSelectAccess().getGroup_sectionAssignment_5()); 
+             after(grammarAccess.getSelectAccess().getGroupClauseAssignment_5()); 
 
             }
 
@@ -2204,20 +2204,20 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Select__Group__6__Impl"
-    // InternalSQL.g:682:1: rule__Select__Group__6__Impl : ( ( rule__Select__Having_sectionAssignment_6 )? ) ;
+    // InternalSQL.g:682:1: rule__Select__Group__6__Impl : ( ( rule__Select__HavingClauseAssignment_6 )? ) ;
     public final void rule__Select__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:686:1: ( ( ( rule__Select__Having_sectionAssignment_6 )? ) )
-            // InternalSQL.g:687:1: ( ( rule__Select__Having_sectionAssignment_6 )? )
+            // InternalSQL.g:686:1: ( ( ( rule__Select__HavingClauseAssignment_6 )? ) )
+            // InternalSQL.g:687:1: ( ( rule__Select__HavingClauseAssignment_6 )? )
             {
-            // InternalSQL.g:687:1: ( ( rule__Select__Having_sectionAssignment_6 )? )
-            // InternalSQL.g:688:2: ( rule__Select__Having_sectionAssignment_6 )?
+            // InternalSQL.g:687:1: ( ( rule__Select__HavingClauseAssignment_6 )? )
+            // InternalSQL.g:688:2: ( rule__Select__HavingClauseAssignment_6 )?
             {
-             before(grammarAccess.getSelectAccess().getHaving_sectionAssignment_6()); 
-            // InternalSQL.g:689:2: ( rule__Select__Having_sectionAssignment_6 )?
+             before(grammarAccess.getSelectAccess().getHavingClauseAssignment_6()); 
+            // InternalSQL.g:689:2: ( rule__Select__HavingClauseAssignment_6 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2226,10 +2226,10 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalSQL.g:689:3: rule__Select__Having_sectionAssignment_6
+                    // InternalSQL.g:689:3: rule__Select__HavingClauseAssignment_6
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Select__Having_sectionAssignment_6();
+                    rule__Select__HavingClauseAssignment_6();
 
                     state._fsp--;
 
@@ -2239,7 +2239,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getSelectAccess().getHaving_sectionAssignment_6()); 
+             after(grammarAccess.getSelectAccess().getHavingClauseAssignment_6()); 
 
             }
 
@@ -2525,31 +2525,31 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FromSection__Group__1__Impl"
-    // InternalSQL.g:790:1: rule__FromSection__Group__1__Impl : ( ( rule__FromSection__From_itemAssignment_1 ) ) ;
+    // InternalSQL.g:790:1: rule__FromSection__Group__1__Impl : ( ( rule__FromSection__FromItemAssignment_1 ) ) ;
     public final void rule__FromSection__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:794:1: ( ( ( rule__FromSection__From_itemAssignment_1 ) ) )
-            // InternalSQL.g:795:1: ( ( rule__FromSection__From_itemAssignment_1 ) )
+            // InternalSQL.g:794:1: ( ( ( rule__FromSection__FromItemAssignment_1 ) ) )
+            // InternalSQL.g:795:1: ( ( rule__FromSection__FromItemAssignment_1 ) )
             {
-            // InternalSQL.g:795:1: ( ( rule__FromSection__From_itemAssignment_1 ) )
-            // InternalSQL.g:796:2: ( rule__FromSection__From_itemAssignment_1 )
+            // InternalSQL.g:795:1: ( ( rule__FromSection__FromItemAssignment_1 ) )
+            // InternalSQL.g:796:2: ( rule__FromSection__FromItemAssignment_1 )
             {
-             before(grammarAccess.getFromSectionAccess().getFrom_itemAssignment_1()); 
-            // InternalSQL.g:797:2: ( rule__FromSection__From_itemAssignment_1 )
-            // InternalSQL.g:797:3: rule__FromSection__From_itemAssignment_1
+             before(grammarAccess.getFromSectionAccess().getFromItemAssignment_1()); 
+            // InternalSQL.g:797:2: ( rule__FromSection__FromItemAssignment_1 )
+            // InternalSQL.g:797:3: rule__FromSection__FromItemAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__FromSection__From_itemAssignment_1();
+            rule__FromSection__FromItemAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFromSectionAccess().getFrom_itemAssignment_1()); 
+             after(grammarAccess.getFromSectionAccess().getFromItemAssignment_1()); 
 
             }
 
@@ -3292,23 +3292,23 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FromItem__Group_1__3__Impl"
 
 
-    // $ANTLR start "rule__Where_clause__Group__0"
-    // InternalSQL.g:1049:1: rule__Where_clause__Group__0 : rule__Where_clause__Group__0__Impl rule__Where_clause__Group__1 ;
-    public final void rule__Where_clause__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__WhereClause__Group__0"
+    // InternalSQL.g:1049:1: rule__WhereClause__Group__0 : rule__WhereClause__Group__0__Impl rule__WhereClause__Group__1 ;
+    public final void rule__WhereClause__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1053:1: ( rule__Where_clause__Group__0__Impl rule__Where_clause__Group__1 )
-            // InternalSQL.g:1054:2: rule__Where_clause__Group__0__Impl rule__Where_clause__Group__1
+            // InternalSQL.g:1053:1: ( rule__WhereClause__Group__0__Impl rule__WhereClause__Group__1 )
+            // InternalSQL.g:1054:2: rule__WhereClause__Group__0__Impl rule__WhereClause__Group__1
             {
             pushFollow(FOLLOW_11);
-            rule__Where_clause__Group__0__Impl();
+            rule__WhereClause__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Where_clause__Group__1();
+            rule__WhereClause__Group__1();
 
             state._fsp--;
 
@@ -3327,12 +3327,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Where_clause__Group__0"
+    // $ANTLR end "rule__WhereClause__Group__0"
 
 
-    // $ANTLR start "rule__Where_clause__Group__0__Impl"
-    // InternalSQL.g:1061:1: rule__Where_clause__Group__0__Impl : ( 'WHERE' ) ;
-    public final void rule__Where_clause__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__WhereClause__Group__0__Impl"
+    // InternalSQL.g:1061:1: rule__WhereClause__Group__0__Impl : ( 'WHERE' ) ;
+    public final void rule__WhereClause__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3343,9 +3343,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1066:1: ( 'WHERE' )
             // InternalSQL.g:1067:2: 'WHERE'
             {
-             before(grammarAccess.getWhere_clauseAccess().getWHEREKeyword_0()); 
+             before(grammarAccess.getWhereClauseAccess().getWHEREKeyword_0()); 
             match(input,27,FOLLOW_2); 
-             after(grammarAccess.getWhere_clauseAccess().getWHEREKeyword_0()); 
+             after(grammarAccess.getWhereClauseAccess().getWHEREKeyword_0()); 
 
             }
 
@@ -3364,21 +3364,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Where_clause__Group__0__Impl"
+    // $ANTLR end "rule__WhereClause__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Where_clause__Group__1"
-    // InternalSQL.g:1076:1: rule__Where_clause__Group__1 : rule__Where_clause__Group__1__Impl ;
-    public final void rule__Where_clause__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__WhereClause__Group__1"
+    // InternalSQL.g:1076:1: rule__WhereClause__Group__1 : rule__WhereClause__Group__1__Impl ;
+    public final void rule__WhereClause__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1080:1: ( rule__Where_clause__Group__1__Impl )
-            // InternalSQL.g:1081:2: rule__Where_clause__Group__1__Impl
+            // InternalSQL.g:1080:1: ( rule__WhereClause__Group__1__Impl )
+            // InternalSQL.g:1081:2: rule__WhereClause__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Where_clause__Group__1__Impl();
+            rule__WhereClause__Group__1__Impl();
 
             state._fsp--;
 
@@ -3397,35 +3397,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Where_clause__Group__1"
+    // $ANTLR end "rule__WhereClause__Group__1"
 
 
-    // $ANTLR start "rule__Where_clause__Group__1__Impl"
-    // InternalSQL.g:1087:1: rule__Where_clause__Group__1__Impl : ( ( rule__Where_clause__Bool_exprAssignment_1 ) ) ;
-    public final void rule__Where_clause__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__WhereClause__Group__1__Impl"
+    // InternalSQL.g:1087:1: rule__WhereClause__Group__1__Impl : ( ( rule__WhereClause__BoolExpressionAssignment_1 ) ) ;
+    public final void rule__WhereClause__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1091:1: ( ( ( rule__Where_clause__Bool_exprAssignment_1 ) ) )
-            // InternalSQL.g:1092:1: ( ( rule__Where_clause__Bool_exprAssignment_1 ) )
+            // InternalSQL.g:1091:1: ( ( ( rule__WhereClause__BoolExpressionAssignment_1 ) ) )
+            // InternalSQL.g:1092:1: ( ( rule__WhereClause__BoolExpressionAssignment_1 ) )
             {
-            // InternalSQL.g:1092:1: ( ( rule__Where_clause__Bool_exprAssignment_1 ) )
-            // InternalSQL.g:1093:2: ( rule__Where_clause__Bool_exprAssignment_1 )
+            // InternalSQL.g:1092:1: ( ( rule__WhereClause__BoolExpressionAssignment_1 ) )
+            // InternalSQL.g:1093:2: ( rule__WhereClause__BoolExpressionAssignment_1 )
             {
-             before(grammarAccess.getWhere_clauseAccess().getBool_exprAssignment_1()); 
-            // InternalSQL.g:1094:2: ( rule__Where_clause__Bool_exprAssignment_1 )
-            // InternalSQL.g:1094:3: rule__Where_clause__Bool_exprAssignment_1
+             before(grammarAccess.getWhereClauseAccess().getBoolExpressionAssignment_1()); 
+            // InternalSQL.g:1094:2: ( rule__WhereClause__BoolExpressionAssignment_1 )
+            // InternalSQL.g:1094:3: rule__WhereClause__BoolExpressionAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Where_clause__Bool_exprAssignment_1();
+            rule__WhereClause__BoolExpressionAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getWhere_clauseAccess().getBool_exprAssignment_1()); 
+             after(grammarAccess.getWhereClauseAccess().getBoolExpressionAssignment_1()); 
 
             }
 
@@ -3444,7 +3444,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Where_clause__Group__1__Impl"
+    // $ANTLR end "rule__WhereClause__Group__1__Impl"
 
 
     // $ANTLR start "rule__BoolExpression__Group__0"
@@ -4733,23 +4733,23 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Binary__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Group_clause__Group__0"
-    // InternalSQL.g:1535:1: rule__Group_clause__Group__0 : rule__Group_clause__Group__0__Impl rule__Group_clause__Group__1 ;
-    public final void rule__Group_clause__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__0"
+    // InternalSQL.g:1535:1: rule__GroupClause__Group__0 : rule__GroupClause__Group__0__Impl rule__GroupClause__Group__1 ;
+    public final void rule__GroupClause__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1539:1: ( rule__Group_clause__Group__0__Impl rule__Group_clause__Group__1 )
-            // InternalSQL.g:1540:2: rule__Group_clause__Group__0__Impl rule__Group_clause__Group__1
+            // InternalSQL.g:1539:1: ( rule__GroupClause__Group__0__Impl rule__GroupClause__Group__1 )
+            // InternalSQL.g:1540:2: rule__GroupClause__Group__0__Impl rule__GroupClause__Group__1
             {
             pushFollow(FOLLOW_16);
-            rule__Group_clause__Group__0__Impl();
+            rule__GroupClause__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group__1();
+            rule__GroupClause__Group__1();
 
             state._fsp--;
 
@@ -4768,12 +4768,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__0"
+    // $ANTLR end "rule__GroupClause__Group__0"
 
 
-    // $ANTLR start "rule__Group_clause__Group__0__Impl"
-    // InternalSQL.g:1547:1: rule__Group_clause__Group__0__Impl : ( 'GROUP' ) ;
-    public final void rule__Group_clause__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__0__Impl"
+    // InternalSQL.g:1547:1: rule__GroupClause__Group__0__Impl : ( 'GROUP' ) ;
+    public final void rule__GroupClause__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -4784,9 +4784,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1552:1: ( 'GROUP' )
             // InternalSQL.g:1553:2: 'GROUP'
             {
-             before(grammarAccess.getGroup_clauseAccess().getGROUPKeyword_0()); 
+             before(grammarAccess.getGroupClauseAccess().getGROUPKeyword_0()); 
             match(input,31,FOLLOW_2); 
-             after(grammarAccess.getGroup_clauseAccess().getGROUPKeyword_0()); 
+             after(grammarAccess.getGroupClauseAccess().getGROUPKeyword_0()); 
 
             }
 
@@ -4805,26 +4805,26 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__0__Impl"
+    // $ANTLR end "rule__GroupClause__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Group_clause__Group__1"
-    // InternalSQL.g:1562:1: rule__Group_clause__Group__1 : rule__Group_clause__Group__1__Impl rule__Group_clause__Group__2 ;
-    public final void rule__Group_clause__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__1"
+    // InternalSQL.g:1562:1: rule__GroupClause__Group__1 : rule__GroupClause__Group__1__Impl rule__GroupClause__Group__2 ;
+    public final void rule__GroupClause__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1566:1: ( rule__Group_clause__Group__1__Impl rule__Group_clause__Group__2 )
-            // InternalSQL.g:1567:2: rule__Group_clause__Group__1__Impl rule__Group_clause__Group__2
+            // InternalSQL.g:1566:1: ( rule__GroupClause__Group__1__Impl rule__GroupClause__Group__2 )
+            // InternalSQL.g:1567:2: rule__GroupClause__Group__1__Impl rule__GroupClause__Group__2
             {
             pushFollow(FOLLOW_3);
-            rule__Group_clause__Group__1__Impl();
+            rule__GroupClause__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group__2();
+            rule__GroupClause__Group__2();
 
             state._fsp--;
 
@@ -4843,12 +4843,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__1"
+    // $ANTLR end "rule__GroupClause__Group__1"
 
 
-    // $ANTLR start "rule__Group_clause__Group__1__Impl"
-    // InternalSQL.g:1574:1: rule__Group_clause__Group__1__Impl : ( 'BY' ) ;
-    public final void rule__Group_clause__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__1__Impl"
+    // InternalSQL.g:1574:1: rule__GroupClause__Group__1__Impl : ( 'BY' ) ;
+    public final void rule__GroupClause__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -4859,9 +4859,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1579:1: ( 'BY' )
             // InternalSQL.g:1580:2: 'BY'
             {
-             before(grammarAccess.getGroup_clauseAccess().getBYKeyword_1()); 
+             before(grammarAccess.getGroupClauseAccess().getBYKeyword_1()); 
             match(input,32,FOLLOW_2); 
-             after(grammarAccess.getGroup_clauseAccess().getBYKeyword_1()); 
+             after(grammarAccess.getGroupClauseAccess().getBYKeyword_1()); 
 
             }
 
@@ -4880,26 +4880,26 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__1__Impl"
+    // $ANTLR end "rule__GroupClause__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Group_clause__Group__2"
-    // InternalSQL.g:1589:1: rule__Group_clause__Group__2 : rule__Group_clause__Group__2__Impl rule__Group_clause__Group__3 ;
-    public final void rule__Group_clause__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__2"
+    // InternalSQL.g:1589:1: rule__GroupClause__Group__2 : rule__GroupClause__Group__2__Impl rule__GroupClause__Group__3 ;
+    public final void rule__GroupClause__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1593:1: ( rule__Group_clause__Group__2__Impl rule__Group_clause__Group__3 )
-            // InternalSQL.g:1594:2: rule__Group_clause__Group__2__Impl rule__Group_clause__Group__3
+            // InternalSQL.g:1593:1: ( rule__GroupClause__Group__2__Impl rule__GroupClause__Group__3 )
+            // InternalSQL.g:1594:2: rule__GroupClause__Group__2__Impl rule__GroupClause__Group__3
             {
             pushFollow(FOLLOW_17);
-            rule__Group_clause__Group__2__Impl();
+            rule__GroupClause__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group__3();
+            rule__GroupClause__Group__3();
 
             state._fsp--;
 
@@ -4918,35 +4918,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__2"
+    // $ANTLR end "rule__GroupClause__Group__2"
 
 
-    // $ANTLR start "rule__Group_clause__Group__2__Impl"
-    // InternalSQL.g:1601:1: rule__Group_clause__Group__2__Impl : ( ( rule__Group_clause__ExpressionsAssignment_2 ) ) ;
-    public final void rule__Group_clause__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__2__Impl"
+    // InternalSQL.g:1601:1: rule__GroupClause__Group__2__Impl : ( ( rule__GroupClause__ExpressionsAssignment_2 ) ) ;
+    public final void rule__GroupClause__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1605:1: ( ( ( rule__Group_clause__ExpressionsAssignment_2 ) ) )
-            // InternalSQL.g:1606:1: ( ( rule__Group_clause__ExpressionsAssignment_2 ) )
+            // InternalSQL.g:1605:1: ( ( ( rule__GroupClause__ExpressionsAssignment_2 ) ) )
+            // InternalSQL.g:1606:1: ( ( rule__GroupClause__ExpressionsAssignment_2 ) )
             {
-            // InternalSQL.g:1606:1: ( ( rule__Group_clause__ExpressionsAssignment_2 ) )
-            // InternalSQL.g:1607:2: ( rule__Group_clause__ExpressionsAssignment_2 )
+            // InternalSQL.g:1606:1: ( ( rule__GroupClause__ExpressionsAssignment_2 ) )
+            // InternalSQL.g:1607:2: ( rule__GroupClause__ExpressionsAssignment_2 )
             {
-             before(grammarAccess.getGroup_clauseAccess().getExpressionsAssignment_2()); 
-            // InternalSQL.g:1608:2: ( rule__Group_clause__ExpressionsAssignment_2 )
-            // InternalSQL.g:1608:3: rule__Group_clause__ExpressionsAssignment_2
+             before(grammarAccess.getGroupClauseAccess().getExpressionsAssignment_2()); 
+            // InternalSQL.g:1608:2: ( rule__GroupClause__ExpressionsAssignment_2 )
+            // InternalSQL.g:1608:3: rule__GroupClause__ExpressionsAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Group_clause__ExpressionsAssignment_2();
+            rule__GroupClause__ExpressionsAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGroup_clauseAccess().getExpressionsAssignment_2()); 
+             after(grammarAccess.getGroupClauseAccess().getExpressionsAssignment_2()); 
 
             }
 
@@ -4965,21 +4965,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__2__Impl"
+    // $ANTLR end "rule__GroupClause__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Group_clause__Group__3"
-    // InternalSQL.g:1616:1: rule__Group_clause__Group__3 : rule__Group_clause__Group__3__Impl ;
-    public final void rule__Group_clause__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__3"
+    // InternalSQL.g:1616:1: rule__GroupClause__Group__3 : rule__GroupClause__Group__3__Impl ;
+    public final void rule__GroupClause__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1620:1: ( rule__Group_clause__Group__3__Impl )
-            // InternalSQL.g:1621:2: rule__Group_clause__Group__3__Impl
+            // InternalSQL.g:1620:1: ( rule__GroupClause__Group__3__Impl )
+            // InternalSQL.g:1621:2: rule__GroupClause__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group__3__Impl();
+            rule__GroupClause__Group__3__Impl();
 
             state._fsp--;
 
@@ -4998,24 +4998,24 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__3"
+    // $ANTLR end "rule__GroupClause__Group__3"
 
 
-    // $ANTLR start "rule__Group_clause__Group__3__Impl"
-    // InternalSQL.g:1627:1: rule__Group_clause__Group__3__Impl : ( ( rule__Group_clause__Group_3__0 )* ) ;
-    public final void rule__Group_clause__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group__3__Impl"
+    // InternalSQL.g:1627:1: rule__GroupClause__Group__3__Impl : ( ( rule__GroupClause__Group_3__0 )* ) ;
+    public final void rule__GroupClause__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1631:1: ( ( ( rule__Group_clause__Group_3__0 )* ) )
-            // InternalSQL.g:1632:1: ( ( rule__Group_clause__Group_3__0 )* )
+            // InternalSQL.g:1631:1: ( ( ( rule__GroupClause__Group_3__0 )* ) )
+            // InternalSQL.g:1632:1: ( ( rule__GroupClause__Group_3__0 )* )
             {
-            // InternalSQL.g:1632:1: ( ( rule__Group_clause__Group_3__0 )* )
-            // InternalSQL.g:1633:2: ( rule__Group_clause__Group_3__0 )*
+            // InternalSQL.g:1632:1: ( ( rule__GroupClause__Group_3__0 )* )
+            // InternalSQL.g:1633:2: ( rule__GroupClause__Group_3__0 )*
             {
-             before(grammarAccess.getGroup_clauseAccess().getGroup_3()); 
-            // InternalSQL.g:1634:2: ( rule__Group_clause__Group_3__0 )*
+             before(grammarAccess.getGroupClauseAccess().getGroup_3()); 
+            // InternalSQL.g:1634:2: ( rule__GroupClause__Group_3__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -5028,10 +5028,10 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalSQL.g:1634:3: rule__Group_clause__Group_3__0
+            	    // InternalSQL.g:1634:3: rule__GroupClause__Group_3__0
             	    {
             	    pushFollow(FOLLOW_5);
-            	    rule__Group_clause__Group_3__0();
+            	    rule__GroupClause__Group_3__0();
 
             	    state._fsp--;
 
@@ -5044,7 +5044,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getGroup_clauseAccess().getGroup_3()); 
+             after(grammarAccess.getGroupClauseAccess().getGroup_3()); 
 
             }
 
@@ -5063,26 +5063,26 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group__3__Impl"
+    // $ANTLR end "rule__GroupClause__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Group_clause__Group_3__0"
-    // InternalSQL.g:1643:1: rule__Group_clause__Group_3__0 : rule__Group_clause__Group_3__0__Impl rule__Group_clause__Group_3__1 ;
-    public final void rule__Group_clause__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group_3__0"
+    // InternalSQL.g:1643:1: rule__GroupClause__Group_3__0 : rule__GroupClause__Group_3__0__Impl rule__GroupClause__Group_3__1 ;
+    public final void rule__GroupClause__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1647:1: ( rule__Group_clause__Group_3__0__Impl rule__Group_clause__Group_3__1 )
-            // InternalSQL.g:1648:2: rule__Group_clause__Group_3__0__Impl rule__Group_clause__Group_3__1
+            // InternalSQL.g:1647:1: ( rule__GroupClause__Group_3__0__Impl rule__GroupClause__Group_3__1 )
+            // InternalSQL.g:1648:2: rule__GroupClause__Group_3__0__Impl rule__GroupClause__Group_3__1
             {
             pushFollow(FOLLOW_3);
-            rule__Group_clause__Group_3__0__Impl();
+            rule__GroupClause__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group_3__1();
+            rule__GroupClause__Group_3__1();
 
             state._fsp--;
 
@@ -5101,12 +5101,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group_3__0"
+    // $ANTLR end "rule__GroupClause__Group_3__0"
 
 
-    // $ANTLR start "rule__Group_clause__Group_3__0__Impl"
-    // InternalSQL.g:1655:1: rule__Group_clause__Group_3__0__Impl : ( ',' ) ;
-    public final void rule__Group_clause__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group_3__0__Impl"
+    // InternalSQL.g:1655:1: rule__GroupClause__Group_3__0__Impl : ( ',' ) ;
+    public final void rule__GroupClause__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -5117,9 +5117,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1660:1: ( ',' )
             // InternalSQL.g:1661:2: ','
             {
-             before(grammarAccess.getGroup_clauseAccess().getCommaKeyword_3_0()); 
+             before(grammarAccess.getGroupClauseAccess().getCommaKeyword_3_0()); 
             match(input,21,FOLLOW_2); 
-             after(grammarAccess.getGroup_clauseAccess().getCommaKeyword_3_0()); 
+             after(grammarAccess.getGroupClauseAccess().getCommaKeyword_3_0()); 
 
             }
 
@@ -5138,21 +5138,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group_3__0__Impl"
+    // $ANTLR end "rule__GroupClause__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__Group_clause__Group_3__1"
-    // InternalSQL.g:1670:1: rule__Group_clause__Group_3__1 : rule__Group_clause__Group_3__1__Impl ;
-    public final void rule__Group_clause__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group_3__1"
+    // InternalSQL.g:1670:1: rule__GroupClause__Group_3__1 : rule__GroupClause__Group_3__1__Impl ;
+    public final void rule__GroupClause__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1674:1: ( rule__Group_clause__Group_3__1__Impl )
-            // InternalSQL.g:1675:2: rule__Group_clause__Group_3__1__Impl
+            // InternalSQL.g:1674:1: ( rule__GroupClause__Group_3__1__Impl )
+            // InternalSQL.g:1675:2: rule__GroupClause__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Group_clause__Group_3__1__Impl();
+            rule__GroupClause__Group_3__1__Impl();
 
             state._fsp--;
 
@@ -5171,35 +5171,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group_3__1"
+    // $ANTLR end "rule__GroupClause__Group_3__1"
 
 
-    // $ANTLR start "rule__Group_clause__Group_3__1__Impl"
-    // InternalSQL.g:1681:1: rule__Group_clause__Group_3__1__Impl : ( ( rule__Group_clause__ExpressionsAssignment_3_1 ) ) ;
-    public final void rule__Group_clause__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__Group_3__1__Impl"
+    // InternalSQL.g:1681:1: rule__GroupClause__Group_3__1__Impl : ( ( rule__GroupClause__ExpressionsAssignment_3_1 ) ) ;
+    public final void rule__GroupClause__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1685:1: ( ( ( rule__Group_clause__ExpressionsAssignment_3_1 ) ) )
-            // InternalSQL.g:1686:1: ( ( rule__Group_clause__ExpressionsAssignment_3_1 ) )
+            // InternalSQL.g:1685:1: ( ( ( rule__GroupClause__ExpressionsAssignment_3_1 ) ) )
+            // InternalSQL.g:1686:1: ( ( rule__GroupClause__ExpressionsAssignment_3_1 ) )
             {
-            // InternalSQL.g:1686:1: ( ( rule__Group_clause__ExpressionsAssignment_3_1 ) )
-            // InternalSQL.g:1687:2: ( rule__Group_clause__ExpressionsAssignment_3_1 )
+            // InternalSQL.g:1686:1: ( ( rule__GroupClause__ExpressionsAssignment_3_1 ) )
+            // InternalSQL.g:1687:2: ( rule__GroupClause__ExpressionsAssignment_3_1 )
             {
-             before(grammarAccess.getGroup_clauseAccess().getExpressionsAssignment_3_1()); 
-            // InternalSQL.g:1688:2: ( rule__Group_clause__ExpressionsAssignment_3_1 )
-            // InternalSQL.g:1688:3: rule__Group_clause__ExpressionsAssignment_3_1
+             before(grammarAccess.getGroupClauseAccess().getExpressionsAssignment_3_1()); 
+            // InternalSQL.g:1688:2: ( rule__GroupClause__ExpressionsAssignment_3_1 )
+            // InternalSQL.g:1688:3: rule__GroupClause__ExpressionsAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__Group_clause__ExpressionsAssignment_3_1();
+            rule__GroupClause__ExpressionsAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGroup_clauseAccess().getExpressionsAssignment_3_1()); 
+             after(grammarAccess.getGroupClauseAccess().getExpressionsAssignment_3_1()); 
 
             }
 
@@ -5218,26 +5218,26 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__Group_3__1__Impl"
+    // $ANTLR end "rule__GroupClause__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__Having_clause__Group__0"
-    // InternalSQL.g:1697:1: rule__Having_clause__Group__0 : rule__Having_clause__Group__0__Impl rule__Having_clause__Group__1 ;
-    public final void rule__Having_clause__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__HavingClause__Group__0"
+    // InternalSQL.g:1697:1: rule__HavingClause__Group__0 : rule__HavingClause__Group__0__Impl rule__HavingClause__Group__1 ;
+    public final void rule__HavingClause__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1701:1: ( rule__Having_clause__Group__0__Impl rule__Having_clause__Group__1 )
-            // InternalSQL.g:1702:2: rule__Having_clause__Group__0__Impl rule__Having_clause__Group__1
+            // InternalSQL.g:1701:1: ( rule__HavingClause__Group__0__Impl rule__HavingClause__Group__1 )
+            // InternalSQL.g:1702:2: rule__HavingClause__Group__0__Impl rule__HavingClause__Group__1
             {
             pushFollow(FOLLOW_11);
-            rule__Having_clause__Group__0__Impl();
+            rule__HavingClause__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Having_clause__Group__1();
+            rule__HavingClause__Group__1();
 
             state._fsp--;
 
@@ -5256,12 +5256,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Having_clause__Group__0"
+    // $ANTLR end "rule__HavingClause__Group__0"
 
 
-    // $ANTLR start "rule__Having_clause__Group__0__Impl"
-    // InternalSQL.g:1709:1: rule__Having_clause__Group__0__Impl : ( 'HAVING' ) ;
-    public final void rule__Having_clause__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__HavingClause__Group__0__Impl"
+    // InternalSQL.g:1709:1: rule__HavingClause__Group__0__Impl : ( 'HAVING' ) ;
+    public final void rule__HavingClause__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -5272,9 +5272,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1714:1: ( 'HAVING' )
             // InternalSQL.g:1715:2: 'HAVING'
             {
-             before(grammarAccess.getHaving_clauseAccess().getHAVINGKeyword_0()); 
+             before(grammarAccess.getHavingClauseAccess().getHAVINGKeyword_0()); 
             match(input,33,FOLLOW_2); 
-             after(grammarAccess.getHaving_clauseAccess().getHAVINGKeyword_0()); 
+             after(grammarAccess.getHavingClauseAccess().getHAVINGKeyword_0()); 
 
             }
 
@@ -5293,21 +5293,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Having_clause__Group__0__Impl"
+    // $ANTLR end "rule__HavingClause__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Having_clause__Group__1"
-    // InternalSQL.g:1724:1: rule__Having_clause__Group__1 : rule__Having_clause__Group__1__Impl ;
-    public final void rule__Having_clause__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__HavingClause__Group__1"
+    // InternalSQL.g:1724:1: rule__HavingClause__Group__1 : rule__HavingClause__Group__1__Impl ;
+    public final void rule__HavingClause__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1728:1: ( rule__Having_clause__Group__1__Impl )
-            // InternalSQL.g:1729:2: rule__Having_clause__Group__1__Impl
+            // InternalSQL.g:1728:1: ( rule__HavingClause__Group__1__Impl )
+            // InternalSQL.g:1729:2: rule__HavingClause__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Having_clause__Group__1__Impl();
+            rule__HavingClause__Group__1__Impl();
 
             state._fsp--;
 
@@ -5326,35 +5326,35 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Having_clause__Group__1"
+    // $ANTLR end "rule__HavingClause__Group__1"
 
 
-    // $ANTLR start "rule__Having_clause__Group__1__Impl"
-    // InternalSQL.g:1735:1: rule__Having_clause__Group__1__Impl : ( ( rule__Having_clause__ExprAssignment_1 ) ) ;
-    public final void rule__Having_clause__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__HavingClause__Group__1__Impl"
+    // InternalSQL.g:1735:1: rule__HavingClause__Group__1__Impl : ( ( rule__HavingClause__ExprAssignment_1 ) ) ;
+    public final void rule__HavingClause__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1739:1: ( ( ( rule__Having_clause__ExprAssignment_1 ) ) )
-            // InternalSQL.g:1740:1: ( ( rule__Having_clause__ExprAssignment_1 ) )
+            // InternalSQL.g:1739:1: ( ( ( rule__HavingClause__ExprAssignment_1 ) ) )
+            // InternalSQL.g:1740:1: ( ( rule__HavingClause__ExprAssignment_1 ) )
             {
-            // InternalSQL.g:1740:1: ( ( rule__Having_clause__ExprAssignment_1 ) )
-            // InternalSQL.g:1741:2: ( rule__Having_clause__ExprAssignment_1 )
+            // InternalSQL.g:1740:1: ( ( rule__HavingClause__ExprAssignment_1 ) )
+            // InternalSQL.g:1741:2: ( rule__HavingClause__ExprAssignment_1 )
             {
-             before(grammarAccess.getHaving_clauseAccess().getExprAssignment_1()); 
-            // InternalSQL.g:1742:2: ( rule__Having_clause__ExprAssignment_1 )
-            // InternalSQL.g:1742:3: rule__Having_clause__ExprAssignment_1
+             before(grammarAccess.getHavingClauseAccess().getExprAssignment_1()); 
+            // InternalSQL.g:1742:2: ( rule__HavingClause__ExprAssignment_1 )
+            // InternalSQL.g:1742:3: rule__HavingClause__ExprAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Having_clause__ExprAssignment_1();
+            rule__HavingClause__ExprAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getHaving_clauseAccess().getExprAssignment_1()); 
+             after(grammarAccess.getHavingClauseAccess().getExprAssignment_1()); 
 
             }
 
@@ -5373,7 +5373,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Having_clause__Group__1__Impl"
+    // $ANTLR end "rule__HavingClause__Group__1__Impl"
 
 
     // $ANTLR start "rule__Expression__Group_3__0"
@@ -5648,21 +5648,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Select__ExpressionsAssignment_1"
-    // InternalSQL.g:1847:1: rule__Select__ExpressionsAssignment_1 : ( ruleexpression ) ;
+    // InternalSQL.g:1847:1: rule__Select__ExpressionsAssignment_1 : ( ruleExpression ) ;
     public final void rule__Select__ExpressionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1851:1: ( ( ruleexpression ) )
-            // InternalSQL.g:1852:2: ( ruleexpression )
+            // InternalSQL.g:1851:1: ( ( ruleExpression ) )
+            // InternalSQL.g:1852:2: ( ruleExpression )
             {
-            // InternalSQL.g:1852:2: ( ruleexpression )
-            // InternalSQL.g:1853:3: ruleexpression
+            // InternalSQL.g:1852:2: ( ruleExpression )
+            // InternalSQL.g:1853:3: ruleExpression
             {
              before(grammarAccess.getSelectAccess().getExpressionsExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleexpression();
+            ruleExpression();
 
             state._fsp--;
 
@@ -5689,21 +5689,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Select__ExpressionsAssignment_2_1"
-    // InternalSQL.g:1862:1: rule__Select__ExpressionsAssignment_2_1 : ( ruleexpression ) ;
+    // InternalSQL.g:1862:1: rule__Select__ExpressionsAssignment_2_1 : ( ruleExpression ) ;
     public final void rule__Select__ExpressionsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1866:1: ( ( ruleexpression ) )
-            // InternalSQL.g:1867:2: ( ruleexpression )
+            // InternalSQL.g:1866:1: ( ( ruleExpression ) )
+            // InternalSQL.g:1867:2: ( ruleExpression )
             {
-            // InternalSQL.g:1867:2: ( ruleexpression )
-            // InternalSQL.g:1868:3: ruleexpression
+            // InternalSQL.g:1867:2: ( ruleExpression )
+            // InternalSQL.g:1868:3: ruleExpression
             {
              before(grammarAccess.getSelectAccess().getExpressionsExpressionParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleexpression();
+            ruleExpression();
 
             state._fsp--;
 
@@ -5729,9 +5729,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Select__ExpressionsAssignment_2_1"
 
 
-    // $ANTLR start "rule__Select__From_sectionAssignment_3"
-    // InternalSQL.g:1877:1: rule__Select__From_sectionAssignment_3 : ( rulefromSection ) ;
-    public final void rule__Select__From_sectionAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Select__FromSectionAssignment_3"
+    // InternalSQL.g:1877:1: rule__Select__FromSectionAssignment_3 : ( rulefromSection ) ;
+    public final void rule__Select__FromSectionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -5742,13 +5742,13 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1882:2: ( rulefromSection )
             // InternalSQL.g:1883:3: rulefromSection
             {
-             before(grammarAccess.getSelectAccess().getFrom_sectionFromSectionParserRuleCall_3_0()); 
+             before(grammarAccess.getSelectAccess().getFromSectionFromSectionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             rulefromSection();
 
             state._fsp--;
 
-             after(grammarAccess.getSelectAccess().getFrom_sectionFromSectionParserRuleCall_3_0()); 
+             after(grammarAccess.getSelectAccess().getFromSectionFromSectionParserRuleCall_3_0()); 
 
             }
 
@@ -5767,29 +5767,29 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Select__From_sectionAssignment_3"
+    // $ANTLR end "rule__Select__FromSectionAssignment_3"
 
 
-    // $ANTLR start "rule__Select__Where_sectionAssignment_4"
-    // InternalSQL.g:1892:1: rule__Select__Where_sectionAssignment_4 : ( rulewhere_clause ) ;
-    public final void rule__Select__Where_sectionAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Select__WhereClauseAssignment_4"
+    // InternalSQL.g:1892:1: rule__Select__WhereClauseAssignment_4 : ( ruleWhereClause ) ;
+    public final void rule__Select__WhereClauseAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1896:1: ( ( rulewhere_clause ) )
-            // InternalSQL.g:1897:2: ( rulewhere_clause )
+            // InternalSQL.g:1896:1: ( ( ruleWhereClause ) )
+            // InternalSQL.g:1897:2: ( ruleWhereClause )
             {
-            // InternalSQL.g:1897:2: ( rulewhere_clause )
-            // InternalSQL.g:1898:3: rulewhere_clause
+            // InternalSQL.g:1897:2: ( ruleWhereClause )
+            // InternalSQL.g:1898:3: ruleWhereClause
             {
-             before(grammarAccess.getSelectAccess().getWhere_sectionWhere_clauseParserRuleCall_4_0()); 
+             before(grammarAccess.getSelectAccess().getWhereClauseWhereClauseParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
-            rulewhere_clause();
+            ruleWhereClause();
 
             state._fsp--;
 
-             after(grammarAccess.getSelectAccess().getWhere_sectionWhere_clauseParserRuleCall_4_0()); 
+             after(grammarAccess.getSelectAccess().getWhereClauseWhereClauseParserRuleCall_4_0()); 
 
             }
 
@@ -5808,29 +5808,29 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Where_sectionAssignment_4"
+    // $ANTLR end "rule__Select__WhereClauseAssignment_4"
 
 
-    // $ANTLR start "rule__Select__Group_sectionAssignment_5"
-    // InternalSQL.g:1907:1: rule__Select__Group_sectionAssignment_5 : ( rulegroup_clause ) ;
-    public final void rule__Select__Group_sectionAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Select__GroupClauseAssignment_5"
+    // InternalSQL.g:1907:1: rule__Select__GroupClauseAssignment_5 : ( ruleGroupClause ) ;
+    public final void rule__Select__GroupClauseAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1911:1: ( ( rulegroup_clause ) )
-            // InternalSQL.g:1912:2: ( rulegroup_clause )
+            // InternalSQL.g:1911:1: ( ( ruleGroupClause ) )
+            // InternalSQL.g:1912:2: ( ruleGroupClause )
             {
-            // InternalSQL.g:1912:2: ( rulegroup_clause )
-            // InternalSQL.g:1913:3: rulegroup_clause
+            // InternalSQL.g:1912:2: ( ruleGroupClause )
+            // InternalSQL.g:1913:3: ruleGroupClause
             {
-             before(grammarAccess.getSelectAccess().getGroup_sectionGroup_clauseParserRuleCall_5_0()); 
+             before(grammarAccess.getSelectAccess().getGroupClauseGroupClauseParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
-            rulegroup_clause();
+            ruleGroupClause();
 
             state._fsp--;
 
-             after(grammarAccess.getSelectAccess().getGroup_sectionGroup_clauseParserRuleCall_5_0()); 
+             after(grammarAccess.getSelectAccess().getGroupClauseGroupClauseParserRuleCall_5_0()); 
 
             }
 
@@ -5849,29 +5849,29 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Group_sectionAssignment_5"
+    // $ANTLR end "rule__Select__GroupClauseAssignment_5"
 
 
-    // $ANTLR start "rule__Select__Having_sectionAssignment_6"
-    // InternalSQL.g:1922:1: rule__Select__Having_sectionAssignment_6 : ( rulehaving_clause ) ;
-    public final void rule__Select__Having_sectionAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__Select__HavingClauseAssignment_6"
+    // InternalSQL.g:1922:1: rule__Select__HavingClauseAssignment_6 : ( ruleHavingClause ) ;
+    public final void rule__Select__HavingClauseAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1926:1: ( ( rulehaving_clause ) )
-            // InternalSQL.g:1927:2: ( rulehaving_clause )
+            // InternalSQL.g:1926:1: ( ( ruleHavingClause ) )
+            // InternalSQL.g:1927:2: ( ruleHavingClause )
             {
-            // InternalSQL.g:1927:2: ( rulehaving_clause )
-            // InternalSQL.g:1928:3: rulehaving_clause
+            // InternalSQL.g:1927:2: ( ruleHavingClause )
+            // InternalSQL.g:1928:3: ruleHavingClause
             {
-             before(grammarAccess.getSelectAccess().getHaving_sectionHaving_clauseParserRuleCall_6_0()); 
+             before(grammarAccess.getSelectAccess().getHavingClauseHavingClauseParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
-            rulehaving_clause();
+            ruleHavingClause();
 
             state._fsp--;
 
-             after(grammarAccess.getSelectAccess().getHaving_sectionHaving_clauseParserRuleCall_6_0()); 
+             after(grammarAccess.getSelectAccess().getHavingClauseHavingClauseParserRuleCall_6_0()); 
 
             }
 
@@ -5890,29 +5890,29 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Select__Having_sectionAssignment_6"
+    // $ANTLR end "rule__Select__HavingClauseAssignment_6"
 
 
-    // $ANTLR start "rule__FromSection__From_itemAssignment_1"
-    // InternalSQL.g:1937:1: rule__FromSection__From_itemAssignment_1 : ( rulefromItem ) ;
-    public final void rule__FromSection__From_itemAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__FromSection__FromItemAssignment_1"
+    // InternalSQL.g:1937:1: rule__FromSection__FromItemAssignment_1 : ( ruleFromItem ) ;
+    public final void rule__FromSection__FromItemAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1941:1: ( ( rulefromItem ) )
-            // InternalSQL.g:1942:2: ( rulefromItem )
+            // InternalSQL.g:1941:1: ( ( ruleFromItem ) )
+            // InternalSQL.g:1942:2: ( ruleFromItem )
             {
-            // InternalSQL.g:1942:2: ( rulefromItem )
-            // InternalSQL.g:1943:3: rulefromItem
+            // InternalSQL.g:1942:2: ( ruleFromItem )
+            // InternalSQL.g:1943:3: ruleFromItem
             {
-             before(grammarAccess.getFromSectionAccess().getFrom_itemFromItemParserRuleCall_1_0()); 
+             before(grammarAccess.getFromSectionAccess().getFromItemFromItemParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            rulefromItem();
+            ruleFromItem();
 
             state._fsp--;
 
-             after(grammarAccess.getFromSectionAccess().getFrom_itemFromItemParserRuleCall_1_0()); 
+             after(grammarAccess.getFromSectionAccess().getFromItemFromItemParserRuleCall_1_0()); 
 
             }
 
@@ -5931,12 +5931,12 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FromSection__From_itemAssignment_1"
+    // $ANTLR end "rule__FromSection__FromItemAssignment_1"
 
 
-    // $ANTLR start "rule__FromItem__Table_nameAssignment_0_0"
-    // InternalSQL.g:1952:1: rule__FromItem__Table_nameAssignment_0_0 : ( RULE_ID ) ;
-    public final void rule__FromItem__Table_nameAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__FromItem__TableNameAssignment_0_0"
+    // InternalSQL.g:1952:1: rule__FromItem__TableNameAssignment_0_0 : ( RULE_ID ) ;
+    public final void rule__FromItem__TableNameAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -5947,9 +5947,9 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
             // InternalSQL.g:1957:2: ( RULE_ID )
             // InternalSQL.g:1958:3: RULE_ID
             {
-             before(grammarAccess.getFromItemAccess().getTable_nameIDTerminalRuleCall_0_0_0()); 
+             before(grammarAccess.getFromItemAccess().getTableNameIDTerminalRuleCall_0_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFromItemAccess().getTable_nameIDTerminalRuleCall_0_0_0()); 
+             after(grammarAccess.getFromItemAccess().getTableNameIDTerminalRuleCall_0_0_0()); 
 
             }
 
@@ -5968,7 +5968,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FromItem__Table_nameAssignment_0_0"
+    // $ANTLR end "rule__FromItem__TableNameAssignment_0_0"
 
 
     // $ANTLR start "rule__FromItem__Select_exprAssignment_0_1_1"
@@ -6013,21 +6013,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FromItem__RhsAssignment_1_1"
-    // InternalSQL.g:1982:1: rule__FromItem__RhsAssignment_1_1 : ( rulefromItem ) ;
+    // InternalSQL.g:1982:1: rule__FromItem__RhsAssignment_1_1 : ( ruleFromItem ) ;
     public final void rule__FromItem__RhsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:1986:1: ( ( rulefromItem ) )
-            // InternalSQL.g:1987:2: ( rulefromItem )
+            // InternalSQL.g:1986:1: ( ( ruleFromItem ) )
+            // InternalSQL.g:1987:2: ( ruleFromItem )
             {
-            // InternalSQL.g:1987:2: ( rulefromItem )
-            // InternalSQL.g:1988:3: rulefromItem
+            // InternalSQL.g:1987:2: ( ruleFromItem )
+            // InternalSQL.g:1988:3: ruleFromItem
             {
              before(grammarAccess.getFromItemAccess().getRhsFromItemParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
-            rulefromItem();
+            ruleFromItem();
 
             state._fsp--;
 
@@ -6054,21 +6054,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FromItem__Bool_exprAssignment_1_3"
-    // InternalSQL.g:1997:1: rule__FromItem__Bool_exprAssignment_1_3 : ( ruleboolExpression ) ;
+    // InternalSQL.g:1997:1: rule__FromItem__Bool_exprAssignment_1_3 : ( ruleBoolExpression ) ;
     public final void rule__FromItem__Bool_exprAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:2001:1: ( ( ruleboolExpression ) )
-            // InternalSQL.g:2002:2: ( ruleboolExpression )
+            // InternalSQL.g:2001:1: ( ( ruleBoolExpression ) )
+            // InternalSQL.g:2002:2: ( ruleBoolExpression )
             {
-            // InternalSQL.g:2002:2: ( ruleboolExpression )
-            // InternalSQL.g:2003:3: ruleboolExpression
+            // InternalSQL.g:2002:2: ( ruleBoolExpression )
+            // InternalSQL.g:2003:3: ruleBoolExpression
             {
              before(grammarAccess.getFromItemAccess().getBool_exprBoolExpressionParserRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleboolExpression();
+            ruleBoolExpression();
 
             state._fsp--;
 
@@ -6094,26 +6094,26 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FromItem__Bool_exprAssignment_1_3"
 
 
-    // $ANTLR start "rule__Where_clause__Bool_exprAssignment_1"
-    // InternalSQL.g:2012:1: rule__Where_clause__Bool_exprAssignment_1 : ( ruleboolExpression ) ;
-    public final void rule__Where_clause__Bool_exprAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__WhereClause__BoolExpressionAssignment_1"
+    // InternalSQL.g:2012:1: rule__WhereClause__BoolExpressionAssignment_1 : ( ruleBoolExpression ) ;
+    public final void rule__WhereClause__BoolExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:2016:1: ( ( ruleboolExpression ) )
-            // InternalSQL.g:2017:2: ( ruleboolExpression )
+            // InternalSQL.g:2016:1: ( ( ruleBoolExpression ) )
+            // InternalSQL.g:2017:2: ( ruleBoolExpression )
             {
-            // InternalSQL.g:2017:2: ( ruleboolExpression )
-            // InternalSQL.g:2018:3: ruleboolExpression
+            // InternalSQL.g:2017:2: ( ruleBoolExpression )
+            // InternalSQL.g:2018:3: ruleBoolExpression
             {
-             before(grammarAccess.getWhere_clauseAccess().getBool_exprBoolExpressionParserRuleCall_1_0()); 
+             before(grammarAccess.getWhereClauseAccess().getBoolExpressionBoolExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleboolExpression();
+            ruleBoolExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getWhere_clauseAccess().getBool_exprBoolExpressionParserRuleCall_1_0()); 
+             after(grammarAccess.getWhereClauseAccess().getBoolExpressionBoolExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -6132,7 +6132,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Where_clause__Bool_exprAssignment_1"
+    // $ANTLR end "rule__WhereClause__BoolExpressionAssignment_1"
 
 
     // $ANTLR start "rule__BoolExpression__LhsAssignment_0"
@@ -6341,21 +6341,21 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__ExprAssignment_1_1"
-    // InternalSQL.g:2102:1: rule__Factor__ExprAssignment_1_1 : ( ruleboolExpression ) ;
+    // InternalSQL.g:2102:1: rule__Factor__ExprAssignment_1_1 : ( ruleBoolExpression ) ;
     public final void rule__Factor__ExprAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:2106:1: ( ( ruleboolExpression ) )
-            // InternalSQL.g:2107:2: ( ruleboolExpression )
+            // InternalSQL.g:2106:1: ( ( ruleBoolExpression ) )
+            // InternalSQL.g:2107:2: ( ruleBoolExpression )
             {
-            // InternalSQL.g:2107:2: ( ruleboolExpression )
-            // InternalSQL.g:2108:3: ruleboolExpression
+            // InternalSQL.g:2107:2: ( ruleBoolExpression )
+            // InternalSQL.g:2108:3: ruleBoolExpression
             {
              before(grammarAccess.getFactorAccess().getExprBoolExpressionParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleboolExpression();
+            ruleBoolExpression();
 
             state._fsp--;
 
@@ -6541,26 +6541,26 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Column__NameAssignment"
 
 
-    // $ANTLR start "rule__Group_clause__ExpressionsAssignment_2"
-    // InternalSQL.g:2177:1: rule__Group_clause__ExpressionsAssignment_2 : ( ruleexpression ) ;
-    public final void rule__Group_clause__ExpressionsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__ExpressionsAssignment_2"
+    // InternalSQL.g:2177:1: rule__GroupClause__ExpressionsAssignment_2 : ( ruleExpression ) ;
+    public final void rule__GroupClause__ExpressionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:2181:1: ( ( ruleexpression ) )
-            // InternalSQL.g:2182:2: ( ruleexpression )
+            // InternalSQL.g:2181:1: ( ( ruleExpression ) )
+            // InternalSQL.g:2182:2: ( ruleExpression )
             {
-            // InternalSQL.g:2182:2: ( ruleexpression )
-            // InternalSQL.g:2183:3: ruleexpression
+            // InternalSQL.g:2182:2: ( ruleExpression )
+            // InternalSQL.g:2183:3: ruleExpression
             {
-             before(grammarAccess.getGroup_clauseAccess().getExpressionsExpressionParserRuleCall_2_0()); 
+             before(grammarAccess.getGroupClauseAccess().getExpressionsExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleexpression();
+            ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getGroup_clauseAccess().getExpressionsExpressionParserRuleCall_2_0()); 
+             after(grammarAccess.getGroupClauseAccess().getExpressionsExpressionParserRuleCall_2_0()); 
 
             }
 
@@ -6579,29 +6579,29 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__ExpressionsAssignment_2"
+    // $ANTLR end "rule__GroupClause__ExpressionsAssignment_2"
 
 
-    // $ANTLR start "rule__Group_clause__ExpressionsAssignment_3_1"
-    // InternalSQL.g:2192:1: rule__Group_clause__ExpressionsAssignment_3_1 : ( ruleexpression ) ;
-    public final void rule__Group_clause__ExpressionsAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__GroupClause__ExpressionsAssignment_3_1"
+    // InternalSQL.g:2192:1: rule__GroupClause__ExpressionsAssignment_3_1 : ( ruleExpression ) ;
+    public final void rule__GroupClause__ExpressionsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:2196:1: ( ( ruleexpression ) )
-            // InternalSQL.g:2197:2: ( ruleexpression )
+            // InternalSQL.g:2196:1: ( ( ruleExpression ) )
+            // InternalSQL.g:2197:2: ( ruleExpression )
             {
-            // InternalSQL.g:2197:2: ( ruleexpression )
-            // InternalSQL.g:2198:3: ruleexpression
+            // InternalSQL.g:2197:2: ( ruleExpression )
+            // InternalSQL.g:2198:3: ruleExpression
             {
-             before(grammarAccess.getGroup_clauseAccess().getExpressionsExpressionParserRuleCall_3_1_0()); 
+             before(grammarAccess.getGroupClauseAccess().getExpressionsExpressionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleexpression();
+            ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getGroup_clauseAccess().getExpressionsExpressionParserRuleCall_3_1_0()); 
+             after(grammarAccess.getGroupClauseAccess().getExpressionsExpressionParserRuleCall_3_1_0()); 
 
             }
 
@@ -6620,29 +6620,29 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Group_clause__ExpressionsAssignment_3_1"
+    // $ANTLR end "rule__GroupClause__ExpressionsAssignment_3_1"
 
 
-    // $ANTLR start "rule__Having_clause__ExprAssignment_1"
-    // InternalSQL.g:2207:1: rule__Having_clause__ExprAssignment_1 : ( ruleboolExpression ) ;
-    public final void rule__Having_clause__ExprAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__HavingClause__ExprAssignment_1"
+    // InternalSQL.g:2207:1: rule__HavingClause__ExprAssignment_1 : ( ruleBoolExpression ) ;
+    public final void rule__HavingClause__ExprAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSQL.g:2211:1: ( ( ruleboolExpression ) )
-            // InternalSQL.g:2212:2: ( ruleboolExpression )
+            // InternalSQL.g:2211:1: ( ( ruleBoolExpression ) )
+            // InternalSQL.g:2212:2: ( ruleBoolExpression )
             {
-            // InternalSQL.g:2212:2: ( ruleboolExpression )
-            // InternalSQL.g:2213:3: ruleboolExpression
+            // InternalSQL.g:2212:2: ( ruleBoolExpression )
+            // InternalSQL.g:2213:3: ruleBoolExpression
             {
-             before(grammarAccess.getHaving_clauseAccess().getExprBoolExpressionParserRuleCall_1_0()); 
+             before(grammarAccess.getHavingClauseAccess().getExprBoolExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleboolExpression();
+            ruleBoolExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getHaving_clauseAccess().getExprBoolExpressionParserRuleCall_1_0()); 
+             after(grammarAccess.getHavingClauseAccess().getExprBoolExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -6661,7 +6661,7 @@ public class InternalSQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Having_clause__ExprAssignment_1"
+    // $ANTLR end "rule__HavingClause__ExprAssignment_1"
 
 
     // $ANTLR start "rule__Expression__ColAssignment_1"

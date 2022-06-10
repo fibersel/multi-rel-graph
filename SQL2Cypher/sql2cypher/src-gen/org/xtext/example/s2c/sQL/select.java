@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.s2c.sQL.select#getExpressions <em>Expressions</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.select#getFrom_section <em>From section</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.select#getWhere_section <em>Where section</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.select#getGroup_section <em>Group section</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.select#getHaving_section <em>Having section</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.select#getFromSection <em>From Section</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.select#getWhereClause <em>Where Clause</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.select#getGroupClause <em>Group Clause</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.select#getHavingClause <em>Having Clause</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.s2c.sQL.SQLPackage#getselect()
@@ -31,7 +31,7 @@ public interface select extends EObject
 {
   /**
    * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.s2c.sQL.expression}.
+   * The list contents are of type {@link org.xtext.example.s2c.sQL.Expression}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expressions</em>' containment reference list.
@@ -39,94 +39,94 @@ public interface select extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<expression> getExpressions();
+  EList<Expression> getExpressions();
 
   /**
-   * Returns the value of the '<em><b>From section</b></em>' containment reference.
+   * Returns the value of the '<em><b>From Section</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>From section</em>' containment reference.
-   * @see #setFrom_section(fromSection)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_From_section()
+   * @return the value of the '<em>From Section</em>' containment reference.
+   * @see #setFromSection(fromSection)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_FromSection()
    * @model containment="true"
    * @generated
    */
-  fromSection getFrom_section();
+  fromSection getFromSection();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getFrom_section <em>From section</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getFromSection <em>From Section</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>From section</em>' containment reference.
-   * @see #getFrom_section()
+   * @param value the new value of the '<em>From Section</em>' containment reference.
+   * @see #getFromSection()
    * @generated
    */
-  void setFrom_section(fromSection value);
+  void setFromSection(fromSection value);
 
   /**
-   * Returns the value of the '<em><b>Where section</b></em>' containment reference.
+   * Returns the value of the '<em><b>Where Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Where section</em>' containment reference.
-   * @see #setWhere_section(where_clause)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_Where_section()
+   * @return the value of the '<em>Where Clause</em>' containment reference.
+   * @see #setWhereClause(WhereClause)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_WhereClause()
    * @model containment="true"
    * @generated
    */
-  where_clause getWhere_section();
+  WhereClause getWhereClause();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getWhere_section <em>Where section</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getWhereClause <em>Where Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Where section</em>' containment reference.
-   * @see #getWhere_section()
+   * @param value the new value of the '<em>Where Clause</em>' containment reference.
+   * @see #getWhereClause()
    * @generated
    */
-  void setWhere_section(where_clause value);
+  void setWhereClause(WhereClause value);
 
   /**
-   * Returns the value of the '<em><b>Group section</b></em>' containment reference.
+   * Returns the value of the '<em><b>Group Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Group section</em>' containment reference.
-   * @see #setGroup_section(group_clause)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_Group_section()
+   * @return the value of the '<em>Group Clause</em>' containment reference.
+   * @see #setGroupClause(GroupClause)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_GroupClause()
    * @model containment="true"
    * @generated
    */
-  group_clause getGroup_section();
+  GroupClause getGroupClause();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getGroup_section <em>Group section</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getGroupClause <em>Group Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Group section</em>' containment reference.
-   * @see #getGroup_section()
+   * @param value the new value of the '<em>Group Clause</em>' containment reference.
+   * @see #getGroupClause()
    * @generated
    */
-  void setGroup_section(group_clause value);
+  void setGroupClause(GroupClause value);
 
   /**
-   * Returns the value of the '<em><b>Having section</b></em>' containment reference.
+   * Returns the value of the '<em><b>Having Clause</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Having section</em>' containment reference.
-   * @see #setHaving_section(having_clause)
-   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_Having_section()
+   * @return the value of the '<em>Having Clause</em>' containment reference.
+   * @see #setHavingClause(HavingClause)
+   * @see org.xtext.example.s2c.sQL.SQLPackage#getselect_HavingClause()
    * @model containment="true"
    * @generated
    */
-  having_clause getHaving_section();
+  HavingClause getHavingClause();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getHaving_section <em>Having section</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.s2c.sQL.select#getHavingClause <em>Having Clause</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Having section</em>' containment reference.
-   * @see #getHaving_section()
+   * @param value the new value of the '<em>Having Clause</em>' containment reference.
+   * @see #getHavingClause()
    * @generated
    */
-  void setHaving_section(having_clause value);
+  void setHavingClause(HavingClause value);
 
 } // select

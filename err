@@ -1,0 +1,12 @@
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:7: NOTICE:  table "territories" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:16: NOTICE:  table "employees" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:40: NOTICE:  table "region" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:48: NOTICE:  table "orders" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:68: NOTICE:  table "shippers" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:77: NOTICE:  table "customers" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:94: NOTICE:  table "products" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:110: NOTICE:  table "suppliers" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:128: NOTICE:  table "categories" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:138: NOTICE:  table "us_states" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:1352: NOTICE:  table "employee_territories" does not exist, skipping
+psql:/Users/a.palagashvili/coursework/psql/queries/tmp.sql:1409: NOTICE:  table "order_details" does not exist, skipping

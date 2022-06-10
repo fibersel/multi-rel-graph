@@ -1,0 +1,6 @@
+
+Cypher:
+    queries+=Query;
+
+Query: // SingleQuery
+    'MATCH';

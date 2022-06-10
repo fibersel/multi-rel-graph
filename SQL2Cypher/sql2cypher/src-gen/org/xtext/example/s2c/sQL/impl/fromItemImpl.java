@@ -12,48 +12,48 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.s2c.sQL.BoolExpression;
+import org.xtext.example.s2c.sQL.FromItem;
 import org.xtext.example.s2c.sQL.SQLPackage;
-import org.xtext.example.s2c.sQL.boolExpression;
-import org.xtext.example.s2c.sQL.fromItem;
 import org.xtext.example.s2c.sQL.select;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>from Item</b></em>'.
+ * An implementation of the model object '<em><b>From Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.fromItemImpl#getTable_name <em>Table name</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.fromItemImpl#getSelect_expr <em>Select expr</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.fromItemImpl#getRhs <em>Rhs</em>}</li>
- *   <li>{@link org.xtext.example.s2c.sQL.impl.fromItemImpl#getBool_expr <em>Bool expr</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.FromItemImpl#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.FromItemImpl#getSelect_expr <em>Select expr</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.FromItemImpl#getRhs <em>Rhs</em>}</li>
+ *   <li>{@link org.xtext.example.s2c.sQL.impl.FromItemImpl#getBool_expr <em>Bool expr</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class fromItemImpl extends MinimalEObjectImpl.Container implements fromItem
+public class FromItemImpl extends MinimalEObjectImpl.Container implements FromItem
 {
   /**
-   * The default value of the '{@link #getTable_name() <em>Table name</em>}' attribute.
+   * The default value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTable_name()
+   * @see #getTableName()
    * @generated
    * @ordered
    */
   protected static final String TABLE_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTable_name() <em>Table name</em>}' attribute.
+   * The cached value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTable_name()
+   * @see #getTableName()
    * @generated
    * @ordered
    */
-  protected String table_name = TABLE_NAME_EDEFAULT;
+  protected String tableName = TABLE_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSelect_expr() <em>Select expr</em>}' containment reference.
@@ -73,7 +73,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    * @ordered
    */
-  protected fromItem rhs;
+  protected FromItem rhs;
 
   /**
    * The cached value of the '{@link #getBool_expr() <em>Bool expr</em>}' containment reference.
@@ -83,14 +83,14 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    * @ordered
    */
-  protected boolExpression bool_expr;
+  protected BoolExpression bool_expr;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected fromItemImpl()
+  protected FromItemImpl()
   {
     super();
   }
@@ -112,9 +112,9 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    */
   @Override
-  public String getTable_name()
+  public String getTableName()
   {
-    return table_name;
+    return tableName;
   }
 
   /**
@@ -123,12 +123,12 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    */
   @Override
-  public void setTable_name(String newTable_name)
+  public void setTableName(String newTableName)
   {
-    String oldTable_name = table_name;
-    table_name = newTable_name;
+    String oldTableName = tableName;
+    tableName = newTableName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.FROM_ITEM__TABLE_NAME, oldTable_name, table_name));
+      eNotify(new ENotificationImpl(this, Notification.SET, SQLPackage.FROM_ITEM__TABLE_NAME, oldTableName, tableName));
   }
 
   /**
@@ -187,7 +187,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    */
   @Override
-  public fromItem getRhs()
+  public FromItem getRhs()
   {
     return rhs;
   }
@@ -197,9 +197,9 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRhs(fromItem newRhs, NotificationChain msgs)
+  public NotificationChain basicSetRhs(FromItem newRhs, NotificationChain msgs)
   {
-    fromItem oldRhs = rhs;
+    FromItem oldRhs = rhs;
     rhs = newRhs;
     if (eNotificationRequired())
     {
@@ -215,7 +215,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    */
   @Override
-  public void setRhs(fromItem newRhs)
+  public void setRhs(FromItem newRhs)
   {
     if (newRhs != rhs)
     {
@@ -237,7 +237,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    */
   @Override
-  public boolExpression getBool_expr()
+  public BoolExpression getBool_expr()
   {
     return bool_expr;
   }
@@ -247,9 +247,9 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBool_expr(boolExpression newBool_expr, NotificationChain msgs)
+  public NotificationChain basicSetBool_expr(BoolExpression newBool_expr, NotificationChain msgs)
   {
-    boolExpression oldBool_expr = bool_expr;
+    BoolExpression oldBool_expr = bool_expr;
     bool_expr = newBool_expr;
     if (eNotificationRequired())
     {
@@ -265,7 +265,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
    * @generated
    */
   @Override
-  public void setBool_expr(boolExpression newBool_expr)
+  public void setBool_expr(BoolExpression newBool_expr)
   {
     if (newBool_expr != bool_expr)
     {
@@ -312,7 +312,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
     switch (featureID)
     {
       case SQLPackage.FROM_ITEM__TABLE_NAME:
-        return getTable_name();
+        return getTableName();
       case SQLPackage.FROM_ITEM__SELECT_EXPR:
         return getSelect_expr();
       case SQLPackage.FROM_ITEM__RHS:
@@ -334,16 +334,16 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
     switch (featureID)
     {
       case SQLPackage.FROM_ITEM__TABLE_NAME:
-        setTable_name((String)newValue);
+        setTableName((String)newValue);
         return;
       case SQLPackage.FROM_ITEM__SELECT_EXPR:
         setSelect_expr((select)newValue);
         return;
       case SQLPackage.FROM_ITEM__RHS:
-        setRhs((fromItem)newValue);
+        setRhs((FromItem)newValue);
         return;
       case SQLPackage.FROM_ITEM__BOOL_EXPR:
-        setBool_expr((boolExpression)newValue);
+        setBool_expr((BoolExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -360,16 +360,16 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
     switch (featureID)
     {
       case SQLPackage.FROM_ITEM__TABLE_NAME:
-        setTable_name(TABLE_NAME_EDEFAULT);
+        setTableName(TABLE_NAME_EDEFAULT);
         return;
       case SQLPackage.FROM_ITEM__SELECT_EXPR:
         setSelect_expr((select)null);
         return;
       case SQLPackage.FROM_ITEM__RHS:
-        setRhs((fromItem)null);
+        setRhs((FromItem)null);
         return;
       case SQLPackage.FROM_ITEM__BOOL_EXPR:
-        setBool_expr((boolExpression)null);
+        setBool_expr((BoolExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -386,7 +386,7 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
     switch (featureID)
     {
       case SQLPackage.FROM_ITEM__TABLE_NAME:
-        return TABLE_NAME_EDEFAULT == null ? table_name != null : !TABLE_NAME_EDEFAULT.equals(table_name);
+        return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
       case SQLPackage.FROM_ITEM__SELECT_EXPR:
         return select_expr != null;
       case SQLPackage.FROM_ITEM__RHS:
@@ -408,10 +408,10 @@ public class fromItemImpl extends MinimalEObjectImpl.Container implements fromIt
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (table_name: ");
-    result.append(table_name);
+    result.append(" (tableName: ");
+    result.append(tableName);
     result.append(')');
     return result.toString();
   }
 
-} //fromItemImpl
+} //FromItemImpl

@@ -11,26 +11,26 @@
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//select">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/expressions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/from_section"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/where_section"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/group_section"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/having_section"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/fromSection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/whereClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/groupClause"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//select/havingClause"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//fromSection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//fromSection/from_item"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//fromSection/fromItem"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//fromItem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//fromItem/table_name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//fromItem/select_expr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//fromItem/rhs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//fromItem/bool_expr"/>
+    <genClasses ecoreClass="SQL.ecore#//FromItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//FromItem/tableName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//FromItem/select_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//FromItem/rhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//FromItem/bool_expr"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//where_clause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//where_clause/bool_expr"/>
+    <genClasses ecoreClass="SQL.ecore#//WhereClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//WhereClause/boolExpression"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//boolExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//boolExpression/lhs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//boolExpression/rhs"/>
+    <genClasses ecoreClass="SQL.ecore#//BoolExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//BoolExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//BoolExpression/rhs"/>
     </genClasses>
     <genClasses ecoreClass="SQL.ecore#//Term">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Term/lhs"/>
@@ -48,14 +48,14 @@
     <genClasses ecoreClass="SQL.ecore#//Column">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SQL.ecore#//Column/name"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//group_clause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//group_clause/expressions"/>
+    <genClasses ecoreClass="SQL.ecore#//GroupClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//GroupClause/expressions"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//having_clause">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//having_clause/expr"/>
+    <genClasses ecoreClass="SQL.ecore#//HavingClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//HavingClause/expr"/>
     </genClasses>
-    <genClasses ecoreClass="SQL.ecore#//expression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//expression/col"/>
+    <genClasses ecoreClass="SQL.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SQL.ecore#//Expression/col"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

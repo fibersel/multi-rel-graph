@@ -96,22 +96,22 @@ public class SQLSwitch<T> extends Switch<T>
       }
       case SQLPackage.FROM_ITEM:
       {
-        fromItem fromItem = (fromItem)theEObject;
-        T result = casefromItem(fromItem);
+        FromItem fromItem = (FromItem)theEObject;
+        T result = caseFromItem(fromItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SQLPackage.WHERE_CLAUSE:
       {
-        where_clause where_clause = (where_clause)theEObject;
-        T result = casewhere_clause(where_clause);
+        WhereClause whereClause = (WhereClause)theEObject;
+        T result = caseWhereClause(whereClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SQLPackage.BOOL_EXPRESSION:
       {
-        boolExpression boolExpression = (boolExpression)theEObject;
-        T result = caseboolExpression(boolExpression);
+        BoolExpression boolExpression = (BoolExpression)theEObject;
+        T result = caseBoolExpression(boolExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,22 +145,22 @@ public class SQLSwitch<T> extends Switch<T>
       }
       case SQLPackage.GROUP_CLAUSE:
       {
-        group_clause group_clause = (group_clause)theEObject;
-        T result = casegroup_clause(group_clause);
+        GroupClause groupClause = (GroupClause)theEObject;
+        T result = caseGroupClause(groupClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SQLPackage.HAVING_CLAUSE:
       {
-        having_clause having_clause = (having_clause)theEObject;
-        T result = casehaving_clause(having_clause);
+        HavingClause havingClause = (HavingClause)theEObject;
+        T result = caseHavingClause(havingClause);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case SQLPackage.EXPRESSION:
       {
-        expression expression = (expression)theEObject;
-        T result = caseexpression(expression);
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -217,49 +217,49 @@ public class SQLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>from Item</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>From Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>from Item</em>'.
+   * @return the result of interpreting the object as an instance of '<em>From Item</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casefromItem(fromItem object)
+  public T caseFromItem(FromItem object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>where clause</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Where Clause</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>where clause</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Where Clause</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casewhere_clause(where_clause object)
+  public T caseWhereClause(WhereClause object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>bool Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Bool Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>bool Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Bool Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseboolExpression(boolExpression object)
+  public T caseBoolExpression(BoolExpression object)
   {
     return null;
   }
@@ -329,49 +329,49 @@ public class SQLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>group clause</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Group Clause</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>group clause</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Group Clause</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casegroup_clause(group_clause object)
+  public T caseGroupClause(GroupClause object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>having clause</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Having Clause</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>having clause</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Having Clause</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casehaving_clause(having_clause object)
+  public T caseHavingClause(HavingClause object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseexpression(expression object)
+  public T caseExpression(Expression object)
   {
     return null;
   }
