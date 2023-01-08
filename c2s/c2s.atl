@@ -1,0 +1,596 @@
+-- @path Cypher=/org.xtext.example.cypher/model/generated/Cypher.ecore
+-- @path SQL=/org.xtext.example.sql/model/generated/Sql.ecore
+
+module c2s;
+create OUT : SQL from IN : Cypher;
+
+
+helper def : var2label : Map(String, String) = Map{};
+helper def : m2mtbls : Set(String) = Set{'order_details'};
+helper def : fkeys : Map(String, TupleType(lhs : String, rhs : String)) = Map{
+	('products-categories', Tuple{lhs='category_id', rhs='category_id'}),
+	('categories-products', Tuple{lhs='category_id', rhs='category_id'}),
+	('suppliers-products', Tuple{lhs='supplier_id', rhs='supplier_id'}),
+	('products-suppliers', Tuple{lhs='supplier_id', rhs='supplier_id'}),
+	('products-order_details', Tuple{lhs='product_id', rhs='product_id'}),
+	('order_details-products', Tuple{lhs='product_id', rhs='product_id'}),
+	('orders-order_details', Tuple{lhs='order_id', rhs='order_id'}),
+	('order_details-orders', Tuple{lhs='order_id', rhs='order_id'}),
+	('orders-employees', Tuple{lhs='employee_id', rhs='employee_id'}),
+	('employees-orders', Tuple{lhs='employee_id', rhs='employee_id'}),
+	('customers-orders', Tuple{lhs='customer_id', rhs='customer_id'}),
+	('orders-customers', Tuple{lhs='customer_id', rhs='customer_id'}),
+	('customers-orders', Tuple{lhs='customer_id', rhs='customer_id'}),
+	('orders-shippers', Tuple{lhs='ship_via', rhs='shipper_id'})
+};
+
+
+helper def : aggfunctions : Set(String) = Set{
+	'sum'	
+};
+
+
+
+entrypoint rule Cypher2SQL() {
+	using {
+		cypher: Cypher!Cypher = Cypher!Cypher.allInstances()->first();
+	}
+	do {
+		-- Cypher!NodePattern.allInstances()->collect(p | thisModule.fillLabelVars(p));
+		thisModule.debug(thisModule.var2label);
+		thisModule.generateMapping(cypher);
+		thisModule.debug('generating sql general mapping');
+		cypher;
+	}
+}
+
+
+rule fillLabelVars(pattern : Cypher!Pattern) {
+	using {
+		p: Cypher!PatternPart = pattern.patterns.first();
+	}
+	do {
+		thisModule.var2label <- Map{};
+		
+		if (not p.nodepattern.oclIsUndefined()) {
+			thisModule.var2label <- thisModule.var2label->including(
+				p.nodepattern.variable.name, 
+				p.nodepattern.nodeLabels.first().labelName
+			);
+		}
+		
+		if (p.chain.notEmpty()) {
+			for (c in p.chain) {
+				if (not c.relationshipPattern.detail.variable.oclIsUndefined()) {
+					thisModule.var2label <- thisModule.var2label->including(
+						c.relationshipPattern.detail.variable.name,
+						c.relationshipPattern.detail.relTypeNames.first()
+					);
+				}
+				
+				if (not c.nodePattern.oclIsUndefined()) {
+					thisModule.var2label <- thisModule.var2label->including(
+						c.nodePattern.variable.name,
+						c.nodePattern.nodeLabels.first().labelName
+					);
+				}
+			}
+		}
+
+		thisModule.debug('variables mapping: ' + thisModule.var2label.toString());
+		thisModule.var2label;
+	}
+}
+
+rule generateMapping(cypher: Cypher!Cypher) {
+	to
+		mdl: SQL!Model(
+			queries <- cypher.statements->collect(s | thisModule.generateSQLQuery(s))
+		)
+	do {
+		thisModule.debug('generating sql queries');
+		mdl;
+	}
+}
+
+
+rule generateSQLQuery(statement: Cypher!Statement) {
+	to
+		q: SQL!Query()
+	do {
+		thisModule.debug('generating sql query');
+		
+		thisModule.fillLabelVars(statement.readingClauses->first().pattern);
+		q.selectClause <- thisModule.generateSQLSelect(statement.return);
+		q.fromClause <- thisModule.generateSQLFrom(statement.readingClauses->first().pattern);
+		
+		if (thisModule.NeedsWhereExpression(
+			statement.readingClauses->first().where, 
+			statement.readingClauses->first().pattern
+		)) {
+			q.whereClause <- thisModule.generateSQLWhere(
+				statement.readingClauses->first().where, 
+				statement.readingClauses->first().pattern
+			);	
+		}
+		
+		if (thisModule.NeedsGroupsExpression(statement.return)) {
+			q.groupClause <- thisModule.generateSQLGroup(statement.return);
+		}
+		
+		q;
+	}
+}
+
+
+rule generateSQLSelect(return : Cypher!Return) {
+	to
+		s: SQL!SelectSection()
+	do {
+		thisModule.debug('generating sql select statement');
+		--s.expressions <- return.body.returnItems.items->collect(i | thisModule.generateSQLSelectExpression(i));
+		s.expressions <- return.body.returnItems.items->collect(i | i.expression->map());
+		s;
+	}
+}
+
+
+
+rule generateSQLSelectExpression(ri : Cypher!ReturnItem) {
+	to
+		--e : SQL!Expression
+	do {
+		-- thisModule.debug(ri);
+		-- thisModule.debug(ri.expression);
+		-- thisModule.debug(ri.expression.propertyLookups);
+		-- al.attributeKeyName <- ri.expression.propertyLookups.first().propertyKeyName;
+		-- vd.name <- thisModule.var2label.get(ri.expression.left.variableRef.name);
+		-- vr;
+		--e <- ri.expression->map();
+		-- thisModule.debug(e);
+		-- ri.expression->map();
+		--e;
+		thisModule.debug(ri.expression->map());
+	}
+}
+
+
+rule generateSQLFrom(pattern : Cypher!Pattern) {
+	using {
+		p: Cypher!PatternPart = pattern.patterns.first();
+		l: String = '';
+	}
+	to
+		tbl: SQL!Table(	
+		),
+		fi : SQL!FromItem(
+		),
+		fs : SQL!fromSection(
+			fromItem <- fi
+		)
+	do {
+		if (not p.var.oclIsUndefined()) {
+			thisModule.debug('varname: ' + p.var.name);
+		}
+		thisModule.debug('chain first label: ' + p.nodepattern.nodeLabels.first().labelName);
+		thisModule.debug(p.chain);
+		
+		l <- p.nodepattern.nodeLabels.first().labelName;
+		tbl.name <- l;
+		fi.tbl <- fi.tbl.including(tbl);
+	
+		if (p.chain.notEmpty()) {
+			thisModule.debug('chain edge: ' + p.chain.first().relationshipPattern.detail.relTypeNames.first());
+			if (not p.chain.first().relationshipPattern.detail.variable.oclIsUndefined()) {
+				thisModule.debug('chain edge: ' + p.chain.first().relationshipPattern.detail.variable.name);
+			}
+			
+			
+			
+			thisModule.debug('chain second label: ' + p.chain.first().nodePattern.nodeLabels.first().labelName);
+			if (not p.chain.first().nodePattern.variable.oclIsUndefined()) {
+				thisModule.debug('chain second alias: ' + p.chain.first().nodePattern.variable.name);	
+			}
+			
+	
+			for (c in p.chain) {
+				thisModule.generateSQLJoinCell(
+					l, 
+					c.relationshipPattern.detail.relTypeNames.first(), 
+					c.nodePattern.nodeLabels.first().labelName, 
+					fi
+				);
+				l <- c.nodePattern.nodeLabels.first().labelName;
+			}			
+		}
+
+		
+		fs;	
+	}
+}
+
+rule generateSQLJoinCell(l : String, e : String, r : String, f : SQL!FromItem) {
+	do {
+		if (thisModule.m2mtbls.includes(e)) {
+			f.tbl <- f.tbl.including(thisModule.generateTableRule(e));
+			f.tbl <- f.tbl.including(thisModule.generateTableRule(r));
+			f.expressions <- f.expressions.including(thisModule.generateOnRule(l, e));
+			f.expressions <- f.expressions.including(thisModule.generateOnRule(e, r));
+		} else {
+			f.tbl <- f.tbl.including(thisModule.generateTableRule(r));
+			f.expressions <- f.expressions.including(thisModule.generateOnRule(l, r));
+		}
+	}	
+}
+
+rule generateTableRule(tbls : String) {
+	to 
+		tbl: SQL!Table()
+	do {
+		tbl.name <- tbls;
+		tbl;	
+	}
+}
+
+rule generateOnRule(l : String, r : String) {
+	to 
+		e : SQL!ComparisonExpression(),
+		vd1 : SQL!VariableDeclaration(),
+		vd2 : SQL!VariableDeclaration(),
+		al1 : SQL!AttributeLookup (),
+		al2 : SQL!AttributeLookup (),
+		lr : SQL!VariableRef(
+			variableRef <- vd1,
+			attributeLookup <- al1
+		),
+		rr : SQL!VariableRef(
+			variableRef <- vd2,
+			attributeLookup <- al2
+		)
+	do {
+		al1.attributeKeyName <- thisModule.fkeys.get(l + '-' + r).lhs;
+		al2.attributeKeyName <- thisModule.fkeys.get(l + '-' + r).rhs;
+		lr.variableRef.name <- l;
+		rr.variableRef.name <- r;
+
+		e.operator <- '=';
+		e.left <- lr;
+		e.right <- rr;
+		e;
+	}
+}
+
+
+rule NeedsGroupsExpression(return : Cypher!Return) {
+	using {
+		aggs: Integer = 0;
+		nonaggs: Integer = 0;
+	}
+	do {
+		aggs <- return.body.returnItems.items->collect(i | i.expression->isAggExpr()).count(true);
+		nonaggs <- return.body.returnItems.items->collect(i | i.expression->isAggExpr()).count(false);
+		
+		if (aggs > 0 and nonaggs > 0) {
+			true;	
+		} else {
+			false;
+		}
+	}	
+}
+
+
+helper context Cypher!Count def : isAggExpr() : Boolean = true;
+
+
+helper context Cypher!Expression def : isAggExpr() : Boolean = false;
+
+
+helper context Cypher!FunctionInvocation def : isAggExpr() : Boolean = thisModule.aggfunctions.includes(self.functionName);
+
+
+rule generateSQLGroup(return : Cypher!Return) {
+	to
+		grp: SQL!GroupClause(
+			expressions <- 	return.body.returnItems.items->reject(
+				i | i.expression->isAggExpr()
+			)->collect(i | i.expression->map())
+		)
+	do {
+		grp;	
+	}
+}
+
+
+rule NeedsWhereExpression(where : Cypher!Where, pattern : Cypher!Pattern) {
+	using {
+		p: Cypher!PatternPart = pattern.patterns.first();
+		res: Boolean = false;
+	}
+	do {
+		if (not p.nodepattern.oclIsUndefined()) {
+			if (not p.nodepattern.properties.oclIsUndefined()) {
+				if (p.nodepattern.properties.entries.notEmpty()) {
+					res <- true;
+				}
+			}
+		}
+		
+		if (p.chain.notEmpty()) {
+			for (c in p.chain) {
+				if (not c.relationshipPattern.detail.properties.oclIsUndefined()) {
+					if (c.relationshipPattern.detail.properties.entries.notEmpty()) {
+						res <- true;	
+					}
+				}
+				
+				if (not c.nodePattern.oclIsUndefined()) {
+					if (not c.nodePattern.properties.oclIsUndefined()) {
+						if (c.nodePattern.properties.entries.notEmpty()) {
+							res <- true;
+						}
+					}
+				}
+			}
+		}
+		
+		if (not where.oclIsUndefined()) {
+			res <- true;
+		}
+
+		res;
+	}
+}
+
+
+rule generateSQLWhere(where : Cypher!Where, pattern : Cypher!Pattern) {
+	using {
+		p: Cypher!PatternPart = pattern.patterns.first();
+		exprs: Sequence(SQL!Expression) = Sequence{};
+	}
+	to
+		whr: SQL!WhereClause()
+	do {
+		if (not where.oclIsUndefined()) {
+			if (not where.expression.oclIsUndefined()) {
+				exprs <- exprs.including(where.expression->map());
+				-- whr.expression <- where.expression->map();
+			}
+		}
+		
+		
+		if (not p.nodepattern.oclIsUndefined()) {
+			if (not p.nodepattern.properties.oclIsUndefined()) {
+				if (p.nodepattern.properties.entries.notEmpty()) {
+					for (e in p.nodepattern.properties.entries) {
+						exprs <- exprs.including(
+							thisModule.generateEqualityCE(
+								p.nodepattern.nodeLabels.first().labelName,
+								e.key,
+								e.value
+							)
+						);
+					}
+				}
+			}
+		}
+		
+		
+		if (p.chain.notEmpty()) {
+			for (c in p.chain) {
+				if (not c.relationshipPattern.detail.properties.oclIsUndefined()) {
+					if (c.relationshipPattern.detail.properties.entries.notEmpty()) {
+					
+					}
+				}
+				
+				if (not c.nodePattern.oclIsUndefined()) {
+					if (not c.nodePattern.properties.oclIsUndefined()) {
+						if (c.nodePattern.properties.entries.notEmpty()) {
+							for (e in p.nodepattern.properties.entries) {
+								exprs <- exprs.including(
+									thisModule.generateEqualityCE(
+										p.nodepattern.nodeLabels.first().labelName,
+										e.key,
+										e.value
+									)
+								);
+							}
+						}
+					}
+				}
+			}
+		}
+		whr.expression <- thisModule.wrapExpressionsRecursive(exprs);
+		whr;
+	}
+}
+
+
+
+rule generateEqualityCE(label : String, propname : String, expr : Cypher!Expression) {
+	to
+		al: SQL!AttributeLookup (),
+		vd: SQL!VariableDeclaration (),
+		vr: SQL!VariableRef(
+			variableRef <- vd,
+			attributeLookup <- al
+		),
+		ret: SQL!ComparisonExpression (
+			left <- vr,
+			right <- expr->map(),
+			operator <- '='
+		)
+	do {
+		al.attributeKeyName <- propname;
+		vd.name <- label;
+		ret;
+	}
+}
+
+
+rule wrapExpressionsRecursive(exprs : Sequence(SQL!Expression)) {
+	using {
+		e: SQL!Expression = exprs.first();
+	}
+	do {
+		if (exprs.size() > 1) {
+			for (e1 in exprs.subSequence(2)) {
+				e <- thisModule.connectExpressionsViaEq(e, e1);
+			}	
+		}
+		
+		e;
+	}	
+}
+
+
+rule connectExpressionsViaEq(lhs : SQL!Expression, rhs : SQL!Expression) {
+	to
+		e: SQL!ComparisonExpression(
+			left <- lhs,
+			right <- rhs
+		)
+	do {
+		e;	
+	}
+}
+
+helper context Cypher!StringLiteral def : map() : SQL!Expression =
+	thisModule.wrapStringLiteral(self);
+
+
+rule wrapStringLiteral(e : Cypher!StringLiteral) {
+	to
+		ret: SQL!StringLiteral ()
+	do {
+		ret.value <- e.value;
+		ret;
+	}
+	
+}
+
+
+helper context Cypher!ComparisonExpression def : map() : SQL!Expression = 
+	thisModule.wrapCE(self);
+
+
+rule wrapCE(e : Cypher!ComparisonExpression) {
+	to
+		ret: SQL!ComparisonExpression ()
+	do {
+		ret.left <- e.left.map();
+		ret.right <- e.right.map();
+		ret.operator <- e.operator;
+		ret;
+	}
+}
+
+
+helper context Cypher!AddOrSubtractExpression def : map() : SQL!Expression = 
+	thisModule.wrapAOSE(self);
+
+
+rule wrapAOSE(e : Cypher!AddOrSubtractExpression) {
+	to
+		ret: SQL!AddOrSubtractExpression ()
+	do {
+		ret.left <- e.left.map();
+		ret.right <- e.right.map();
+		ret.operator <- e.operator;
+		ret;
+	}
+}
+
+
+helper context Cypher!FunctionInvocation def : map() : SQL!Expression = 
+	thisModule.wrapFI(self);
+
+
+rule wrapFI(e : Cypher!FunctionInvocation) {
+	to
+		ret: SQL!FunctionInvocation ()
+	do {
+		ret.functionName <- e.functionName;
+		ret.parameter <- e.parameter->collect(p | p->map());
+		thisModule.debug(e.parameter);
+		thisModule.debug(ret.functionName);
+		thisModule.debug(ret.parameter);
+		ret;	
+	}
+}
+
+
+helper context Cypher!MultiplyDivideModuloExpression def : map() : SQL!Expression = thisModule.wrapMDME(self);
+
+
+rule wrapMDME(e : Cypher!MultiplyDivideModuloExpression) {
+	to
+		ret: SQL!MultiplyDivideModuloExpression ()
+	do {
+		ret.left <- e.left.map();
+		ret.right <- e.right.map();
+		ret.operator <- e.operator;
+		ret;	
+	}
+}
+
+
+helper context Cypher!PropertyLookupExpression def : map() : SQL!Expression = thisModule.wrapPLE(self);
+
+
+rule wrapPLE(e : Cypher!PropertyLookupExpression) {
+	to
+		al: SQL!AttributeLookup (),
+		vd: SQL!VariableDeclaration (),
+		vr: SQL!VariableRef(
+			variableRef <- vd,
+			attributeLookup <- al
+		)
+	do {
+		al.attributeKeyName <- e.propertyLookups.first().propertyKeyName;
+		vd.name <- thisModule.var2label.get(e.left.variableRef.name);
+		vr;
+	}
+}
+
+
+helper context Cypher!Count def : map() : SQL!Expression = thisModule.wrapCount(self);
+
+
+rule wrapCount(cin : Cypher!Count) {
+	to
+		out: SQL!Count ()
+	do {
+		out;	
+	}
+}
+
+
+--rule PropertyLookupExpression {
+--	from
+--		s: Cypher!MapLiteral
+--	to
+--		t: SQL!AttributeLookup
+--	do {
+--		-- thisModule.debug('Tranforming property lookup');
+--		for (e in s.entries) {
+--			-- thisModule.debug(e);
+--		}
+--	}
+--}
+
+
+--rule MapLiteralEntry2Condition {
+--	from
+--		s: Cypher!MapLiteralEntry
+--	to
+--		t: SQL!BoolExpression
+--	do {
+		-- thisModule.debug('key attribute: ' + s.key + ';');
+--	}
+--}
+
+
+
+
+

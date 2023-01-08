@@ -1,0 +1,221 @@
+grammar org.xtext.example.mydsl.Sql with org.eclipse.xtext.common.Terminals
+
+generate sql "http://www.xtext.org/example/mydsl/Sql"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	(queries+=Query)*;
+
+
+Query:
+	selectClause=SelectSection
+	(fromClause=fromSection)? 
+	(whereClause=WhereClause)? 
+	(groupClause=GroupClause)? 
+	(havingClause=HavingClause)? ';';
+
+
+SelectSection:
+	'SELECT' expressions+=Expression (',' expressions+=Expression)*;
+
+
+fromSection:
+	'FROM' fromItem=FromItem;
+
+
+FromItem:
+	tbl+=Table ('JOIN' tbl+=Table 'ON' expressions+=Expression)* | '('select_expr=SelectSection')';
+
+
+Table:
+	name=ID;
+
+
+WhereClause:
+	'WHERE' expression=Expression;
+
+
+BoolExpression returns Expression:
+	lhs=Term ('OR' rhs=Term)?;
+
+
+Term returns Expression:
+	lhs=Factor ('AND' rhs=Factor)?;
+
+
+Factor returns Expression:
+	'NOT' factor=Factor | '('expr=BoolExpression ')' | 'TRUE' | 'FALSE' | binexp=Binary;
+
+
+Binary returns Expression:
+	lhs=PropertyOrRelationAttributeExpression ('<' | '>' | '=' | '>=' | '<=') rhs=PropertyOrRelationAttributeExpression;
+
+
+Column:
+	name=ID;
+
+
+GroupClause:
+	'GROUP' 'BY' expressions+=Expression (',' expressions+=Expression)*;
+
+
+HavingClause:
+	'HAVING' expr=BoolExpression;
+
+
+//Expression:
+//	'*' | col=Column | 'count()' | 'sum('col=Column')';
+	
+Expression:
+	OrExpression;
+
+
+OrExpression returns Expression:
+	XorExpression ({OrExpression.left=current} operator='OR' right=XorExpression)*;
+
+
+XorExpression returns Expression:
+	AndExpression ({XorExpression.left=current} operator='XOR' right=AndExpression)*;
+
+
+AndExpression returns Expression:
+	NotExpression ({AndExpression.left=current} operator='AND' right=NotExpression)*;
+
+	
+NotExpression returns Expression:
+	({NotExpression} operator='NOT' left=NotExpression) | ComparisonExpression;
+
+	
+ComparisonExpression returns Expression:
+	AddOrSubtractExpression ({ComparisonExpression.left=current} operator=('=' | '<>' | '<' | '>' | '<=' | '>=')
+	right=AddOrSubtractExpression)*;
+
+
+AddOrSubtractExpression returns Expression:
+	MultiplyDivideModuloExpression ({AddOrSubtractExpression.left=current} operator=('+' | '-')
+	right=MultiplyDivideModuloExpression)*;
+
+
+MultiplyDivideModuloExpression returns Expression:
+/*
+ * oC_MultiplyDivideModuloExpression : oC_PowerOfExpression ( ( SP? '*' SP? oC_PowerOfExpression ) | ( SP? '/' SP? oC_PowerOfExpression ) | ( SP? '%' SP? oC_PowerOfExpression ) )* ;
+ */
+	PowerOfExpression ({MultiplyDivideModuloExpression.left=current} operator=('*' | '/' | '%') right=PowerOfExpression)*;
+
+
+PowerOfExpression returns Expression:
+/*
+ * oC_PowerOfExpression : oC_UnaryAddOrSubtractExpression ( SP? '^' SP? oC_UnaryAddOrSubtractExpression )* ;
+ */
+	UnaryAddOrSubtractExpression ({PowerOfExpression.left=current} operator='^' right=UnaryAddOrSubtractExpression)*;
+	
+UnaryAddOrSubtractExpression returns Expression:
+/*
+ * oC_UnaryAddOrSubtractExpression : ( ( '+' | '-' ) SP? )* oC_StringListNullOperatorExpression ;
+ */
+	StringListNullOperatorExpression | {UnaryAddOrSubtractExpression} operator=('+' | '-') left=UnaryAddOrSubtractExpression;
+	
+	
+StringListNullOperatorExpression returns Expression:
+/*
+ * oC_StringListNullOperatorExpression : oC_PropertyOrLabelsExpression ( oC_StringOperatorExpression | oC_ListOperatorExpression | oC_NullOperatorExpression )* ;
+ */
+	PropertyOrRelationAttributeExpression ( {StringListNullOperatorExpression.left=current } expressions+=( StringOperatorExpression | NullOperatorExpression) )*;
+
+
+StringOperatorExpression returns Expression:
+/*
+ * oC_StringOperatorExpression : ( oC_RegularExpression | ( SP IN ) | ( SP STARTS SP WITH ) | ( SP ENDS SP WITH ) | ( SP CONTAINS ) ) SP? oC_PropertyOrLabelsExpression ; 
+ */
+	( ( {RegExpMatchingExpression} '=~' ) |
+	  ( {InCollectionExpression} 'IN' ) | 
+	  ( {StartsWithExpression} 'STARTS' 'WITH' ) | 
+	  ( {EndsWithExpression} 'ENDS' 'WITH' ) |
+	  ( {ContainsExpression} 'CONTAINS' ) )
+	right=PropertyOrRelationAttributeExpression 
+;
+
+NullOperatorExpression returns Expression:
+/*
+ * oC_NullOperatorExpression : ( SP IS SP NULL )
+ *                           | ( SP IS SP NOT SP NULL )
+ *                           ;
+ */	
+	( {IsNullExpression} 'IS' 'NULL') | 
+	( {IsNotNullExpression} 'IS' 'NOT' 'NULL')	
+;
+
+
+PropertyOrRelationAttributeExpression returns Expression:
+/*
+ * oC_PropertyOrLabelsExpression : oC_Atom ( SP? oC_PropertyLookup )* ( SP? oC_NodeLabels )? ;
+ *
+ * Note: we want PropertyLookupExpression and NodeLabelsExpression to
+ * appear in the AST iff property lookups and node label constraints were given, respectively
+ */
+	Atom (attributeLookup=AttributeLookup)?;
+	
+	
+AttributeLookup:
+	'.' attributeKeyName=AttributeKeyName;
+
+
+AttributeKeyName:
+	SYMBOLIC_NAME_X;
+
+	
+Atom returns Expression:
+	Literal | {Count} 'COUNT' '(' '*' ')' | {VariableRef} variableRef=VariableDeclaration |
+	FunctionInvocation;
+
+FunctionInvocation:
+	functionName=FunctionName '(' (parameter+=Expression (',' parameter+=Expression)*)? ')'
+;
+
+
+FunctionName:
+	SYMBOLIC_NAME_X;
+	
+VariableDeclaration:
+	name=SYMBOLIC_NAME_X;
+	
+Literal:
+	NumberLiteral | StringLiteral | BooleanLiteral;
+	
+	
+BooleanLiteral:
+	{BooleanLiteral} value=('TRUE' | 'FALSE');
+
+
+StringLiteral:
+	value=STRING_LITERAL;
+
+
+SYMBOLIC_NAME_X:
+	ID;
+
+terminal STRING_LITERAL:
+	'"' ('\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\' | '"'))* '"' | "'" ('\\' .
+	/* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\' | "'"))* "'";
+
+
+NumberLiteral:
+	value=Number;
+	
+
+Number hidden():
+	HEX | (INT | DECIMAL) ('.' (INT | DECIMAL))?;
+	
+	
+terminal HEX:
+	('0x' | '0X') ('0'..'9' | 'A'..'F')+;
+
+
+@Override 
+terminal INT returns ecore::EInt:
+	'0'..'9' ('0'..'9')*;
+
+
+terminal DECIMAL:
+	INT (('e') ('+' | '-')? INT)?;

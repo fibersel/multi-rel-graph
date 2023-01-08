@@ -1,0 +1,56 @@
+SELECT orders.ship_name
+FROM 
+	orders
+
+WHERE orders.ship_country = "Switzerland"
+
+
+SELECT sum(order_details.quantity * order_details.unit_price)
+FROM 
+	orders
+JOIN
+	order_details
+ON
+	orders.order_id = order_details.order_id
+JOIN
+	products
+ON
+	order_details.product_id = products.product_id
+WHERE orders.ship_country = "Switzerland"
+
+
+SELECT categories.category_name, COUNT(*)
+FROM 
+	products
+JOIN
+	categories
+ON
+	products.category_id = categories.category_id
+GROUP BY categories.category_name
+
+
+SELECT orders.ship_name, products.product_name
+FROM 
+	orders
+JOIN
+	order_details
+ON
+	orders.order_id = order_details.order_id
+JOIN
+	products
+ON
+	order_details.product_id = products.product_id
+
+
+SELECT employees.title, customers.postal_code
+FROM 
+	employees
+JOIN
+	orders
+ON
+	employees.employee_id = orders.employee_id
+JOIN
+	customers
+ON
+	orders.customer_id = customers.customer_id
+WHERE orders.ship_city = 'Reims'

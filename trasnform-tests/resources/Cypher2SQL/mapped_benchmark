@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<sql:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sql="http://www.xtext.org/example/mydsl/Sql">
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="ship_name"/>
+        <variableRef name="orders"/>
+      </expressions>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="orders"/>
+      </fromItem>
+    </fromClause>
+    <whereClause>
+      <expression xsi:type="sql:ComparisonExpression" operator="=">
+        <left xsi:type="sql:VariableRef">
+          <attributeLookup attributeKeyName="ship_country"/>
+          <variableRef name="orders"/>
+        </left>
+        <right xsi:type="sql:StringLiteral" value="&quot;Switzerland&quot;"/>
+      </expression>
+    </whereClause>
+  </queries>
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:FunctionInvocation" functionName="sum">
+        <parameter xsi:type="sql:MultiplyDivideModuloExpression" operator="*">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="quantity"/>
+            <variableRef name="order_details"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="unit_price"/>
+            <variableRef name="order_details"/>
+          </right>
+        </parameter>
+      </expressions>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="orders"/>
+        <tbl name="order_details"/>
+        <tbl name="products"/>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="order_id"/>
+            <variableRef name="orders"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="order_id"/>
+            <variableRef name="order_details"/>
+          </right>
+        </expressions>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="product_id"/>
+            <variableRef name="order_details"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="product_id"/>
+            <variableRef name="products"/>
+          </right>
+        </expressions>
+      </fromItem>
+    </fromClause>
+    <whereClause>
+      <expression xsi:type="sql:ComparisonExpression" operator="=">
+        <left xsi:type="sql:VariableRef">
+          <attributeLookup attributeKeyName="ship_country"/>
+          <variableRef name="orders"/>
+        </left>
+        <right xsi:type="sql:StringLiteral" value="&quot;Switzerland&quot;"/>
+      </expression>
+    </whereClause>
+  </queries>
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="category_name"/>
+        <variableRef name="categories"/>
+      </expressions>
+      <expressions xsi:type="sql:Count"/>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="products"/>
+        <tbl name="categories"/>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="category_id"/>
+            <variableRef name="products"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="category_id"/>
+            <variableRef name="categories"/>
+          </right>
+        </expressions>
+      </fromItem>
+    </fromClause>
+    <groupClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="category_name"/>
+        <variableRef name="categories"/>
+      </expressions>
+    </groupClause>
+  </queries>
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="ship_name"/>
+        <variableRef name="orders"/>
+      </expressions>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="product_name"/>
+        <variableRef name="products"/>
+      </expressions>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="orders"/>
+        <tbl name="order_details"/>
+        <tbl name="products"/>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="order_id"/>
+            <variableRef name="orders"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="order_id"/>
+            <variableRef name="order_details"/>
+          </right>
+        </expressions>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="product_id"/>
+            <variableRef name="order_details"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="product_id"/>
+            <variableRef name="products"/>
+          </right>
+        </expressions>
+      </fromItem>
+    </fromClause>
+  </queries>
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="title"/>
+        <variableRef name="employees"/>
+      </expressions>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="postal_code"/>
+        <variableRef name="customers"/>
+      </expressions>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="employees"/>
+        <tbl name="orders"/>
+        <tbl name="customers"/>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="employee_id"/>
+            <variableRef name="employees"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="employee_id"/>
+            <variableRef name="orders"/>
+          </right>
+        </expressions>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="customer_id"/>
+            <variableRef name="orders"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="customer_id"/>
+            <variableRef name="customers"/>
+          </right>
+        </expressions>
+      </fromItem>
+    </fromClause>
+    <whereClause>
+      <expression xsi:type="sql:ComparisonExpression" operator="=">
+        <left xsi:type="sql:VariableRef">
+          <attributeLookup attributeKeyName="ship_city"/>
+          <variableRef name="orders"/>
+        </left>
+        <right xsi:type="sql:StringLiteral" value="'Reims'"/>
+      </expression>
+    </whereClause>
+  </queries>
+</sql:Model>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sql="http://www.xtext.org/example/mydsl/Sql">
+  <sql:Model/>
+  <sql:Query/>
+  <sql:SelectSection/>
+  <sql:Expression/>
+  <sql:AttributeLookup/>
+  <sql:BoolExpression/>
+</xmi:XMI>

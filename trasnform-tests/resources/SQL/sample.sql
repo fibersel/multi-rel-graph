@@ -1,2 +1,2 @@
-SELECT column1, column2 
+SELECT table.column1, table.column2 
 FROM table 

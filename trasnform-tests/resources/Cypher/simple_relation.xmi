@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openCypher:Cypher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:openCypher="http://www.codekontor.io/opencypher/xtext/OpenCypher">
-  <queryOptions xsi:type="openCypher:AllOptions"/>
-  <statements xsi:type="openCypher:SinglePartQuery">
-    <readingClauses xsi:type="openCypher:Match">
+<cypher:Cypher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cypher="http://www.xtext.org/example/mydsl/Cypher">
+  <queryOptions xsi:type="cypher:AllOptions"/>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
       <pattern>
-        <patterns xsi:type="openCypher:PatternElement">
+        <patterns xsi:type="cypher:PatternElement">
           <nodepattern>
             <nodeLabels labelName="Person"/>
-            <properties xsi:type="openCypher:MapLiteral">
+            <properties xsi:type="cypher:MapLiteral">
               <entries key="name">
-                <value xsi:type="openCypher:StringLiteral" value="'Tom Hanks'"/>
+                <value xsi:type="cypher:StringLiteral" value="'Tom Hanks'"/>
               </entries>
             </properties>
           </nodepattern>
@@ -27,16 +27,14 @@
         </patterns>
       </pattern>
     </readingClauses>
-  </statements>
-  <statements xsi:type="openCypher:SinglePartQuery">
     <return return="RETURN">
       <body>
         <returnItems>
           <items>
-            <expression xsi:type="openCypher:PropertyLookupExpression">
+            <expression xsi:type="cypher:PropertyLookupExpression">
               <propertyLookups propertyKeyName="title"/>
-              <left xsi:type="openCypher:VariableRef">
-                <variableRef href="__synthetic0.cypher#|0"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="movie"/>
               </left>
             </expression>
           </items>
@@ -44,4 +42,4 @@
       </body>
     </return>
   </statements>
-</openCypher:Cypher>
+</cypher:Cypher>

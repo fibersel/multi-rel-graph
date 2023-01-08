@@ -1,0 +1,18 @@
+MATCH (:orders)
+RETURN .ship_name
+
+
+MATCH (:orders)-[:order_details]-()
+RETURN sum(.quantity * .unit_price)
+
+
+MATCH (:products)-[:category_id]-(:categories)
+RETURN COUNT(*), .category_name
+
+
+MATCH (:orders)-[:order_details]-(:products)
+RETURN .ship_name, .product_name
+
+
+MATCH (:employees)-[:employee_id]-(:orders)-[:customer_id]-(:customers)
+RETURN .title, .postal_code

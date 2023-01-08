@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="sql2cypher.ide/src"/>
+	<classpathentry kind="src" path="sql2cypher.ide/src-gen"/>
+	<classpathentry kind="src" path="sql2cypher.tests/src-gen"/>
+	<classpathentry kind="src" path="sql2cypher.tests/xtend-gen"/>
+	<classpathentry kind="src" path="sql2cypher.ui.tests/src-gen"/>
+	<classpathentry kind="src" path="sql2cypher.ui/src"/>
+	<classpathentry kind="src" path="sql2cypher.ui/src-gen"/>
+	<classpathentry kind="src" path="sql2cypher/src"/>
+	<classpathentry kind="src" path="sql2cypher/src-gen"/>
+	<classpathentry kind="src" path="sql2cypher/xtend-gen"/>
+	<classpathentry kind="lib" path="sql2cypher/.antlr-generator-3.2.0-patch.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

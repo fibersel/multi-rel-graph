@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sQL:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sQL="http://www.xtext.org/example/s2c/SQL">
-  <statements>
-    <expressions>
-      <col name="ELECT"/>
-    </expressions>
-  </statements>
-</sQL:Model>
+<sql:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sql="http://www.xtext.org/example/mydsl/Sql">
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="column1"/>
+        <variableRef name="ELECT"/>
+      </expressions>
+      <expressions xsi:type="sql:VariableRef">
+        <variableRef name="column2"/>
+      </expressions>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="table"/>
+      </fromItem>
+    </fromClause>
+  </queries>
+</sql:Model>

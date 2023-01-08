@@ -1,0 +1,66 @@
+
+
+query Cypher2Text = 
+		Cypher!Statement.allInstances()->
+			iterate(c; acc : String = '' | if acc = '' then c.toString() else acc + '\n\n' + c.toString() endif).writeTo('/trasnform-tests/resources/SQL2Cypher/benchmark_text');
+
+
+helper context Cypher!Statement def : toString() : String = 
+	let s : String = '' in 
+	self.readingClauses.first().toString() + '\n' +
+	if not self.return.oclIsUndefined() then self.return.toString() + '\n' else '' endif;
+
+
+helper context Cypher!Match def : toString() : String =
+	let s : String = 'expr' in 'MATCH' + ' ' + self.pattern.toString();
+
+
+helper context Cypher!Pattern def : toString() : String = 
+	let s : String = 'expr' in self.patterns.first().part.toString();
+
+
+helper context Cypher!PatternElement def : toString() : String =
+	let s : String = '' in 
+	if self.nodepattern.oclIsUndefined() then '()' else self.nodepattern.toString() endif + 
+	self.chain->iterate(i; acc : String = '' | acc + i.relationshipPattern.toString() + 
+	if i.nodePattern.oclIsUndefined() then '()' else i.nodePattern.toString() endif);
+
+helper context Cypher!NodePattern def : toString() : String =
+	let s : String = '' in '(' + ':' + self.nodeLabels.first().labelName + ')';
+
+helper context Cypher!RelationshipPattern def : toString() : String =
+	let s : String = '' in 
+	'-' + '[' + ':' + self.detail.relTypeNames.first() +  ']' + '-';
+
+helper context Cypher!MultiplyDivideModuloExpression def : toString() : String =
+	self.left.toString() + ' ' + self.operator + ' ' + self.right.toString();
+
+
+helper context Cypher!Return def : toString() : String = 
+	let s : String = '' in
+	self.return + ' ' + self.body.returnItems.items->iterate(
+		i; 
+		acc : String = '' | if acc = '' then i.expression.toString() else acc + ', ' + i.expression.toString() endif
+	);
+
+
+helper context Cypher!FunctionInvocation def : toString() : String = 
+	self.functionName + '(' + self.parameter->iterate(
+		e; acc : String = '' | if acc = '' then e.toString() else acc + ', ' + e.toString() endif
+	) + ')';
+
+
+helper context Cypher!Count def : toString() : String = 'COUNT(*)';
+
+
+helper context Cypher!PropertyLookupExpression def : toString() : String = 
+	let s : String = 
+	if not self.left.oclIsUndefined() then self.left.variableRef.name else '' endif + '.' + self.propertyLookups.first().propertyKeyName in
+	s;
+
+--self.propertyLookups.first().propertyKeyName
+
+
+helper context Cypher!Expression def : toString() : String = 
+	let s : String = 'expr' in
+	s;

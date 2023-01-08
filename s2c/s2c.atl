@@ -1,0 +1,312 @@
+-- @path Cypher=/org.xtext.example.cypher/model/generated/Cypher.ecore
+-- @path SQL=/org.xtext.example.sql/model/generated/Sql.ecore
+
+module s2c;
+create OUT : Cypher from IN : SQL;
+
+helper def : m2mtbls : Set(String) = Set{'order_details'};
+helper def : fkeys : Map(String, String) = Map{
+	('products-categories', 'category_id'),
+	('categories-products', 'category_id'),
+	('employees-orders', 'employee_id'),
+	('orders-employees', 'employee_id'),
+	('orders-customers', 'customer_id'),
+	('customers-orders', 'customer_id'),
+	('order_details-orders', 'product_id'),
+	('orders-order_details', 'product_id')
+};
+
+
+
+entrypoint rule SQL2Cypher() {
+	using {
+		sql: SQL!Model = SQL!Model.allInstances()->first();
+	}
+	do {
+		thisModule.generateMapping(sql);
+		thisModule.debug('generating cypher general mapping');
+		sql;
+	}
+}
+
+
+rule generateMapping(sql: SQL!Model) {
+	to
+		mdl: Cypher!Cypher(
+			statements <- sql.queries->collect(q | thisModule.generateCypherStatement(q))
+		)
+	do {
+		thisModule.debug('generating cypher queries');
+		mdl;
+	}
+}
+
+
+rule generateCypherStatement(q: SQL!Query) {
+	to
+		s: Cypher!SinglePartQuery(),
+		rc: Cypher!Match()
+	do {
+		--thisModule.debug(q.selectClause);
+		s.return <- thisModule.generateCypherReturn(q.selectClause);
+		rc.pattern <- thisModule.generateCypherPattern(q.fromClause);
+		s.readingClauses <- s.readingClauses->including(rc);
+		s;
+	}
+}
+
+
+rule generateCypherPattern(fromClause: SQL!fromSection) {
+	using {
+		prev : String = '';
+		cur : String = '';
+		inChain : Boolean = false;
+		patternElement : Cypher!PatternElement = OclUndefined;
+		patternElementChain: Cypher!PatternElementChain = OclUndefined;
+		nodePattern : Cypher!NodePattern = OclUndefined;
+	}
+	to
+		patternPart: Cypher!PatternPart(),
+		pattern: Cypher!Pattern()
+	do {
+		pattern.patterns <- pattern.patterns.including(patternPart);
+		cur <- fromClause.fromItem.tbl.first().name;
+		
+		if (not thisModule.m2mtbls.includes(cur)) {
+			patternElement <- thisModule.emptyPatternElement();
+			nodePattern <- thisModule.generateNodePattern(cur);
+			patternElement.nodepattern <- nodePattern;
+			patternPart.part <- patternElement;
+			inChain <- false;
+			--patternPart.part <- thisModule.generateNodePattern(l);
+		} else {
+			patternElement <- thisModule.emptyPatternElement();
+			patternPart.part <- patternElement;
+			patternElement.chain <- patternElement.chain.including(thisModule.generatePatternElementChain(cur));
+			patternElementChain <- patternElement.chain;
+			inChain <- true;
+		}
+		
+		prev <- cur;
+		
+		for (tbl in fromClause.fromItem.tbl) {
+			if (not (prev = tbl.name)) {
+				cur <- tbl.name;
+				
+				if (not thisModule.m2mtbls.includes(cur)) {
+					if (not thisModule.m2mtbls.includes(prev)) {
+						patternElementChain <- thisModule.generateO2MChain(prev, cur);
+						nodePattern <- thisModule.generateNodePattern(cur);
+						patternElementChain.nodePattern <- nodePattern;
+						patternElement.chain <- patternElement.chain.including(patternElementChain);
+					} else {
+						nodePattern <- thisModule.generateNodePattern(cur);
+						patternElementChain.nodePattern <- nodePattern;
+						--patternElementChain.nodePattern <- thisModule.generateNodePattern(cur);
+						--patternElement <- patternElementChain.nodePattern;
+					}
+					--patternElement <- thisModule.generateNodePattern(cur);
+					--patternPart.part <- patternElement;
+					inChain <- false;
+				} else {
+					patternElementChain <- thisModule.generatePatternElementChain(cur);
+					--nodePattern <- thisModule.generateNodePattern(cur);
+					--patternElementChain.nodePattern <- nodePattern;
+					patternElement.chain <- patternElement.chain.including(patternElementChain);
+					--thisModule.debug('here!!!');
+					--patternElement <- thisModule.emptyPatternElement();
+					--patternPart.part <- patternElement;
+					--patternElement.chain <- patternElement.chain.including(thisModule.generatePatternElementChain(cur));
+					--inChain <- true;	
+				}
+				
+				prev <- cur;
+			}
+		}
+		
+		pattern;
+	}
+}
+
+
+rule generateO2MChain(l: String, r: String) {
+	to
+		rd: Cypher!RelationshipDetail(),
+		rp: Cypher!RelationshipPattern(
+			detail <- rd	
+		),
+		chain: Cypher!PatternElementChain(
+			relationshipPattern <- rp	
+		)
+	do {
+		thisModule.debug('here3');
+		thisModule.debug(l + '-' + r);
+		thisModule.debug(thisModule.fkeys.get(l + '-' + r));
+		rd.relTypeNames <- rd.relTypeNames.including(thisModule.fkeys.get(l + '-' + r));
+		chain;	
+	}
+}
+
+
+rule emptyPatternElement() {
+	to
+		patternElement: Cypher!PatternElement()
+	do {
+		patternElement;
+	}
+}
+
+
+rule generatePatternElementChain(tbl: String) {
+	to
+		detail: Cypher!RelationshipDetail(
+			relTypeNames <- tbl
+		),
+		rp: Cypher!RelationshipPattern(
+			detail <- detail	
+		),
+		pec: Cypher!PatternElementChain(
+			relationshipPattern <- rp	
+		)
+	do {
+		pec;	
+	}
+}
+
+
+rule generateNodePattern(tbl: String) {
+	to
+		nodePattern: Cypher!NodePattern(),
+		nodeLabel: Cypher!NodeLabel(
+			labelName <- tbl	
+		)
+	do {
+		nodePattern.nodeLabels <- nodePattern.nodeLabels.including(nodeLabel);
+		nodePattern;
+	}
+}
+
+
+rule generateCypherReturn(select: SQL!SelectSection) {
+	to
+		ris: Cypher!ReturnItems(
+			items <- select.expressions->collect(e | thisModule.wrapReturnItem(e))
+		),
+		rb: Cypher!ReturnBody(
+			returnItems <- 	ris
+		),
+		r: Cypher!Return(
+			return <- 'RETURN',
+			body <- rb
+		)
+	do {
+		r;
+	}
+}
+
+rule wrapReturnItem(exp: SQL!Expression) {
+	to
+		ri: Cypher!ReturnItem(
+			expression <- exp.map()
+		)
+	do {
+		ri;
+	}
+}
+
+
+helper context SQL!VariableRef def : map() : Cypher!Expression = thisModule.wrapVarRef(self);
+
+
+rule wrapVarRef(e: SQL!VariableRef) {
+	to
+		pl: Cypher!PropertyLookup(),
+		ple: Cypher!PropertyLookupExpression()
+	do {
+		pl.propertyKeyName <- e.attributeLookup.attributeKeyName;
+		ple.propertyLookups <- ple.propertyLookups->including(pl);
+		ple;
+	}
+}
+
+
+helper context SQL!ComparisonExpression def : map() : Cypher!ComparisonExpression = thisModule.wrapCE(self);
+
+
+rule wrapCE(e : SQL!ComparisonExpression) {
+	to
+		ret: Cypher!ComparisonExpression ()
+	do {
+		ret.left <- e.left.map();
+		ret.right <- e.right.map();
+		ret.operator <- e.operator;
+		ret;
+	}
+}
+
+
+helper context SQL!FunctionInvocation def : map() : Cypher!Expression = 
+	thisModule.wrapFI(self);
+
+
+rule wrapFI(e : SQL!FunctionInvocation) {
+	to
+		ret: Cypher!FunctionInvocation ()
+	do {
+		ret.functionName <- e.functionName;
+		ret.parameter <- e.parameter->collect(p | p->map());
+		thisModule.debug(e.parameter);
+		thisModule.debug(ret.functionName);
+		thisModule.debug(ret.parameter);
+		ret;	
+	}
+}
+
+
+helper context SQL!MultiplyDivideModuloExpression def : map() : Cypher!Expression = thisModule.wrapMDME(self);
+
+
+rule wrapMDME(e : SQL!MultiplyDivideModuloExpression) {
+	to
+		ret: Cypher!MultiplyDivideModuloExpression ()
+	do {
+		ret.left <- e.left.map();
+		ret.right <- e.right.map();
+		ret.operator <- e.operator;
+		ret;	
+	}
+}
+
+
+helper context SQL!Count def : map() : Cypher!Expression = thisModule.wrapCount(self);
+
+
+rule wrapCount(cin : SQL!Count) {
+	to
+		out: Cypher!Count ()
+	do {
+		out;	
+	}
+}
+
+
+helper context SQL!Expression def : map() : Cypher!Expression = thisModule.wrapExp(self);
+
+
+rule wrapExp(s: SQL!expression) {
+	to
+		e: Cypher!Expression
+	do {
+		e;	
+	}
+}
+
+
+
+
+
+
+
+
+
+

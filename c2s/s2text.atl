@@ -1,0 +1,105 @@
+-- @path MM=/org.xtext.example.sql/model/generated/Sql.ecore
+-- @path MM1=/c2s/text.ecore
+
+
+query
+	
+	SQL2Text = 
+		SQL!Query.allInstances()->
+			iterate(c; acc : String = '' | if acc = '' then c.toString() else acc + '\n\n' + c.toString() endif).writeTo('/trasnform-tests/resources/Cypher2SQL/benchmark_text')
+	;
+
+helper context SQL!Query def : toString() : String = 
+	let s: String = '' in self.selectClause.toString() + '\n' + 
+	if not self.fromClause.oclIsUndefined() then self.fromClause.toString() + '\n' else '' endif + 
+	if not self.whereClause.oclIsUndefined() then self.whereClause.toString() + '\n' else '' endif + 
+	if not self.groupClause.oclIsUndefined() then self.groupClause.toString() + '\n' else '' endif;
+
+
+helper context SQL!SelectSection def : toString() : String = 'SELECT' + ' ' +
+	self.expressions->iterate(e; acc : String = '' | if acc = '' then e.toString() else acc + ', ' + e.toString() endif);
+
+
+--helper context SQL!PropertyOrRelationAttributeExpression def : toString() : String = 
+--helper context SQL!Expression def : toString() : String = 'expr';
+
+helper context SQL!VariableRef def : toString() : String = self.variableRef.name + '.' + self.attributeLookup.attributeKeyName;
+
+
+helper context SQL!OrExpression def : toString() : String = 
+	self.left.toString() + if not self.right.oclIsUndefined() then ' ' + 'OR' + ' ' + self.right.toString() else '' endif;
+
+
+helper context SQL!XorExpression def : toString() : String = 
+	self.left.toString() + if not self.right.oclIsUndefined() then ' ' + 'XOR' + ' ' + self.right.toString() else '' endif;
+
+
+helper context SQL!AndExpression def : toString() : String = 
+	self.left.toString() + if not self.right.oclIsUndefined() then ' ' + 'AND' + ' ' + self.right.toString() else '' endif;
+
+
+helper context SQL!ComparisonExpression def : toString() : String =
+	self.left.toString() + ' ' + self.operator + ' ' + self.right.toString();
+
+
+helper context SQL!AddOrSubtractExpression def : toString() : String =
+	self.left.toString() + ' ' + self.operator + ' ' + self.right.toString();
+
+
+helper context SQL!MultiplyDivideModuloExpression def : toString() : String =
+	self.left.toString() + ' ' + self.operator + ' ' + self.right.toString();
+
+
+helper context SQL!PowerOfExpression def : toString() : String =
+	self.left.toString() + ' ' + self.operator + ' ' + self.right.toString();
+
+
+helper context SQL!UnaryAddOrSubtractExpression def : toString() : String =
+	self.left.toString() + ' ' + self.operator + ' ' + self.right.toString();
+
+
+helper context SQL!FunctionInvocation def : toString() : String = 
+	self.functionName + '(' + self.parameter->iterate(
+		e; acc : String = '' | if acc = '' then e.toString() else acc + ', ' + e.toString() endif
+	) + ')';
+
+
+helper context SQL!Count def : toString() : String = 'COUNT(*)';
+
+
+helper context SQL!StringLiteral def : toString() : String = 
+	self.value;
+
+	
+helper context SQL!fromSection def : toString() : String = 'FROM' + ' ' + self.fromItem.toString();
+
+
+helper context SQL!FromItem def : toString() : String = '\n\t' + self.tbl.first().name + 
+	if self.tbl.size() < 2 then 
+		'\n'
+	else
+		thisModule.generateJoinConnection(self.tbl.subSequence(2, self.tbl.size()), self.expressions)
+	endif;
+
+
+helper def : generateJoinConnection(l : Sequence(SQL!Table), r : Sequence(SQL!Expression)) : String = let s : String = '' in 
+	l->iterate(e; acc : String = '' | acc + '\nJOIN\n\t' + e.name + '\nON\n\t' + r.at(l.indexOf(e))->toString());
+
+
+helper context SQL!WhereClause def : toString() : String = 'WHERE' + ' ' + 
+	self.expression.toString();
+
+
+helper context SQL!GroupClause def : toString() : String = 'GROUP BY' + ' ' +
+	self.expressions->iterate(e; acc : String = '' | if acc = '' then e.toString() else acc + ', ' + e.toString() endif);
+
+
+
+
+
+
+
+
+
+
+

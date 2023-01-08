@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cypher:Cypher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cypher="http://www.xtext.org/example/mydsl/Cypher">
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns>
+          <part xsi:type="cypher:PatternElement">
+            <nodepattern>
+              <nodeLabels labelName="orders"/>
+            </nodepattern>
+          </part>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="ship_name"/>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns>
+          <part xsi:type="cypher:PatternElement">
+            <nodepattern>
+              <nodeLabels labelName="orders"/>
+            </nodepattern>
+            <chain>
+              <relationshipPattern>
+                <detail>
+                  <relTypeNames>order_details</relTypeNames>
+                </detail>
+              </relationshipPattern>
+            </chain>
+          </part>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:FunctionInvocation" functionName="sum">
+              <parameter xsi:type="cypher:MultiplyDivideModuloExpression" operator="*">
+                <left xsi:type="cypher:PropertyLookupExpression">
+                  <propertyLookups propertyKeyName="quantity"/>
+                </left>
+                <right xsi:type="cypher:PropertyLookupExpression">
+                  <propertyLookups propertyKeyName="unit_price"/>
+                </right>
+              </parameter>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns>
+          <part xsi:type="cypher:PatternElement">
+            <nodepattern>
+              <nodeLabels labelName="products"/>
+            </nodepattern>
+            <chain>
+              <relationshipPattern>
+                <detail>
+                  <relTypeNames>category_id</relTypeNames>
+                </detail>
+              </relationshipPattern>
+              <nodePattern>
+                <nodeLabels labelName="categories"/>
+              </nodePattern>
+            </chain>
+          </part>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:Count"/>
+          </items>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="category_name"/>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns>
+          <part xsi:type="cypher:PatternElement">
+            <nodepattern>
+              <nodeLabels labelName="orders"/>
+            </nodepattern>
+            <chain>
+              <relationshipPattern>
+                <detail>
+                  <relTypeNames>order_details</relTypeNames>
+                </detail>
+              </relationshipPattern>
+              <nodePattern>
+                <nodeLabels labelName="products"/>
+              </nodePattern>
+            </chain>
+          </part>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="ship_name"/>
+            </expression>
+          </items>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="product_name"/>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns>
+          <part xsi:type="cypher:PatternElement">
+            <nodepattern>
+              <nodeLabels labelName="employees"/>
+            </nodepattern>
+            <chain>
+              <relationshipPattern>
+                <detail>
+                  <relTypeNames>employee_id</relTypeNames>
+                </detail>
+              </relationshipPattern>
+              <nodePattern>
+                <nodeLabels labelName="orders"/>
+              </nodePattern>
+            </chain>
+            <chain>
+              <relationshipPattern>
+                <detail>
+                  <relTypeNames>customer_id</relTypeNames>
+                </detail>
+              </relationshipPattern>
+              <nodePattern>
+                <nodeLabels labelName="customers"/>
+              </nodePattern>
+            </chain>
+          </part>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="title"/>
+            </expression>
+          </items>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="postal_code"/>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+</cypher:Cypher>

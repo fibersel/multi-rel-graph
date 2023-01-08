@@ -1,8 +1,8 @@
 import psycopg2
 from dataclasses import dataclass
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import networkx as nx
-from pygraphviz import *
+# from pygraphviz import *
 from helpers import *
 from entities import *
 from generate_migrations import generate_neo4j_migrations
@@ -175,9 +175,10 @@ if __name__ == "__main__":
     parser.add_argument("-db", "--database", type=str)
     args = parser.parse_args()
 
-    conn = psycopg2.connect("dbname={} user=postgres password=password".format(args.db))
+    conn = psycopg2.connect("dbname={} user=fibersel password=password".format(args.database))
     cursor = conn.cursor()
 
+    DB = args.database
     table_names = get_tables_list(cursor, DB)
 
     tables = get_table_attributes(cursor, DB, table_names)

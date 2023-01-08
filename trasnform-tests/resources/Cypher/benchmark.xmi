@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cypher:Cypher xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cypher="http://www.xtext.org/example/mydsl/Cypher">
+  <queryOptions xsi:type="cypher:AllOptions"/>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns xsi:type="cypher:PatternElement">
+          <nodepattern>
+            <nodeLabels labelName="orders"/>
+            <variable name="o"/>
+            <properties xsi:type="cypher:MapLiteral">
+              <entries key="ship_country">
+                <value xsi:type="cypher:StringLiteral" value="&quot;Switzerland&quot;"/>
+              </entries>
+            </properties>
+          </nodepattern>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="ship_name"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="o"/>
+              </left>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns xsi:type="cypher:PatternElement">
+          <nodepattern>
+            <nodeLabels labelName="orders"/>
+            <variable name="o"/>
+            <properties xsi:type="cypher:MapLiteral">
+              <entries key="ship_country">
+                <value xsi:type="cypher:StringLiteral" value="&quot;Switzerland&quot;"/>
+              </entries>
+            </properties>
+          </nodepattern>
+          <chain>
+            <relationshipPattern incoming="true">
+              <detail>
+                <relTypeNames>order_details</relTypeNames>
+                <variable name="od"/>
+              </detail>
+            </relationshipPattern>
+            <nodePattern>
+              <nodeLabels labelName="products"/>
+              <variable name="p"/>
+            </nodePattern>
+          </chain>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:FunctionInvocation" functionName="sum">
+              <parameter xsi:type="cypher:MultiplyDivideModuloExpression" operator="*">
+                <left xsi:type="cypher:PropertyLookupExpression">
+                  <propertyLookups propertyKeyName="quantity"/>
+                  <left xsi:type="cypher:VariableRef">
+                    <variableRef name="od"/>
+                  </left>
+                </left>
+                <right xsi:type="cypher:PropertyLookupExpression">
+                  <propertyLookups propertyKeyName="unit_price"/>
+                  <left xsi:type="cypher:VariableRef">
+                    <variableRef name="od"/>
+                  </left>
+                </right>
+              </parameter>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns xsi:type="cypher:PatternElement">
+          <nodepattern>
+            <nodeLabels labelName="products"/>
+            <variable name="p"/>
+          </nodepattern>
+          <chain>
+            <relationshipPattern outgoing="true">
+              <detail>
+                <relTypeNames>category_id</relTypeNames>
+              </detail>
+            </relationshipPattern>
+            <nodePattern>
+              <nodeLabels labelName="categories"/>
+              <variable name="c"/>
+            </nodePattern>
+          </chain>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="category_name"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="c"/>
+              </left>
+            </expression>
+          </items>
+          <items>
+            <expression xsi:type="cypher:Count"/>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns xsi:type="cypher:PatternElement">
+          <nodepattern>
+            <nodeLabels labelName="orders"/>
+            <variable name="o"/>
+          </nodepattern>
+          <chain>
+            <relationshipPattern incoming="true">
+              <detail>
+                <relTypeNames>order_details</relTypeNames>
+              </detail>
+            </relationshipPattern>
+            <nodePattern>
+              <nodeLabels labelName="products"/>
+              <variable name="p"/>
+            </nodePattern>
+          </chain>
+        </patterns>
+      </pattern>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="ship_name"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="o"/>
+              </left>
+            </expression>
+          </items>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="product_name"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="p"/>
+              </left>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+  <statements xsi:type="cypher:SinglePartQuery">
+    <readingClauses xsi:type="cypher:Match">
+      <pattern>
+        <patterns xsi:type="cypher:PatternElement">
+          <nodepattern>
+            <nodeLabels labelName="employees"/>
+            <variable name="e"/>
+          </nodepattern>
+          <chain>
+            <relationshipPattern incoming="true">
+              <detail>
+                <relTypeNames>employee_id</relTypeNames>
+              </detail>
+            </relationshipPattern>
+            <nodePattern>
+              <nodeLabels labelName="orders"/>
+              <variable name="o"/>
+            </nodePattern>
+          </chain>
+          <chain>
+            <relationshipPattern outgoing="true">
+              <detail>
+                <relTypeNames>customer_id</relTypeNames>
+              </detail>
+            </relationshipPattern>
+            <nodePattern>
+              <nodeLabels labelName="customers"/>
+              <variable name="c"/>
+            </nodePattern>
+          </chain>
+        </patterns>
+      </pattern>
+      <where>
+        <expression xsi:type="cypher:ComparisonExpression" operator="=">
+          <left xsi:type="cypher:PropertyLookupExpression">
+            <propertyLookups propertyKeyName="ship_city"/>
+            <left xsi:type="cypher:VariableRef">
+              <variableRef name="o"/>
+            </left>
+          </left>
+          <right xsi:type="cypher:StringLiteral" value="'Reims'"/>
+        </expression>
+      </where>
+    </readingClauses>
+    <return return="RETURN">
+      <body>
+        <returnItems>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="title"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="e"/>
+              </left>
+            </expression>
+          </items>
+          <items>
+            <expression xsi:type="cypher:PropertyLookupExpression">
+              <propertyLookups propertyKeyName="postal_code"/>
+              <left xsi:type="cypher:VariableRef">
+                <variableRef name="c"/>
+              </left>
+            </expression>
+          </items>
+        </returnItems>
+      </body>
+    </return>
+  </statements>
+</cypher:Cypher>

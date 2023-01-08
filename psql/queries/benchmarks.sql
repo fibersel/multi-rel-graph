@@ -46,3 +46,33 @@ FROM
     ON order_details.order_id = orders.order_id
 GROUP BY ship_city
 ORDER BY ship_city;
+
+
+-- ###################################
+
+-- psql northwind
+
+-- cypher-shell neo4j 201998
+
+SELECT ship_name
+FROM orders
+WHERE ship_country = 'Switzerland';
+
+
+SELECT sum(od.quantity * od.unit_price) 
+FROM 
+    orders o 
+JOIN 
+    order_details od 
+ON o.order_id = od.order_id  
+WHERE o.ship_country = 'Switzerland';
+
+
+SELECT count(*), category_name 
+FROM 
+    products 
+JOIN 
+    categories 
+ON 
+    products.category_id = categories.category_id 
+GROUP BY category_name;

@@ -27,7 +27,7 @@ TABLE_PRIMARY_KEYS = {
 
 uri = "neo4j://localhost:7687"
 user = "neo4j"
-password = "password"
+password = "201998"
 
 def nodeMapper(nodeRec):
     label = list(nodeRec.labels)[0]

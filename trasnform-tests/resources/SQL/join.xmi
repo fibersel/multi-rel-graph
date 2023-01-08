@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sql="http://www.xtext.org/example/mydsl/Sql">
+  <queries>
+    <selectClause>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="column1"/>
+        <variableRef name="table"/>
+      </expressions>
+      <expressions xsi:type="sql:VariableRef">
+        <attributeLookup attributeKeyName="column2"/>
+        <variableRef name="table"/>
+      </expressions>
+    </selectClause>
+    <fromClause>
+      <fromItem>
+        <tbl name="table1"/>
+        <tbl name="table2"/>
+        <expressions xsi:type="sql:ComparisonExpression" operator="=">
+          <left>
+            <attributeLookup attributeKeyName="id"/>
+          </left>
+          <right xsi:type="sql:VariableRef">
+            <attributeLookup attributeKeyName="id"/>
+            <variableRef name="table2"/>
+          </right>
+        </expressions>
+      </fromItem>
+    </fromClause>
+  </queries>
+</sql:Model>

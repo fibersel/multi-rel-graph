@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import Any
+import typing as tp
 
 @dataclass
 class Attr:
@@ -81,14 +82,14 @@ class GraphSchema:
 @dataclass(frozen=True)
 class Node:
     label: str
-    attr: list[str]
-    vals: list[Any]
+    attr: tp.List[str]
+    vals: tp.List[Any]
         
 @dataclass(frozen=True)
 class Edge:
     label: str
-    attr: list[str]
-    vals: list[Any]
+    attr: tp.List[str]
+    vals: tp.List[Any]
     source: Node
     target: Node
 

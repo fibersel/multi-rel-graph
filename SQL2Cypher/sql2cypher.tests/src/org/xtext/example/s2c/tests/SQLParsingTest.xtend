@@ -31,7 +31,7 @@ class SQLParsingTest {
 	
 	@Test
 	def void loadModel() {
-		val folder = "/Users/a.palagashvili/coursework/trasnform-tests/resources/SQL"
+		val folder = "/Users/fibersel/coursework/trasnform-tests/resources/SQL"
 		
 		var filelist = new ArrayList<File>()
 		getFileList(filelist, folder)
